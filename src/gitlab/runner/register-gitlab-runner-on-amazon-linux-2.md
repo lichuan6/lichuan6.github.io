@@ -73,7 +73,7 @@ And you can also config the runner in `/etc/gitlab-runner/config.toml`.
 
 You can go to runners page in gitlab Admin and check if the runner is registered successfully.
 
-![Runner](https://github.com/lichuan6/blog-images/assets/74223747/08d2b0ba-f32a-4b75-8dad-f676e5d055ab)
+![Runner](https://github.com/lichuan6/lichuan6.github.io/assets/74223747/c4df4b54-ae28-40e2-be29-66a29b2206f1)
 
 # Set GITLAB_PORT to 443
 
@@ -165,4 +165,4 @@ You can trigger ci either by committing on `main` branch or clicking `Run Pipeli
 
 If the pipeline is passed, your gitlab runner is runner successfully.
 
-![Pipeline](https://github.com/lichuan6/blog-images/assets/74223747/c1d7ccf0-c622-49f4-9cb2-12c3b5d8afb2)
+![Pipeline](https://github.com/lichuan6/lichuan6.github.io/assets/74223747/aaf5c27f-7451-4061-a0f6-181250f4abb0)
