@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -647,6 +647,207 @@ deploy:
 <p>You can trigger ci either by committing on <code>main</code> branch or clicking <code>Run Pipeline</code> in your project's pipeline page, i.e https://gitlab.mycompany.com/myname/go-ci-test/-/pipelines</p>
 <p>If the pipeline is passed, your gitlab runner is runner successfully.</p>
 <p><img src="https://github.com/lichuan6/lichuan6.github.io/assets/74223747/aaf5c27f-7451-4061-a0f6-181250f4abb0" alt="Pipeline" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-organise-application-error-in-actix-web-application"><a class="header" href="#how-to-organise-application-error-in-actix-web-application">How to organise application Error in actix-web application</a></h1>
+<h1 id="table-of-contents-2"><a class="header" href="#table-of-contents-2">Table of Contents</a></h1>
+<!--ts-->
+<ul>
+<li><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html#how-to-organise-application-error-in-actix-web-application">How to organise application Error in actix-web application</a></li>
+<li><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html#dao-layer">Dao layer</a></li>
+<li><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html#actix-web-http-layer">Actix-web http layer</a></li>
+<li><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html#solution">Solution</a></li>
+</ul>
+<!--te-->
+<h1 id="dao-layer"><a class="header" href="#dao-layer">Dao layer</a></h1>
+<p>For dao layer, usually we use <code>lib::Result</code> as return type. Below is an example of fetching all users when using <code>clickhosue-rs</code> crate:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use clickhouse::error::{Error, Result};
+
+pub async fn get_all_users(client: &amp;Client) -&gt; Result&lt;Vec&lt;User&gt;&gt; {
+    let users = client
+        .query(&quot;SELECT ?fields FROM users&quot;)
+        .fetch_all::&lt;User&gt;()
+        .await?;
+
+    Ok(users)
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Notice, the <code>Result</code> is not <code>std::result::Result</code> type, it is a type that use <code>clickhouse::error::Error</code> as the error type in <code>Result</code> generic type.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::{error::Error as StdError, fmt, io, result, str::Utf8Error};
+
+use serde::{de, ser};
+
+/// A result with a specified [`Error`] type.
+pub type Result&lt;T, E = Error&gt; = result::Result&lt;T, E&gt;;
+
+
+/// Represents all possible errors.
+#[derive(Debug, thiserror::Error)]
+#[non_exhaustive]
+#[allow(missing_docs)]
+pub enum Error {
+    #[error(&quot;invalid params: {0}&quot;)]
+    InvalidParams(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
+    #[error(&quot;network error: {0}&quot;)]
+    Network(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
+    #[error(&quot;compression error: {0}&quot;)]
+    Compression(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
+    #[error(&quot;decompression error: {0}&quot;)]
+    Decompression(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
+    #[error(&quot;no rows returned by a query that expected to return at least one row&quot;)]
+    RowNotFound,
+    #[error(&quot;sequences must have a known size ahead of time&quot;)]
+    SequenceMustHaveLength,
+    #[error(&quot;`deserialize_any` is not supported&quot;)]
+    DeserializeAnyNotSupported,
+    #[error(&quot;not enough data, probably a row type mismatches a database schema&quot;)]
+    NotEnoughData,
+    #[error(&quot;string is not valid utf8&quot;)]
+    InvalidUtf8Encoding(#[from] Utf8Error),
+    #[error(&quot;tag for enum is not valid&quot;)]
+    InvalidTagEncoding(usize),
+    #[error(&quot;a custom error message from serde: {0}&quot;)]
+    Custom(String),
+    #[error(&quot;bad response: {0}&quot;)]
+    BadResponse(String),
+    #[error(&quot;timeout expired&quot;)]
+    TimedOut,
+
+    // Internally handled errors, not part of public API.
+    // XXX: move to another error?
+    #[error(&quot;internal error: too small buffer, need another {0} bytes&quot;)]
+    #[doc(hidden)]
+    TooSmallBuffer(usize),
+}
+<span class="boring">}</span></code></pre></pre>
+<h1 id="actix-web-http-layer"><a class="header" href="#actix-web-http-layer">Actix-web http layer</a></h1>
+<p>Actix-web framework requires the error type is <code>actix_web::error::Error</code> if <code>actix_web::Result</code> is used as the return type.</p>
+<p><code>Result</code> type in actix-web :</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub use self::error::Error;
+pub use self::internal::*;
+pub use self::response_error::ResponseError;
+pub(crate) use macros::{downcast_dyn, downcast_get_type_id};
+
+/// A convenience [`Result`](std::result::Result) for Actix Web operations.
+///
+/// This type alias is generally used to avoid writing out `actix_http::Error` directly.
+pub type Result&lt;T, E = Error&gt; = std::result::Result&lt;T, E&gt;;
+<span class="boring">}</span></code></pre></pre>
+<p><code>Error</code> type in actix-web :</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/// General purpose Actix Web error.
+///
+/// An Actix Web error is used to carry errors from `std::error` through actix in a convenient way.
+/// It can be created through converting errors with `into()`.
+///
+/// Whenever it is created from an external object a response error is created for it that can be
+/// used to create an HTTP response from it this means that if you have access to an actix `Error`
+/// you can always get a `ResponseError` reference from it.
+pub struct Error {
+    cause: Box&lt;dyn ResponseError&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Normally, we write actix-web handler and call dao functions like this:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub async fn get_all_users(data: web::Data&lt;AppState&gt;) -&gt; actix_web::Result&lt;impl Responder&gt; {
+    let db = &amp;data.db;
+
+    // call dao function to fetch data
+    let users = users::get_all_users(db).await?;
+    Ok(web::Json(users))
+}
+<span class="boring">}</span></code></pre></pre>
+<p>If you write a http handler like this and call function in dao(i.e. <code>dao::get_all_users</code>) function, which returns an error from the dao crate, error will happen.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>   --&gt; src/user/http.rs:348:54
+    |
+348 |     let users = users::get_all(db).await?;
+    |                                         ^ the trait `ResponseError` is not implemented for `clickhouse::error::Error`
+    |
+    = help: the following other types implement trait `ResponseError`:
+              AppError
+              BlockingError
+              Box&lt;(dyn StdError + 'static)&gt;
+              HttpError
+              Infallible
+              InvalidHeaderValue
+              JsonPayloadError
+              PathError
+            and 17 others
+    = note: required for `actix_web::Error` to implement `std::convert::From&lt;clickhouse::error::Error&gt;`
+    = note: required for `Result&lt;_, actix_web::Error&gt;` to implement `FromResidual&lt;Result&lt;Infallible, clickhouse::error::Error&gt;&gt;`
+<span class="boring">}</span></code></pre></pre>
+<p>It means that you cannot convert <code>clickhouse::error::Error</code> to <code>actix_web::Error</code>.</p>
+<p>The reason is that the error type in dao function is <code>clickhouse::error::Error</code> and <code>actix_web::Error</code> in http handler. You have to implement <code>From</code> trait as rust compiler told you.</p>
+<h1 id="solution"><a class="header" href="#solution">Solution</a></h1>
+<p>One possible solution is to define application error and implement <code>From</code> trait, which will convert <code>clickhouse::error::Error</code> to <code>AppError</code>:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Debug)]
+pub enum AppError {
+    ClickhouseError(ClickhouseError),
+    // ... other error variants
+}
+
+impl ResponseError for AppError {
+    fn error_response(&amp;self) -&gt; HttpResponse {
+        HttpResponse::InternalServerError().body(self.to_string())
+        // We can also use match to handle specific error define in clickhouse::error::Error
+        // match *self {
+        //     AppError::ClickhouseError(ref err) =&gt; match err {
+        //         ClickhouseError::Timeout(err) =&gt; HttpResponse::InternalServerError()
+        //             .body(format!(&quot;Clickhouse server error: {}&quot;, err)),
+        //         ClickhouseError::Network(err) =&gt; {
+        //             HttpResponse::BadRequest().body(format!(&quot;Clickhouse client error: {}&quot;, err))
+        //         }
+        //         _ =&gt; HttpResponse::InternalServerError().body(&quot;Unknown error&quot;),
+        //     }, // ... handle other error variants
+        // }
+    }
+}
+
+use std::fmt;
+
+impl fmt::Display for AppError {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        match *self {
+            AppError::ClickhouseError(ref err) =&gt; {
+                write!(f, &quot;Clickhouse error: {}&quot;, err)
+            } // ... handle other error variants
+        }
+    }
+}
+
+impl From&lt;ClickhouseError&gt; for AppError {
+    fn from(error: ClickhouseError) -&gt; Self {
+        AppError::ClickhouseError(error)
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Finally, you need to modify actix-web handler:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use clickhouse::error::{Error, Result};
+
+// Previous function signature
+// pub async fn get_all_users(data: web::Data&lt;AppState&gt;) -&gt; actix_web::Result&lt;impl Responder&gt; {
+// Pass AppError to handler's return type
+pub async fn get_all_users(data: web::Data&lt;AppState&gt;) -&gt; actix_web::Result&lt;impl Responder, AppError&gt; {
+    let db = &amp;data.db;
+
+    // call dao function to fetch data
+    let users = users::get_all_users(db).await?;
+    Ok(web::Json(users))
+}
+<span class="boring">}</span></code></pre></pre>
+<p>🎉🎉🎉</p>
 
                     </main>
 
