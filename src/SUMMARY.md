@@ -19,3 +19,9 @@
 ## Error
 
 - [How to organise application Error in actix-web application](rust/error/how-to-organise-application-error-in-actix-web-application.md)
+
+# Go
+
+## Go Module
+
+- [Add dependency in go mod in self-hosted gitlab](go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.md)

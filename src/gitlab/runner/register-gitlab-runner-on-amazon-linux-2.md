@@ -50,7 +50,7 @@ You can register gitlab runner by using `gitlab-ci-multi-runner` command:
 Replace `GITLAB_URL` and `TOKEN` with your self-hosted gitlab url or token. You can go to `https://gitlab.mycompany.com/admin/runners` and click `Register an instance runner` button, and you will see the `TOKEN` in the popup.
 
 ```bash
-# register runner in gitlab ccc
+# register runner in gitlab
 sudo gitlab-ci-multi-runner register -n --url https://gitlab.mycompany.com/ --registration-token "A____TOKEN_____A"   --executor docker   --description "Name of docker runner"   --docker-image "docker:latest" --docker-privileged
 ```
 
