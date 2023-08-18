@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">4.</strong> Add dependency in go mod in self-hosted gitlab</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -554,7 +554,7 @@ sudo yum install -y git
 # sudo gitlab-ci-multi-runner register -n --url GITLAB_URL --registration-token &quot;TOKEN&quot;   --executor docker   --description &quot;Name of docker runner&quot;   --docker-image &quot;docker:latest&quot; --docker-privileged
 </code></pre>
 <p>Replace <code>GITLAB_URL</code> and <code>TOKEN</code> with your self-hosted gitlab url or token. You can go to <code>https://gitlab.mycompany.com/admin/runners</code> and click <code>Register an instance runner</code> button, and you will see the <code>TOKEN</code> in the popup.</p>
-<pre><code class="language-bash"># register runner in gitlab ccc
+<pre><code class="language-bash"># register runner in gitlab
 sudo gitlab-ci-multi-runner register -n --url https://gitlab.mycompany.com/ --registration-token &quot;A____TOKEN_____A&quot;   --executor docker   --description &quot;Name of docker runner&quot;   --docker-image &quot;docker:latest&quot; --docker-privileged
 </code></pre>
 <p>Output:</p>
@@ -847,6 +847,110 @@ pub async fn get_all_users(data: web::Data&lt;AppState&gt;) -&gt; actix_web::Res
     Ok(web::Json(users))
 }
 <span class="boring">}</span></code></pre></pre>
+<p>🎉🎉🎉</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="table-of-contents-3"><a class="header" href="#table-of-contents-3">Table of Contents</a></h1>
+<!--ts-->
+<ul>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#add-dependency-in-go-mod-in-self-hosted-gitlab">Add dependency in go mod in self-hosted gitlab</a>
+<ul>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#background">Background</a></li>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#how-go-get-works">How go get works?</a></li>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#fix">Fix</a>
+<ul>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#use-nginx">Use nginx</a></li>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#use-caddy">Use caddy</a></li>
+</ul>
+</li>
+<li><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html#config-ssh">Config ssh</a></li>
+</ul>
+</li>
+</ul>
+<!--te-->
+<h1 id="add-dependency-in-go-mod-in-self-hosted-gitlab"><a class="header" href="#add-dependency-in-go-mod-in-self-hosted-gitlab">Add dependency in go mod in self-hosted gitlab</a></h1>
+<h2 id="background"><a class="header" href="#background">Background</a></h2>
+<p>As a infrastructure engineer, it is common to deploy source code management tools like GitLab to management source code. When using GitLab for code management, we need to add dependencies to our projects like this:</p>
+<pre><code class="language-bash">go get -u -v gitlab.mycompany.com/mygroup/myproject
+</code></pre>
+<p>If we're using github, running <code>go get github.com/username/repo</code> will succeed. Here is an example:</p>
+<pre><code class="language-bash">go get -u -v github.com/lichuan6/go-mod-test
+</code></pre>
+<p>Output:</p>
+<pre><code>go: downloading github.com/lichuan6/go-mod-test v1.0.1
+go: added github.com/lichuan6/go-mod-test v1.0.1
+</code></pre>
+<p>However, it fails with self-hosted VCS like gitlab:</p>
+<pre><code class="language-bash">go get gitlab.mycompany.com/mygroup/myproject
+</code></pre>
+<p>Output:</p>
+<pre><code>go: unrecognized import path &quot;gitlab.mycompany.com/mygroup/myproject&quot;: parse https://gitlab.mycompany.com/mygroup/myproject?go-get=1: no go-import meta tags (meta tag gitlab.mycompany.com:443/mygroup/myproject did not match import path gitlab.mycompany.com/mygroup/myproject)
+</code></pre>
+<p>What does this error message mean?</p>
+<h2 id="how-go-get-works"><a class="header" href="#how-go-get-works">How go get works?</a></h2>
+<p>Before digging into the reason why it failds, we need to understand how <code>go get</code> works.</p>
+<p>The <a href="https://docs.gitlab.com/ee/development/go_guide/dependencies.html">gitlab document</a> says that prior to Go 1.12, the process for fetching a package was as follows:</p>
+<ul>
+<li>Query <code>https://{package name}?go-get=1</code>.</li>
+<li>Scan the response for the <code>go-import</code> meta tag.</li>
+<li>Fetch the repository indicated by the meta tag using the indicated VCS.</li>
+</ul>
+<p>The meta tag should have the form <code>&lt;meta name=&quot;go-import&quot; content=&quot;{prefix} {vcs} {url}&quot;&gt;</code>. For example, <code>gitlab.com/my/project git https://gitlab.com/my/project.git</code> indicates that packages beginning with <code>gitlab.com/my/project</code> should be fetched from <code>https://gitlab.com/my/project.git</code> using Git.</p>
+<p>Looking back the error message, we know that we do not config correct meta tag for request like <code>https://{package name}?go-get=1</code>, here it refers to <code>https://gitlab.mycompany.com/mygroup/myproject</code>.</p>
+<h2 id="fix"><a class="header" href="#fix">Fix</a></h2>
+<p>The fix is easy, but it maybe different depending on which reverse proxy you use.</p>
+<h3 id="use-nginx"><a class="header" href="#use-nginx">Use nginx</a></h3>
+<p>If you're using <code>nginx</code>, you can add the following config to nginx configuration:</p>
+<pre><code>server {
+    server_name gitlab.mycompany.com;
+
+    if ($args ~* &quot;^go-get=1&quot;) {
+      set $condition goget;
+    }
+    if ($uri ~ ^/([a-zA-Z0-9\._-]+)/([a-zA-Z0-9_-]+)/?.*$) {
+      set $condition &quot;${condition}query&quot;;
+    }
+    if ($condition = gogetquery) {
+      return 200 &quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta content='gitlab.mycompany.com/$1/$2 git https://gitlab.mycompany.com
+/$1/$2' name='go-import'&gt;&lt;/head&gt;&lt;/html&gt;&quot;;
+    }
+}
+</code></pre>
+<h3 id="use-caddy"><a class="header" href="#use-caddy">Use caddy</a></h3>
+<p>If you're using <code>caddy</code>, you can add the following config to <code>Caddyfile</code>:</p>
+<pre><code>gitlab.mycompany.com {
+        @goget {
+                path_regexp goget ^/([a-zA-Z0-9\._-]+)/([a-zA-Z0-9_-]+)$
+                query go-get=1
+        }
+
+        respond @goget 200 {
+                body &quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta content='gitlab.mycompany.com/{re.goget.1}/{re.goget.2} git ssh://git@gitlab.mycompany.com/{re.goget.1}/{re.goget.2}' name='go-import'&gt;&lt;/head&gt;&lt;/html&gt;&quot;
+        }
+
+        reverse_proxy localhost:10080
+}
+</code></pre>
+<h2 id="config-ssh"><a class="header" href="#config-ssh">Config ssh</a></h2>
+<p>Now we have reverse proxy configured to return the correct meta tag in response, but there's still an error when running <code>go get -u -v gitlab.mycompany.com/mygroup/myproject</code>:</p>
+<pre><code>get &quot;gitlab.mycompany.com/mygroup/myproject&quot;: found meta tag vcs.metaImport{Prefix:&quot;gitlab.mycompany.com/mygroup/myproject&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;ssh://git@gitlab.mycompany.com/mygroup/myproject&quot;} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
+go: module gitlab.mycompany.com/mygroup/myproject: git ls-remote -q origin in /Users/username/go/pkg/mod/cache/vcs/d831e72abb0cb1006afb601471112319e0a1d0e490efb16e63a5682d76677a2e: exit status 128:
+        Host key verification failed.
+        fatal: Could not read from remote repository.
+
+        Please make sure you have the correct access rights
+        and the repository exists.
+</code></pre>
+<p>You need to add the following to ssh config file: <code>~/.ssh/config</code>, which means it wil tell go get to use the correct identity file to fetch the package from gitlab:</p>
+<pre><code>Host gitlab.mycompany.com
+    # ssh://git@gitlab.mycompany.com/username/project.git
+    Port 10022
+    User git
+    #IdentityFile ~/.ssh/id_rsa.gitlab.self-hosted
+    IdentityFile ~/.ssh/id_rsa-gitlab.self-hosted
+</code></pre>
+<p>After all is setup, you can add dependency using <code>go get</code> successfully.</p>
+<pre><code>get &quot;gitlab.tencet.com/mygroup/myproject&quot;: found meta tag vcs.metaImport{Prefix:&quot;gitlab.mycompany.com/mygroup/myproject&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;ssh://git@gitlab.mycompany.com/mygroup/myproject&quot;} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
+go: added gitlab.mycompany.com/mygroup/myproject v0.0.1
+</code></pre>
 <p>🎉🎉🎉</p>
 
                     </main>

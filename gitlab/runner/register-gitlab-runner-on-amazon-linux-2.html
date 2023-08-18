@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html" class="active"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html" class="active"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">4.</strong> Add dependency in go mod in self-hosted gitlab</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -202,7 +202,7 @@ sudo yum install -y git
 # sudo gitlab-ci-multi-runner register -n --url GITLAB_URL --registration-token &quot;TOKEN&quot;   --executor docker   --description &quot;Name of docker runner&quot;   --docker-image &quot;docker:latest&quot; --docker-privileged
 </code></pre>
 <p>Replace <code>GITLAB_URL</code> and <code>TOKEN</code> with your self-hosted gitlab url or token. You can go to <code>https://gitlab.mycompany.com/admin/runners</code> and click <code>Register an instance runner</code> button, and you will see the <code>TOKEN</code> in the popup.</p>
-<pre><code class="language-bash"># register runner in gitlab ccc
+<pre><code class="language-bash"># register runner in gitlab
 sudo gitlab-ci-multi-runner register -n --url https://gitlab.mycompany.com/ --registration-token &quot;A____TOKEN_____A&quot;   --executor docker   --description &quot;Name of docker runner&quot;   --docker-image &quot;docker:latest&quot; --docker-privileged
 </code></pre>
 <p>Output:</p>
