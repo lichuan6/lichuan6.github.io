@@ -16,7 +16,7 @@
 
 ## Background
 
-As a infrastructure engineer, it is common to deploy source code management tools like GitLab to management source code. When using GitLab for code management, we need to add dependencies to our projects like this:
+As an infrastructure engineer, it is common to deploy source code management tools like GitLab to management source code. When using GitLab for code management, we need to add dependencies to our projects like this:
 
 ```bash
 go get -u -v gitlab.mycompany.com/mygroup/myproject
@@ -51,7 +51,7 @@ What does this error message mean?
 
 ## How go get works?
 
-Before digging into the reason why it failds, we need to understand how `go get` works.
+Before digging into the reason why it failed, we need to understand how `go get` works.
 
 The [gitlab document](https://docs.gitlab.com/ee/development/go_guide/dependencies.html) says that prior to Go 1.12, the process for fetching a package was as follows:
 
