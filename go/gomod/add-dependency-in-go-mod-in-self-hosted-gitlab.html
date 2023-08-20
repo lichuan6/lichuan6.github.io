@@ -186,7 +186,7 @@
 <!--te-->
 <h1 id="add-dependency-in-go-mod-in-self-hosted-gitlab"><a class="header" href="#add-dependency-in-go-mod-in-self-hosted-gitlab">Add dependency in go mod in self-hosted gitlab</a></h1>
 <h2 id="background"><a class="header" href="#background">Background</a></h2>
-<p>As a infrastructure engineer, it is common to deploy source code management tools like GitLab to management source code. When using GitLab for code management, we need to add dependencies to our projects like this:</p>
+<p>As an infrastructure engineer, it is common to deploy source code management tools like GitLab to management source code. When using GitLab for code management, we need to add dependencies to our projects like this:</p>
 <pre><code class="language-bash">go get -u -v gitlab.mycompany.com/mygroup/myproject
 </code></pre>
 <p>If we're using github, running <code>go get github.com/username/repo</code> will succeed. Here is an example:</p>
@@ -204,7 +204,7 @@ go: added github.com/lichuan6/go-mod-test v1.0.1
 </code></pre>
 <p>What does this error message mean?</p>
 <h2 id="how-go-get-works"><a class="header" href="#how-go-get-works">How go get works?</a></h2>
-<p>Before digging into the reason why it failds, we need to understand how <code>go get</code> works.</p>
+<p>Before digging into the reason why it failed, we need to understand how <code>go get</code> works.</p>
 <p>The <a href="https://docs.gitlab.com/ee/development/go_guide/dependencies.html">gitlab document</a> says that prior to Go 1.12, the process for fetching a package was as follows:</p>
 <ul>
 <li>Query <code>https://{package name}?go-get=1</code>.</li>
