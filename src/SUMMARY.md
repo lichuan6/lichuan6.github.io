@@ -20,6 +20,10 @@
 
 - [How to organise application Error in actix-web application](rust/error/how-to-organise-application-error-in-actix-web-application.md)
 
+## Actix-web
+
+- [Serialize time::OffsetDataTime type using serde_as in serde_with crate](rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.md)
+
 # Go
 
 ## Go Module
