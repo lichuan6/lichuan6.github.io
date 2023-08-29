@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">5.</strong> Add dependency in go mod in self-hosted gitlab</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">5.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">6.</strong> Add nextjs router to mui tabs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1289,10 +1289,278 @@ go: module gitlab.mycompany.com/mygroup/myproject: git ls-remote -q origin in /U
     IdentityFile ~/.ssh/id_rsa-gitlab.self-hosted
 </code></pre>
 <p>After all is setup, you can add dependency using <code>go get</code> successfully.</p>
-<pre><code>get &quot;gitlab.tencet.com/mygroup/myproject&quot;: found meta tag vcs.metaImport{Prefix:&quot;gitlab.mycompany.com/mygroup/myproject&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;ssh://git@gitlab.mycompany.com/mygroup/myproject&quot;} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
+<pre><code>get &quot;gitlab.mycompany.com/mygroup/myproject&quot;: found meta tag vcs.metaImport{Prefix:&quot;gitlab.mycompany.com/mygroup/myproject&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;ssh://git@gitlab.mycompany.com/mygroup/myproject&quot;} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
 go: added gitlab.mycompany.com/mygroup/myproject v0.0.1
 </code></pre>
 <p>🎉🎉🎉</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-nextjs-router-to-mui-tabs"><a class="header" href="#add-nextjs-router-to-mui-tabs">Add nextjs router to mui tabs</a></h1>
+<h1 id="table-of-contents-5"><a class="header" href="#table-of-contents-5">Table of Contents</a></h1>
+<!--ts-->
+<ul>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#add-nextjs-router-to-mui-tabs">Add nextjs router to mui tabs</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#table-of-contents">Table of Contents</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#introduction">Introduction</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#demoseeing-is-beliving">Demo(Seeing is beliving)</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#application-structure">Application structure</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#proceedstabs-component">ProceedsTabs component</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#tab-page">Tab page</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#proceeds-page">Proceeds page</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#the-takeaway">The takeaway</a></li>
+<li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#summary">Summary</a></li>
+</ul>
+<!--te-->
+<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>In this blog post, we will explore how to build a tabbed navigation system in <code>Next.js</code> using <code>React</code>. Tabbed navigation is a common UI pattern that allows users to switch between different sections or categories of content within a single page.</p>
+<h1 id="demoseeing-is-beliving"><a class="header" href="#demoseeing-is-beliving">Demo(Seeing is beliving)</a></h1>
+<p><img src="https://user-images.githubusercontent.com/74223747/264132025-57ca0731-46dd-4208-95ca-74420ff60e38.gif" alt="" /></p>
+<h1 id="application-structure"><a class="header" href="#application-structure">Application structure</a></h1>
+<p>The Next.js App Router is a file-system based router built on concepts of pages.</p>
+<p>Now, I will show you how to use Material UI with the Next.js App Router.</p>
+<p>The structure of <code>src</code> folder looks like this:</p>
+<pre><code>drwxr-xr-x     - naonao 28 Aug 16:38 src
+drwxr-xr-x     - naonao 28 Aug 23:38 ├── app
+.rw-r--r--  4.1k naonao 28 Aug 23:51 │  ├── layout.tsx
+.rw-r--r--  3.2k naonao 28 Aug 16:38 │  ├── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:59 │  ├── proceeds
+drwxr-xr-x     - naonao 28 Aug 23:57 │  │  ├── category
+.rw-r--r--   419 naonao 28 Aug 23:58 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:59 │  │  ├── client
+.rw-r--r--   415 naonao 28 Aug 23:59 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:58 │  │  ├── cmb
+.rw-r--r--   409 naonao 28 Aug 23:59 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:38 │  │  ├── content
+.rw-r--r--   418 naonao 28 Aug 23:48 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:58 │  │  ├── contenttype
+.rw-r--r--   425 naonao 28 Aug 23:58 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:49 │  │  ├── device
+.rw-r--r--   415 naonao 28 Aug 23:57 │  │  │  └── page.tsx
+.rw-r--r--   749 naonao 28 Aug 23:56 │  │  ├── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:48 │  │  ├── territory
+.rw-r--r--   424 naonao 28 Aug 23:49 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:58 │  │  ├── transactiontype
+.rw-r--r--   433 naonao 29 Aug 00:00 │  │  │  └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:59 │  │  └── version
+.rw-r--r--   417 naonao 28 Aug 23:59 │  │     └── page.tsx
+drwxr-xr-x     - naonao 28 Aug 23:40 └── components
+.rw-r--r--  3.5k naonao 29 Aug 00:01    ├── ProceedsTabs.tsx
+drwxr-xr-x     - naonao 28 Aug 16:38    └── ThemeRegistry
+.rw-r--r--  2.9k naonao 28 Aug 16:38       ├── EmotionCache.tsx
+.rw-r--r--   590 naonao 28 Aug 16:38       ├── theme.ts
+.rw-r--r--   647 naonao 28 Aug 16:38       └── ThemeRegistry.tsx
+</code></pre>
+<p>We add a <code>proceeds</code> folder in <code>app</code>, we also add corresponding folder as router in <code>provided</code> to represent each tab.</p>
+<h1 id="proceedstabs-component"><a class="header" href="#proceedstabs-component">ProceedsTabs component</a></h1>
+<p>Let's look at the <code>ProceedsTabs</code> component.</p>
+<pre><code class="language-jsx">&quot;use client&quot;;
+
+import * as React from &quot;react&quot;;
+import Tabs from &quot;@mui/material/Tabs&quot;;
+import Tab from &quot;@mui/material/Tab&quot;;
+import Typography from &quot;@mui/material/Typography&quot;;
+import Box from &quot;@mui/material/Box&quot;;
+import { useRouter } from &quot;next/navigation&quot;;
+
+interface ProceedsTabsProps {
+  defaultTab: number;
+}
+
+const ProceedsTabs: React.FC&lt;ProceedsTabsProps&gt; = ({ defaultTab }) =&gt; {
+  const router = useRouter();
+  const [value, setValue] = React.useState(defaultTab);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) =&gt; {
+    setValue(newValue);
+  };
+
+  React.useEffect(() =&gt; {
+    let route = &quot;/proceeds&quot;;
+    if (value === 0) {
+      route += &quot;/content&quot;;
+    } else if (value === 1) {
+      route += &quot;/territory&quot;;
+    } else if (value === 2) {
+      route += &quot;/device&quot;;
+    } else if (value === 3) {
+      route += &quot;/category&quot;;
+    } else if (value === 4) {
+      route += &quot;/contenttype&quot;;
+    } else if (value === 5) {
+      route += &quot;/transactiontype&quot;;
+    } else if (value === 6) {
+      route += &quot;/cmb&quot;;
+    } else if (value === 7) {
+      route += &quot;/version&quot;;
+    } else if (value === 8) {
+      route += &quot;/client&quot;;
+    }
+    console.log(`💗💗💗 ${route}`);
+    router.push(route);
+  }, [value]);
+
+  return (
+    &lt;Box sx={{ width: &quot;100%&quot; }}&gt;
+      &lt;Box sx={{ borderBottom: 1, borderColor: &quot;divider&quot; }}&gt;
+        &lt;Tabs value={value} onChange={handleChange} aria-label=&quot;proceeds tabs&quot;&gt;
+          &lt;Tab label=&quot;Content&quot; /&gt;
+          &lt;Tab label=&quot;Territory&quot; /&gt;
+          &lt;Tab label=&quot;Device&quot; /&gt;
+          &lt;Tab label=&quot;Category&quot; /&gt;
+          &lt;Tab label=&quot;Content Type&quot; /&gt;
+          &lt;Tab label=&quot;Transaction Type&quot; /&gt;
+          &lt;Tab label=&quot;CMB&quot; /&gt;
+          &lt;Tab label=&quot;Version&quot; /&gt;
+          &lt;Tab label=&quot;Client&quot; /&gt;
+        &lt;/Tabs&gt;
+      &lt;/Box&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 0}&gt;
+        {value === 0 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Content&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 1}&gt;
+        {value === 1 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Territory&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 2}&gt;
+        {value === 2 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Device&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 3}&gt;
+        {value === 3 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Category&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 4}&gt;
+        {value === 4 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Content Type&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 5}&gt;
+        {value === 5 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Transaction Type&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 6}&gt;
+        {value === 6 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;CMB&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 7}&gt;
+        {value === 7 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Version&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div role=&quot;tabpanel&quot; hidden={value !== 8}&gt;
+        {value === 8 &amp;&amp; (
+          &lt;Box sx={{ p: 3 }}&gt;
+            &lt;Typography&gt;Client&lt;/Typography&gt;
+          &lt;/Box&gt;
+        )}
+      &lt;/div&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default ProceedsTabs;
+</code></pre>
+<p><code>ProceedsTabs</code> React functional component that represents a tabbed navigation system for managing different types of proceeds.</p>
+<p>First, it imports various dependencies from the Material-UI library, such as <code>Tabs</code>, <code>Tab</code>, <code>Typography</code>, and <code>Box</code>. It also imports the <code>useRouter</code> hook for handling navigation.</p>
+<p>It takes a single prop named <code>defaultTab</code>, which determines the initially selected tab. Inside the component, it initializes the value state variable using the <code>useState</code> hook, with the initial value set to <code>defaultTab</code>.</p>
+<p>This component also defines a <code>handleChange</code> function that is called when the user selects a different tab. This function updates the value state variable with the new tab index.</p>
+<p>Besides, it also uses the <code>useEffect</code> hook to listen for changes in the value state variable. When the value changes, it constructs a route string based on the selected tab index and pushes the new route to the router using the <code>router.push</code> method.</p>
+<p>For the rendering, it uses a <code>Box</code> component with a width of 100% to contain the tab navigation. Inside the <code>Box</code>, there is a <code>Tabs</code> component that renders the individual tabs based on the value state variable and the <code>handleChange</code> function.</p>
+<p>Below the Tabs component, there are multiple div elements that represent the content for each tab. The <code>hidden</code> attribute is used to show or hide the content based on the selected tab. Each div element contains a <code>Box</code> component with some padding and a <code>Typography</code> component that displays the name of the tab, just for demostration. Feel free to use your own component for each tab.</p>
+<h1 id="tab-page"><a class="header" href="#tab-page">Tab page</a></h1>
+<p>Now, let's look at each tab page.</p>
+<p>As most tab pages are the same, we will take <code>category</code> as an example.</p>
+<pre><code class="language-jsx">&quot;use client&quot;;
+
+import ProceedsTabs from &quot;@/components/ProceedsTabs&quot;;
+
+const Category = () =&gt; {
+  let defaultTab = 3;
+  return &lt;ProceedsTabs defaultTab={defaultTab} /&gt;;
+};
+
+export default Category;
+</code></pre>
+<p>We write a React functional component named <code>Category</code>. This component is responsible for rendering a specific category page for proceeds.</p>
+<p>It imports the <code>ProceedsTabs</code> component from the <code>@/components/ProceedsTabs</code> and pass <code>defaultTab</code> to specify which tab to render.</p>
+<h1 id="proceeds-page"><a class="header" href="#proceeds-page">Proceeds page</a></h1>
+<p>Now, let's look at the <code>proceeds</code> page.</p>
+<pre><code class="language-jsx">&quot;use client&quot;;
+
+import { useRouter, useSearchParams } from &quot;next/navigation&quot;;
+import ProceedsTabs from &quot;@/components/ProceedsTabs&quot;;
+
+const Proceeds = () =&gt; {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const tab = searchParams.get(&quot;tab&quot;);
+
+  let defaultTab = 0;
+
+  if (tab === &quot;/content&quot;) {
+    defaultTab = 0;
+  } else if (tab === &quot;/territory&quot;) {
+    defaultTab = 1;
+  } else if (tab === &quot;/device&quot;) {
+    defaultTab = 2;
+  } else if (tab === &quot;/category&quot;) {
+    defaultTab = 3;
+  } else if (tab === &quot;/contenttype&quot;;) {
+    defaultTab = 4;
+  } else if (tab === &quot;/transactiontype&quot;) {
+    defaultTab = 5;
+  } else if (tab === &quot;/cmb&quot;) {
+    defaultTab = 6;
+  } else if (tab === &quot;/version&quot;) {
+    defaultTab = 7;
+  } else if (tab === &quot;/client&quot;) {
+    defaultTab = 8;
+  }
+
+  return &lt;ProceedsTabs defaultTab={defaultTab} /&gt;;
+};
+
+export default Proceeds;
+</code></pre>
+<p>This component uses the <code>useSearchParams</code> hook to access the search parameters from the URL. It retrieves the value of the tab parameter using the <code>searchParams.get(&quot;tab&quot;)</code> method and assigns it to the tab variable.</p>
+<p>After that, there is a series of conditional statements that determine the value of the <code>defaultTab</code> variable based on the value of the tab variable. If the tab is <code>&quot;territory&quot;</code>, the <code>defaultTab</code> is set to <code>1</code>. If the tab is <code>&quot;device&quot;</code>, the <code>defaultTab</code> is set to <code>2</code>, etc.</p>
+<p>As we handle request parameter using <code>useSearchParams</code> hook and pass tab index to <code>ProceedsTabs</code> which will push corresponding route using <code>router.push(route)</code>, when we open link like <code>http://localhost:3000/proceeds?tab=content</code>, the browser will redirect to <code>http://localhost:3000/proceed/content</code>.</p>
+<h1 id="the-takeaway"><a class="header" href="#the-takeaway">The takeaway</a></h1>
+<p>Follow these steps if you want to implement tabbed navigation using NextJS:</p>
+<ul>
+<li>Define correct file system structure(page files) to represent router</li>
+<li>Write tab component(<code>ProceedsTabs</code>) to conditionally render tab based on tab index
+<ul>
+<li>Handling Tab Changes to update router</li>
+<li>Updating the URL when state(selected tab) changes and push new route</li>
+<li>Rendering the Tabs based on tab index</li>
+</ul>
+</li>
+<li>Write each individual tab page as nextjs route need it</li>
+</ul>
+<h1 id="summary-1"><a class="header" href="#summary-1">Summary</a></h1>
+<p>In this blog post, we have explored how to build a tabbed navigation system in Next.js using React. We have seen how to handle tab changes, update the URL, and render the tab content dynamically. By leveraging the power of Next.js and React, we can create a flexible and interactive tabbed navigation component that enhances the user experience of our web applications.</p>
 
                     </main>
 
