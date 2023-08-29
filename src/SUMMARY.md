@@ -29,3 +29,7 @@
 ## Go Module
 
 - [Add dependency in go mod in self-hosted gitlab](go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.md)
+
+# NextJS
+
+- [Add nextjs router to mui tabs](nextjs/add-nextjs-router-to-mui-tabs.md)

@@ -135,7 +135,7 @@ Host gitlab.mycompany.com
 After all is setup, you can add dependency using `go get` successfully.
 
 ```
-get "gitlab.tencet.com/mygroup/myproject": found meta tag vcs.metaImport{Prefix:"gitlab.mycompany.com/mygroup/myproject", VCS:"git", RepoRoot:"ssh://git@gitlab.mycompany.com/mygroup/myproject"} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
+get "gitlab.mycompany.com/mygroup/myproject": found meta tag vcs.metaImport{Prefix:"gitlab.mycompany.com/mygroup/myproject", VCS:"git", RepoRoot:"ssh://git@gitlab.mycompany.com/mygroup/myproject"} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
 go: added gitlab.mycompany.com/mygroup/myproject v0.0.1
 ```
 
