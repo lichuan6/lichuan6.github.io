@@ -133,7 +133,7 @@ describe("getAbsoluteTime", () => {
     expect(absoluteTime).toBe(expectedTime);
   });
 
-  it('should return the correct absolute time for relative time "now-24"', () => {
+  it('should return the correct absolute time for relative time "now-24h"', () => {
     const relativeTime = "now-24h";
     const absoluteTime = getAbsoluteTime(relativeTime);
     const currentTime = dayjs(); // Get the current time using dayjs
@@ -183,7 +183,7 @@ Output:
   getAbsoluteTime
     ✓ should return the correct absolute time for relative time "now-15m" (2 ms)
     ✓ should return the correct absolute time for relative time "now-1h"
-    ✓ should return the correct absolute time for relative time "now-24"
+    ✓ should return the correct absolute time for relative time "now-24h" (1 ms)
     ✓ should return the correct absolute time for relative time "now-7h"
 
 Test Suites: 1 passed, 1 total
