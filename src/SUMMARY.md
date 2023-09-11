@@ -33,3 +33,9 @@
 # NextJS
 
 - [Add nextjs router to mui tabs](nextjs/add-nextjs-router-to-mui-tabs.md)
+
+# NodeJS
+
+## Test
+
+- [Setup tests in npm project using jest](nodejs/test/setup-tests-in-npm-project-using-jest.md)
