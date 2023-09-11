@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">5.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">6.</strong> Add nextjs router to mui tabs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">5.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">6.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">7.</strong> Setup tests in npm project using jest</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1561,6 +1561,163 @@ export default Proceeds;
 </ul>
 <h1 id="summary-1"><a class="header" href="#summary-1">Summary</a></h1>
 <p>In this blog post, we have explored how to build a tabbed navigation system in Next.js using React. We have seen how to handle tab changes, update the URL, and render the tab content dynamically. By leveraging the power of Next.js and React, we can create a flexible and interactive tabbed navigation component that enhances the user experience of our web applications.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="table-of-contents-6"><a class="header" href="#table-of-contents-6">Table of Contents</a></h1>
+<!--ts-->
+<ul>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#setup-tests-in-npm-project-using-jest">Setup tests in npm project using jest</a></li>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#init-nodejs-project-using-npm">Init nodejs project using npm</a></li>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#install-jest">Install jest</a></li>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#install-other-dependencies">Install other dependencies</a></li>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#write-functions">Write functions</a></li>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#write-tests-for-functions">Write tests for functions</a></li>
+<li><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html#run-test">Run Test</a></li>
+</ul>
+<!--te-->
+<h1 id="setup-tests-in-npm-project-using-jest"><a class="header" href="#setup-tests-in-npm-project-using-jest">Setup tests in npm project using jest</a></h1>
+<p>In this article, I will demonstrate how to set up <code>Jest</code>, a popular testing framework, to run tests in a Node.js project. I will guide you through the process of installing Jest, configuring it for your project, and running sample tests to ensure everything is set up correctly. By the end of this article, you will have a fully functional Jest setup for testing your Node.js code.</p>
+<h1 id="init-nodejs-project-using-npm"><a class="header" href="#init-nodejs-project-using-npm">Init nodejs project using npm</a></h1>
+<p>First, let's set up a Node.js project to organize the code. We will use npm to initialize the project by running the command <code>npm init</code> in your project's root directory.</p>
+<pre><code class="language-bash">mkdir -p npm-test; cd npm-test; npm init --yes
+</code></pre>
+<p>The <code>--yes</code> flag is used to automatically accept the default values for all prompts. This will generate a package.json file with default values for the package name, version, description, entry point, test command, repository, author, and license.</p>
+<p>Output:</p>
+<pre><code>Wrote to /Users/naonao/tmp/kkkk/npm-test/package.json:
+
+{
+  &quot;name&quot;: &quot;npm-test&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;
+}
+</code></pre>
+<h1 id="install-jest"><a class="header" href="#install-jest">Install jest</a></h1>
+<p><a href="https://jestjs.io/">Jest</a> is a popular JavaScript testing framework developed by Facebook.</p>
+<blockquote>
+<p>Jest is a delightful JavaScript Testing Framework with a focus on simplicity.</p>
+</blockquote>
+<p>It provides a complete solution for running tests, making assertions, mocking dependencies, and generating code coverage reports. Jest's key features include a descriptive syntax, a wide range of built-in matchers, support for snapshot testing, simplified testing of asynchronous code, and extensive configuration options. It is widely used and highly regarded for its simplicity, comprehensive documentation, and powerful testing capabilities</p>
+<pre><code class="language-bash">npm install --save-dev jest
+</code></pre>
+<h1 id="install-other-dependencies"><a class="header" href="#install-other-dependencies">Install other dependencies</a></h1>
+<p>We can install any dependencies using <code>npm install &lt;library&gt;</code>. Below is an example of adding <code>dayjs</code> as dependency.</p>
+<pre><code class="language-bash">npm install dayjs
+</code></pre>
+<h1 id="write-functions"><a class="header" href="#write-functions">Write functions</a></h1>
+<p>Now, we'll write a function to convert different relative time formats (<code>now-15m</code>, <code>now-1h</code>, <code>now-24h</code>, <code>now-7h</code>) to their respective absolute time representations. The function looks like this:</p>
+<pre><code class="language-javascript">const dayjs = require(&quot;dayjs&quot;);
+
+const getAbsoluteTime = (relativeTime) =&gt; {
+  if (relativeTime.includes(&quot;now&quot;)) {
+    let parsedDate = dayjs();
+
+    if (relativeTime.includes(&quot;m&quot;)) {
+      const relativeValue = parseInt(
+        relativeTime.split(&quot;now-&quot;)[1].split(&quot;m&quot;)[0]
+      );
+      parsedDate = parsedDate.subtract(relativeValue, &quot;minute&quot;);
+    } else if (relativeTime.includes(&quot;h&quot;)) {
+      const relativeValue = parseInt(
+        relativeTime.split(&quot;now-&quot;)[1].split(&quot;h&quot;)[0]
+      );
+      parsedDate = parsedDate.subtract(relativeValue, &quot;hour&quot;);
+    } else if (relativeTime.includes(&quot;d&quot;)) {
+      const relativeValue = parseInt(
+        relativeTime.split(&quot;now-&quot;)[1].split(&quot;d&quot;)[0]
+      );
+      parsedDate = parsedDate.subtract(relativeValue, &quot;day&quot;);
+    }
+
+    return parsedDate.format(&quot;YYYY-MM-DDTHH:mm&quot;);
+  }
+
+  return null;
+};
+
+module.exports = getAbsoluteTime;
+</code></pre>
+<p>We'll save it in <code>getAbsoluteTime.js</code> file in the project's root directory.</p>
+<h1 id="write-tests-for-functions"><a class="header" href="#write-tests-for-functions">Write tests for functions</a></h1>
+<p>Now, let's write tests for this simple function.</p>
+<pre><code class="language-javascript">const dayjs = require(&quot;dayjs&quot;);
+const getAbsoluteTime = require(&quot;../getAbsoluteTime&quot;); // Assuming the function is exported from a separate file
+
+describe(&quot;getAbsoluteTime&quot;, () =&gt; {
+  it('should return the correct absolute time for relative time &quot;now-15m&quot;', () =&gt; {
+    const relativeTime = &quot;now-15m&quot;;
+    const absoluteTime = getAbsoluteTime(relativeTime);
+    const currentTime = dayjs(); // Get the current time using dayjs
+    const expectedTime = currentTime
+      .subtract(15, &quot;minute&quot;)
+      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+    expect(absoluteTime).toBe(expectedTime);
+  });
+
+  it('should return the correct absolute time for relative time &quot;now-1h&quot;', () =&gt; {
+    const relativeTime = &quot;now-1h&quot;;
+    const absoluteTime = getAbsoluteTime(relativeTime);
+    const currentTime = dayjs(); // Get the current time using dayjs
+    const expectedTime = currentTime
+      .subtract(1, &quot;hour&quot;)
+      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+    expect(absoluteTime).toBe(expectedTime);
+  });
+
+  it('should return the correct absolute time for relative time &quot;now-24&quot;', () =&gt; {
+    const relativeTime = &quot;now-24h&quot;;
+    const absoluteTime = getAbsoluteTime(relativeTime);
+    const currentTime = dayjs(); // Get the current time using dayjs
+    const expectedTime = currentTime
+      .subtract(24, &quot;hour&quot;)
+      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+    expect(absoluteTime).toBe(expectedTime);
+  });
+
+  it('should return the correct absolute time for relative time &quot;now-7h&quot;', () =&gt; {
+    const relativeTime = &quot;now-7h&quot;;
+    const absoluteTime = getAbsoluteTime(relativeTime);
+    const currentTime = dayjs(); // Get the current time using dayjs
+    const expectedTime = currentTime
+      .subtract(7, &quot;hour&quot;)
+      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+    expect(absoluteTime).toBe(expectedTime);
+  });
+});
+</code></pre>
+<p>Save this file in <code>tests/getAbsoluteTime.test.js</code> and we are ready to run test using <code>jest</code>.</p>
+<h1 id="run-test"><a class="header" href="#run-test">Run Test</a></h1>
+<p>Before running any tests, you have to add <code>&quot;scripts&quot; : {&quot;test&quot;: &quot;jest&quot;}</code> to <code>package.json</code> as follows:</p>
+<pre><code class="language-json">{
+  // ...
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;jest&quot;
+  }
+  // ...
+}
+</code></pre>
+<p>Now, you can run tests using <code>npm run test</code> command.</p>
+<p>Output:</p>
+<pre><code class="language-bash">&gt; relative-time-to-absolute-time@1.0.0 test
+&gt; jest
+
+ PASS  tests/getAbsoluteTime.test.js
+  getAbsoluteTime
+    ✓ should return the correct absolute time for relative time &quot;now-15m&quot; (2 ms)
+    ✓ should return the correct absolute time for relative time &quot;now-1h&quot;
+    ✓ should return the correct absolute time for relative time &quot;now-24&quot;
+    ✓ should return the correct absolute time for relative time &quot;now-7h&quot;
+
+Test Suites: 1 passed, 1 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        0.149 s, estimated 1 s
+Ran all test suites.
+</code></pre>
 
                     </main>
 
