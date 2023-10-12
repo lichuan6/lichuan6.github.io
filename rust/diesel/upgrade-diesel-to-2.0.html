@@ -219,7 +219,7 @@ index 8f5a1aa..5164334 100644
  # actix-web = &quot;1.0.3&quot;
  chrono = { version = &quot;0.4.7&quot;, features = [&quot;serde&quot;] }
 </code></pre>
-<p>We change diesel version to <code>2.1.2</code> and remove <code>r2d2</code> and <code>r2d2-diesel</code> dependencies, as they are included in <code>diesel</code> crate, by specifying the <code>r2d2</code> feature in <code>diesel</code> crate <code>diesel = { version = &quot;2.1.2&quot;, features = [ &quot;r2d2&quot; ] }</code>.</p>
+<p>We change diesel version to <code>2.1.2</code> and remove <code>r2d2</code> and <code>r2d2-diesel</code> dependencies, as they are included in <code>diesel</code> crate, by specifying the <code>r2d2</code> feature in <code>diesel</code> crate like this: <code>diesel = { version = &quot;2.1.2&quot;, features = [ &quot;r2d2&quot; ] }</code>.</p>
 <h2 id="add-mut-to-pgconnection-and-dao-functions"><a class="header" href="#add-mut-to-pgconnection-and-dao-functions">Add mut to PgConnection and dao functions</a></h2>
 <p>Diesel now requires mutable access to the Connection to perform any database interaction. The following changes are required for all usages of any Connection type:</p>
 <pre><code class="language-diff">- let connection = PgConnection::establish_connection(&quot;…&quot;)?;
