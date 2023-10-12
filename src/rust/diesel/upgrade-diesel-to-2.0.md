@@ -53,7 +53,7 @@ index 8f5a1aa..5164334 100644
  chrono = { version = "0.4.7", features = ["serde"] }
 ```
 
-We change diesel version to `2.1.2` and remove `r2d2` and `r2d2-diesel` dependencies, as they are included in `diesel` crate, by specifying the `r2d2` feature in `diesel` crate `diesel = { version = "2.1.2", features = [ "r2d2" ] }`.
+We change diesel version to `2.1.2` and remove `r2d2` and `r2d2-diesel` dependencies, as they are included in `diesel` crate, by specifying the `r2d2` feature in `diesel` crate like this: `diesel = { version = "2.1.2", features = [ "r2d2" ] }`.
 
 ## Add mut to PgConnection and dao functions
 
