@@ -1,0 +1,558 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Upgrade diesel to 2.0 - Blog by lichuan</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html" class="active"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Blog by lichuan</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="upgrade-diesel-to-20"><a class="header" href="#upgrade-diesel-to-20">Upgrade diesel to 2.0</a></h1>
+<h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
+<!-- toc -->
+<ul>
+<li><a href="#an-introduction-to-diesel-20">An introduction to diesel 2.0</a></li>
+<li><a href="#upgrade-to-diesel-20">Upgrade to diesel 2.0</a>
+<ul>
+<li><a href="#upgrade-diesel-version-in-cargotoml">Upgrade diesel version in Cargo.toml</a></li>
+<li><a href="#add-mut-to-pgconnection-and-dao-functions">Add mut to PgConnection and dao functions</a></li>
+<li><a href="#derive-attributes">Derive attributes</a></li>
+</ul>
+</li>
+<li><a href="#refs">Refs</a></li>
+</ul>
+<!-- tocstop -->
+<h1 id="an-introduction-to-diesel-20"><a class="header" href="#an-introduction-to-diesel-20">An introduction to diesel 2.0</a></h1>
+<p>Diesel 2.0 has breaking changes compared to 1.4.x.</p>
+<p>Any code base migrating from Diesel 1.4.x to Diesel 2.0 is expected to be affected at least by the following changes:</p>
+<ul>
+<li><a href="https://diesel.rs/guides/migration_guide.html#2-0-0-mutable-connection">Diesel now requires a mutable reference to the connection</a></li>
+<li><a href="https://diesel.rs/guides/migration_guide.html#2-0-0-derive-attributes">Changed derive attributes</a></li>
+</ul>
+<h1 id="upgrade-to-diesel-20"><a class="header" href="#upgrade-to-diesel-20">Upgrade to diesel 2.0</a></h1>
+<h2 id="upgrade-diesel-version-in-cargotoml"><a class="header" href="#upgrade-diesel-version-in-cargotoml">Upgrade diesel version in Cargo.toml</a></h2>
+<p>In order to upgrade diesel to 2.0, we need to change dependencies in <code>Cargo.toml</code>.</p>
+<pre><code class="language-diff">diff --git a/rust/projects/diesel_2.0_example/Cargo.toml b/rust/projects/diesel_2.0_example/Cargo.toml
+index 8f5a1aa..5164334 100644
+--- a/rust/projects/diesel_2.0_example/Cargo.toml
++++ b/rust/projects/diesel_2.0_example/Cargo.toml
+@@ -5,12 +5,13 @@ authors = [&quot;lichuan &lt;lichuan@mur&gt;&quot;]
+ edition = &quot;2018&quot;
+
+ [dependencies]
+-diesel = { version = &quot;1.4&quot;, features = [
++diesel = { version = &quot;2.1.2&quot;, features = [
+   &quot;postgres&quot;,
+   &quot;serde_json&quot;,
+   &quot;chrono&quot;,
+   &quot;numeric&quot;,
+   &quot;64-column-tables&quot;,
++  &quot;r2d2&quot;,
+ ] }
+ # r2d2 = &quot;0.8&quot;
+ # r2d2-diesel = &quot;1.0&quot;
+ dotenv = &quot;0.14&quot;
+ # actix-web = &quot;1.0.3&quot;
+ chrono = { version = &quot;0.4.7&quot;, features = [&quot;serde&quot;] }
+</code></pre>
+<p>We change diesel version to <code>2.1.2</code> and remove <code>r2d2</code> and <code>r2d2-diesel</code> dependencies, as they are included in <code>diesel</code> crate, by specifying the <code>r2d2</code> feature in <code>diesel</code> crate <code>diesel = { version = &quot;2.1.2&quot;, features = [ &quot;r2d2&quot; ] }</code>.</p>
+<h2 id="add-mut-to-pgconnection-and-dao-functions"><a class="header" href="#add-mut-to-pgconnection-and-dao-functions">Add mut to PgConnection and dao functions</a></h2>
+<p>Diesel now requires mutable access to the Connection to perform any database interaction. The following changes are required for all usages of any Connection type:</p>
+<pre><code class="language-diff">- let connection = PgConnection::establish_connection(&quot;…&quot;)?;
+- let result = some_query.load(&amp;connection)?;
++ let mut connection = PgConnection::establish_connection(&quot;…&quot;)?;
++ let result = some_query.load(&amp;mut connection)?;
+</code></pre>
+<p>Here are the changes for our own code:</p>
+<pre><code class="language-diff">diff --git a/rust/projects/diesel_2.0_example/src/bin/contacts.rs b/rust/projects/diesel_2.0_example/src/bin/contacts.rs
+index a74e29397..6efc8ef4f 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/contacts.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/contacts.rs
+@@ -16,11 +16,15 @@ fn test_contacts() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(LOCAL_DATABASE_URL.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
++    let mut conn = pool.get().unwrap();
+
+-    let conn: &amp;PgConnection = &amp;connection;
+-    conn.execute(&quot;TRUNCATE TABLE contacts&quot;).unwrap();
+-    conn.execute(&quot;alter sequence contacts_id_seq restart;&quot;).unwrap();
++    diesel::sql_query(&quot;TRUNCATE TABLE contacts&quot;).execute(&amp;mut conn).unwrap();
++    diesel::sql_query(&quot;alter sequence contacts_id_seq restart;&quot;)
++        .execute(&amp;mut conn)
++        .unwrap();
++
++    // conn.execute(&quot;TRUNCATE TABLE contacts&quot;).unwrap();
++    // conn.execute(&quot;alter sequence contacts_id_seq restart;&quot;).unwrap();
+
+     let santas_address: serde_json::Value = serde_json::from_str(
+         r#&quot;{
+@@ -61,7 +65,7 @@ fn test_contacts() {
+         },
+     ];
+
+-    let contacts = create_contracts(&amp;conn, &amp;new_contacts).unwrap();
++    let contacts = create_contracts(&amp;mut conn, &amp;new_contacts).unwrap();
+     println!(&quot;{:?}&quot;, contacts);
+
+     // let inserted_address = insert_into(contacts)
+@@ -75,9 +79,7 @@ fn get_contacts() {
+     let database_url =
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(LOCAL_DATABASE_URL.into());
+     let pool = db::init_pool(database_url);
+-    let connection = pool.get().unwrap();
+-
+-    let conn: &amp;PgConnection = &amp;connection;
++    let mut conn = pool.get().unwrap();
+
+     let santas_address: serde_json::Value = serde_json::from_str(
+         r#&quot;{
+@@ -86,12 +88,13 @@ fn get_contacts() {
+     )
+     .unwrap();
+
+-    let contacts = get_contacts_by_address(&amp;conn, &amp;santas_address).unwrap();
++    let contacts = get_contacts_by_address(&amp;mut conn, &amp;santas_address).unwrap();
+     println!(&quot;{:?}&quot;, contacts);
+
+     let santas_address2: serde_json::Value = json!(true);
+
+-    let contacts = get_contacts_by_address(&amp;conn, &amp;santas_address2).unwrap();
++    let contacts =
++        get_contacts_by_address(&amp;mut conn, &amp;santas_address2).unwrap();
+     println!(&quot;{:?}&quot;, contacts);
+ }
+
+diff --git a/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs b/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs
+index a9c583039..a69489b7a 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs
+@@ -10,13 +10,11 @@ fn select_limit_offset() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
+-
+-    let _conn: &amp;PgConnection = &amp;connection;
++    let mut conn = pool.get().unwrap();
+
+     let limit = 2;
+     let offset = 2;
+-    let all = get_select_limit_offset(&amp;connection, limit, offset).unwrap();
++    let all = get_select_limit_offset(&amp;mut conn, limit, offset).unwrap();
+     println!(&quot;select : {:?} records&quot;, all);
+ }
+
+@@ -26,17 +24,15 @@ fn select_limit_offset_loop() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
+-
+-    let _conn: &amp;PgConnection = &amp;connection;
++    let mut conn = pool.get().unwrap();
+
+     let limit = 2;
+     let mut offset = 0;
+-    let all = get_select_limit_offset(&amp;connection, limit, offset).unwrap();
++    let all = get_select_limit_offset(&amp;mut conn, limit, offset).unwrap();
+     println!(&quot;select : {:?} records&quot;, all);
+
+     loop {
+-        if let Ok(res) = get_select_limit_offset(&amp;connection, limit, offset) {
++        if let Ok(res) = get_select_limit_offset(&amp;mut conn, limit, offset) {
+             if res.len() == 0 {
+                 break;
+             }
+diff --git a/rust/projects/diesel_2.0_example/src/bin/test-connect-r2d2-pool-actix.rs b/rust/projects/diesel_2.0_example/src/bin/test-connect-r2d2-pool-actix.rs
+index 1010a2380..44bce1eb4 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/test-connect-r2d2-pool-actix.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/test-connect-r2d2-pool-actix.rs
+@@ -2,15 +2,22 @@ extern crate diesel;
+
+ use std::env;
+
+-use actix_web::{web, App, HttpRequest, HttpServer, Responder};
++use actix_web::{web, App, HttpServer, Responder};
+ use diesel_example::db;
+
+-fn greet(req: HttpRequest) -&gt; impl Responder {
+-    let name = req.match_info().get(&quot;name&quot;).unwrap_or(&quot;World&quot;);
+-    format!(&quot;Hello {}!&quot;, &amp;name)
++// TODO: why compile error for actix-web 4?
++// fn greet(req: HttpRequest) -&gt; impl Responder {
++//     let name = req.match_info().get(&quot;name&quot;).unwrap_or(&quot;World&quot;);
++//     format!(&quot;Hello {}!&quot;, &amp;name)
++// }
++
++// #[get(&quot;/hello/{name}&quot;)]
++async fn greet(name: web::Path&lt;String&gt;) -&gt; impl Responder {
++    format!(&quot;Hello {}!&quot;, name)
+ }
+
+-fn main() {
++#[actix_web::main]
++async fn main() -&gt; std::io::Result&lt;()&gt; {
+     let database_url = env::var(&quot;DATABASE_URL&quot;).expect(&quot;set DATABASE_URL&quot;);
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+@@ -26,5 +33,5 @@ fn main() {
+     .bind(&quot;127.0.0.1:8000&quot;)
+     .expect(&quot;Can not bind to port 8000&quot;)
+     .run()
+-    .unwrap();
++    .await
+ }
+diff --git a/rust/projects/diesel_2.0_example/src/bin/test-partial-inserts.rs b/rust/projects/diesel_2.0_example/src/bin/test-partial-inserts.rs
+index 1819a9677..0fa4e2650 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/test-partial-inserts.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/test-partial-inserts.rs
+@@ -1,4 +1,3 @@
+-
+ use diesel_example::dao::partial_inserts::create_partial_inserts;
+ use diesel_example::db;
+ use diesel_example::model::partial_inserts::NewPartialInsert;
+@@ -10,7 +9,7 @@ fn main() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
++    let mut conn = pool.get().unwrap();
+
+     let v = vec![
+         NewPartialInsert { user_id: 5, name: Some(&quot;3&quot;.to_string()) },
+@@ -20,7 +19,7 @@ fn main() {
+     // 如果每次插入多个，其中一个报错（比如以上 user_id = 2），整体插入失败（5 不被插入）
+     // Err(DatabaseError(UniqueViolation, &quot;duplicate key value violates unique constraint \&quot;ui_partial_inserts_user_id\&quot;&quot;))
+
+-    let r = create_partial_inserts(&amp;connection, &amp;v);
++    let r = create_partial_inserts(&amp;mut conn, &amp;v);
+
+     println!(&quot;{:?}&quot;, r);
+ }
+diff --git a/rust/projects/diesel_2.0_example/src/bin/timestamp-with-zone.rs b/rust/projects/diesel_2.0_example/src/bin/timestamp-with-zone.rs
+index e5a793222..1d3b3e72d 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/timestamp-with-zone.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/timestamp-with-zone.rs
+@@ -1,7 +1,5 @@
+-use chrono::{DateTime};
+-use diesel_example::dao::timestamp_with_zone::{
+-    create_timestamp_with_zones,
+-};
++use chrono::DateTime;
++use diesel_example::dao::timestamp_with_zone::create_timestamp_with_zones;
+ use diesel_example::db;
+ use diesel_example::model::timestamp_with_zone::NewTimestampWithZone;
+ use std::env;
+@@ -12,7 +10,7 @@ fn main() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
++    let mut conn = pool.get().unwrap();
+
+     /*
+         let mut user_id = 123;
+@@ -45,7 +43,7 @@ fn main() {
+         NewTimestampWithZone { user_id: 109, created_at: dt.into() },
+     ];
+
+-    let inserted = create_timestamp_with_zones(&amp;connection, &amp;zones);
++    let inserted = create_timestamp_with_zones(&amp;mut conn, &amp;zones);
+     match inserted {
+         Ok(ref v) =&gt; {
+             println!(
+diff --git a/rust/projects/diesel_2.0_example/src/bin/updated-at.rs b/rust/projects/diesel_2.0_example/src/bin/updated-at.rs
+index c536b6a9c..27c5a37da 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/updated-at.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/updated-at.rs
+@@ -10,7 +10,7 @@ fn main() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
++    let mut conn = pool.get().unwrap();
+
+     let user_id = 123;
+     let n = NewWeiboFeedCrawlStatus {
+@@ -20,11 +20,8 @@ fn main() {
+         created_at: Local::now().naive_local(),
+         updated_at: None,
+     };
+-    create_weibo_feed_crawl_status(&amp;connection, &amp;n);
++    create_weibo_feed_crawl_status(&amp;mut conn, &amp;n);
+     update_total_page_count_and_next_page_index_by_user_id(
+-        user_id,
+-        &amp;connection,
+-        1,
+-        1,
++        user_id, &amp;mut conn, 1, 1,
+     );
+ }
+diff --git a/rust/projects/diesel_2.0_example/src/bin/upsert-if-condition.rs b/rust/projects/diesel_2.0_example/src/bin/upsert-if-condition.rs
+index ca7f19d77..807f74272 100644
+--- a/rust/projects/diesel_2.0_example/src/bin/upsert-if-condition.rs
++++ b/rust/projects/diesel_2.0_example/src/bin/upsert-if-condition.rs
+@@ -10,11 +10,15 @@ fn upsert_on_conflict_id() {
+         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+     let pool = db::init_pool(database_url);
+     // https://github.com/sfackler/r2d2/issues/37
+-    let connection = pool.get().unwrap();
++    let mut conn = pool.get().unwrap();
+
+-    let conn: &amp;PgConnection = &amp;connection;
+-    conn.execute(&quot;TRUNCATE TABLE upserts_if_condition&quot;).unwrap();
+-    conn.execute(&quot;alter sequence upserts_if_condition_id_seq restart;&quot;)
++    // let conn: &amp;mut PgConnection = &amp;mut connection;
++    // conn.execute(&quot;TRUNCATE TABLE upserts_if_condition&quot;).unwrap();
++    // conn.execute(&quot;alter sequence upserts_if_condition_id_seq restart;&quot;)
++    //     .unwrap();
++
++    diesel::sql_query(&quot;TRUNCATE TABLE upserts_if_condition&quot;)
++        .execute(&amp;mut conn)
+         .unwrap();
+
+     let u = NewUpsertIfCondition {
+@@ -27,7 +31,7 @@ fn upsert_on_conflict_id() {
+         next: Some(9),
+         email: Some(&quot;e&quot;.into()),
+     };
+-    let inserted = create_upserts_if_condition_by_sql(&amp;connection, &amp;u).unwrap();
++    let inserted = create_upserts_if_condition_by_sql(&amp;mut conn, &amp;u).unwrap();
+     println!(&quot;{} records inserted&quot;, inserted.len());
+ }
+</code></pre>
+<h2 id="derive-attributes"><a class="header" href="#derive-attributes">Derive attributes</a></h2>
+<p>You should add <code>#[diesel()]</code> when using derive attributes.</p>
+<p>Below is an example of using <code>table_name</code> macro to define <code>NewTimestampWithZone</code> struct.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Insertable, Debug)]
+// NOTE: For diesel 1.4.x, we use `table_name` macro directly.
+// #[table_name = &quot;timestamp_with_zone&quot;]
+#[table_name = &quot;timestamp_with_zone&quot;]
+pub struct NewTimestampWithZone {
+    pub user_id: i64,
+    pub created_at: DateTime&lt;Utc&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<h1 id="refs"><a class="header" href="#refs">Refs</a></h1>
+<p>Diesel 2.0 migration guide
+https://diesel.rs/guides/migration_guide.html</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
