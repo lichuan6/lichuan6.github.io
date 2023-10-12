@@ -24,6 +24,10 @@
 
 - [Serialize time::OffsetDataTime type using serde_as in serde_with crate](rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.md)
 
+## Diesel
+
+- [Upgrade diesel to 2.0](rust/diesel/upgrade-diesel-to-2.0.md)
+
 # Go
 
 ## Go Module
