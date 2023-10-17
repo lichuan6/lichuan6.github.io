@@ -43,3 +43,9 @@
 ## Test
 
 - [Setup tests in npm project using jest](nodejs/test/setup-tests-in-npm-project-using-jest.md)
+
+# ClickHouse
+
+## Update
+
+- [Update on local table for ReplicatedMergeTree Table Engine](clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.md)
