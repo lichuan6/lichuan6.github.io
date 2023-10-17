@@ -34,7 +34,7 @@ ENGINE = Distributed('{cluster}', t, t_local, rand())
 
 Insert data through local table:
 
-NOTE: Run each in `clickhouse-client` prompt, otherwise only insert one record.
+NOTE: Run each sql line in `clickhouse-client` prompt, otherwise only one record is inserted.
 
 ```sql
 INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 09:00:00', 'First log entry', '/var/logs/file1.log');
