@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Update on local table for ReplicatedMergeTree Table Engine - Blog by lichuan</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html" class="active"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Blog by lichuan</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="update-on-local-table-for-replicatedmergetree-table-engine"><a class="header" href="#update-on-local-table-for-replicatedmergetree-table-engine">Update on local table for ReplicatedMergeTree Table Engine</a></h1>
+<!-- toc -->
+<ul>
+<li><a href="#create-local-and-distributed-table">Create Local and Distributed Table</a></li>
+<li><a href="#insert-data">Insert Data</a></li>
+<li><a href="#%E2%9D%8Cupdate-on-distributed-table-engine">❌Update on Distributed Table Engine</a></li>
+<li><a href="#%E2%9C%85update-on-local-table-engine">✅Update on Local Table Engine</a></li>
+<li><a href="#refs">Refs</a></li>
+</ul>
+<!-- tocstop -->
+<h1 id="create-local-and-distributed-table"><a class="header" href="#create-local-and-distributed-table">Create Local and Distributed Table</a></h1>
+<pre><code class="language-sql">-- Create Local Table
+CREATE TABLE t.t_local ON CLUSTER `{cluster}` (
+    timestamp DateTime Codec(DoubleDelta, LZ4),
+    log String,
+    path String
+)
+ENGINE = ReplicatedMergeTree(
+  '/clickhouse/{installation}/{cluster}/tables/{shard}/{database}/{table}', '{replica}'
+)
+PARTITION BY toYYYYMM(timestamp)
+ORDER BY (timestamp, path)
+
+-- Create Distributed Table
+CREATE TABLE t.t_all ON CLUSTER `{cluster}`
+ENGINE = Distributed('{cluster}', t, t_local, rand())
+</code></pre>
+<h1 id="insert-data"><a class="header" href="#insert-data">Insert Data</a></h1>
+<p>Insert data through local table:</p>
+<p>NOTE: Run each in <code>clickhouse-client</code> prompt, otherwise only insert one record.</p>
+<pre><code class="language-sql">INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 09:00:00', 'First log entry', '/var/logs/file1.log');
+INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 10:30:00', 'Second log entry', '/var/logs/file2.log');
+INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 12:15:00', 'Third log entry', '/var/logs/file3.log');
+</code></pre>
+<p>Insert data through distributed table:</p>
+<pre><code class="language-sql">INSERT INTO t.t_all (timestamp, log, path) VALUES ('2023-10-18 09:00:00', 'First log entry', '/var/logs/file1.log');
+INSERT INTO t.t_all (timestamp, log, path) VALUES ('2023-10-18 10:30:00', 'Second log entry', '/var/logs/file2.log');
+INSERT INTO t.t_all (timestamp, log, path) VALUES ('2023-10-18 12:15:00', 'Third log entry', '/var/logs/file3.log');
+</code></pre>
+<h1 id="update-on-distributed-table-engine"><a class="header" href="#update-on-distributed-table-engine">❌Update on Distributed Table Engine</a></h1>
+<pre><code class="language-sql">ALTER TABLE t.t_all UPDATE log = 'Updated log entry &lt;-'
+WHERE timestamp = '2023-10-17 09:00:00' AND path = '/var/logs/file1.log';
+</code></pre>
+<p>Error:</p>
+<pre><code class="language-sql">ALTER TABLE t.t_all
+    UPDATE log = 'Updated log entry &lt;-' WHERE (timestamp = '2023-10-17 09:00:00') AND (path = '/var/logs/file1.log')
+
+Query id: fcd17813-087c-496b-ba2e-0e5c7fbff6ea
+
+
+0 rows in set. Elapsed: 0.019 sec.
+
+Received exception from server (version 23.3.8):
+Code: 48. DB::Exception: Received from localhost:9000. DB::Exception: Table engine Distributed doesn't support mutations. (NOT_IMPLEMENTED)
+
+</code></pre>
+<h1 id="update-on-local-table-engine"><a class="header" href="#update-on-local-table-engine">✅Update on Local Table Engine</a></h1>
+<p>Let's update data through local table(non-distributed table):</p>
+<pre><code class="language-sql">ALTER TABLE t.t_local ON CLUSTER `{cluster}` UPDATE log = 'Updated log entry &lt;-'
+WHERE timestamp = '2023-10-17 09:00:00' AND path = '/var/logs/file1.log';
+</code></pre>
+<p>Results:</p>
+<pre><code class="language-sql">ALTER TABLE t.t_local ON CLUSTER `{cluster}`
+    UPDATE log = 'Updated log entry &lt;-' WHERE (timestamp = '2023-10-17 09:00:00') AND (path = '/var/logs/file1.log')
+
+Query id: 0a119cbf-d244-4d3c-be12-be7201d25d6c
+
+┌─host──────────────┬─port─┬─status─┬─error─┬─num_hosts_remaining─┬─num_hosts_active─┐
+│ chi-logs-logs-1-1 │ 9000 │      0 │       │                   3 │                0 │
+│ chi-logs-logs-0-0 │ 9000 │      0 │       │                   2 │                0 │
+│ chi-logs-logs-0-1 │ 9000 │      0 │       │                   1 │                0 │
+│ chi-logs-logs-1-0 │ 9000 │      0 │       │                   0 │                0 │
+└───────────────────┴──────┴────────┴───────┴─────────────────────┴──────────────────┘
+
+4 rows in set. Elapsed: 0.116 sec.
+</code></pre>
+<p>Check if data is updated:</p>
+<pre><code class="language-sql">SELECT *
+FROM t_all
+GROUP BY (timestamp, log, path)
+
+Query id: 1cc2811e-cdb1-4fc2-b94e-6d9d4320ede8
+
+┌───────────timestamp─┬─log──────────────────┬─path────────────────┐
+│ 2023-10-17 10:30:00 │ Second log entry     │ /var/logs/file2.log │
+│ 2023-10-17 12:15:00 │ Third log entry      │ /var/logs/file3.log │
+│ 2023-10-18 12:15:00 │ Third log entry      │ /var/logs/file3.log │
+│ 2023-10-17 09:00:00 │ Updated log entry &lt;- │ /var/logs/file1.log │
+│ 2023-10-18 10:30:00 │ Second log entry     │ /var/logs/file2.log │
+│ 2023-10-18 09:00:00 │ First log entry      │ /var/logs/file1.log │
+└─────────────────────┴──────────────────────┴─────────────────────┘
+
+6 rows in set. Elapsed: 0.007 sec.
+</code></pre>
+<p>We can see the record with timestamp <code>2023-10-17 09:00:00</code> is updated!</p>
+<h1 id="refs"><a class="header" href="#refs">Refs</a></h1>
+<p>https://clickhouse.com/docs/en/guides/developer/mutations</p>
+<pre><code class="language-sql">ALTER TABLE website.clicks
+UPDATE url = substring(url, position(url, '://') + 3), visitor_id = new_visit_id
+WHERE visit_date &lt; '2022-01-01'
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
