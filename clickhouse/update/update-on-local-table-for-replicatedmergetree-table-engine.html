@@ -200,7 +200,7 @@ ENGINE = Distributed('{cluster}', t, t_local, rand())
 </code></pre>
 <h1 id="insert-data"><a class="header" href="#insert-data">Insert Data</a></h1>
 <p>Insert data through local table:</p>
-<p>NOTE: Run each in <code>clickhouse-client</code> prompt, otherwise only insert one record.</p>
+<p>NOTE: Run each sql line in <code>clickhouse-client</code> prompt, otherwise only one record is inserted.</p>
 <pre><code class="language-sql">INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 09:00:00', 'First log entry', '/var/logs/file1.log');
 INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 10:30:00', 'Second log entry', '/var/logs/file2.log');
 INSERT INTO t.t_local (timestamp, log, path) VALUES ('2023-10-17 12:15:00', 'Third log entry', '/var/logs/file3.log');
