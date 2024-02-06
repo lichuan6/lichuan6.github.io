@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Existing value not exists when searching - Blog by lichuan</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html" class="active"><strong aria-hidden="true">10.</strong> Existing value not exists when searching</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Blog by lichuan</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="existing-value-not-exist-when-searching-log-in-kibana"><a class="header" href="#existing-value-not-exist-when-searching-log-in-kibana">Existing value not exist when searching log in kibana</a></h1>
+<!-- toc -->
+<ul>
+<li><a href="#existing-value-not-exist">Existing value not exist</a></li>
+<li><a href="#ingest-data">Ingest data</a></li>
+<li><a href="#search-using-filter">Search using filter</a></li>
+<li><a href="#reason-why-existing-data-not-exist">Reason why existing data not exist</a></li>
+<li><a href="#conclution">Conclution</a></li>
+<li><a href="#refs">refs</a></li>
+</ul>
+<!-- tocstop -->
+<p>Recently, when searching for application error logs in Kibana, I encountered a particularly intriguing challenge. Some of the expected search results were missing, when using <code>error</code> as filter field and <code>exists</code> as filter operator in kibana(Click <code>+Add Filter</code> button). After scratching my head for a while and doing a deep dive into why this was happening, I stumbled upon a lifesaver feature in Elasticsearch - the <code>ignore_above</code> parameter.</p>
+<p>Below are the samples for <code>error</code> field in log records.</p>
+<pre><code class="language-json">[
+  &quot;你所在的区域无法查看特定的内容，请联系相关部门进行处理&quot;,
+  &quot;author is not authenticated missing parameters in request, request=id_is:Kp3mE5QJwVHkM1Wl3xCg client_id_is:MoNRe2Qxvz4nR8R9oZtA payment_number:\&quot;jXb9q8flSY6vQIpV3GtE\&quot; order_detail_id:L3R9mU1W8pN9gKuH6Wz deliver_timestamp:{seconds:QG4cP2a0QK6SxI6D0EbR} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
+  &quot;author is not authenticated missing parameters in request, request=user_id_is:T7L3b4HnE1pM6L9QeXy5 client_id_is:w1L6i0uJ3S0A9X6K4G5 payment_number:\&quot;K0l6W0kR2rH9Y0O5Z0x8\&quot; order_detail_id:J2A0B1Z4uE9X7Y2W7L0E deliver_timestamp:{seconds:1I3lC6nT8Q4N7j0X4I6v} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
+  &quot;author is not authenticated missing parameters in request, request=user_id_is:G5B9kS6pJ3C7H0D8K6M4 client_id_is:w9R0V6mF3A8D4H1G2G6 payment_number:\&quot;Z3R0b8D7uJ2Z4Q5W7X6E\&quot; order_detail_id:Y7T2R8X1vI6E0G3C7M3E deliver_timestamp:{seconds:4K6G9O5N3fP1K6S7R8Y} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
+  &quot;author is not authenticated missing parameters in request, request=user_id_is:U8T0D9hE8C3L6H9K5V7 client_id_is:O4xH2L3K5R0C9X2O9M0 merchant_id_iss:z5fN6qO0R4eV9tK8E2bB payment_number:\&quot;D9H4fQ2O5W3C7R8E2C6\&quot; order_detail_id:W8sI5kQ2dP3W1C7G9T5 deliver_timestamp:{seconds:R0U7X1Q3U5sE2Y4O8D} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;
+]
+</code></pre>
+<p>The question is: Why doesn't the error log saying &quot;author is not ...&quot; appear in the search results?</p>
+<h1 id="ingest-data"><a class="header" href="#ingest-data">Ingest data</a></h1>
+<p>Now, let's do some investigation!</p>
+<p>First, we creates an index named <code>tmp-1</code> with a single field called <code>error</code>. The <code>error</code> field is of type <code>text</code> for full-text search and has a sub-field named <code>keyword</code> of type <code>keyword</code> for exact matching, with a maximum length of <code>20</code> characters.</p>
+<pre><code class="language-json">PUT /tmp-1
+{
+  &quot;mappings&quot;: {
+    &quot;properties&quot;: {
+      &quot;error&quot;: {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;fields&quot;: {
+          &quot;keyword&quot;: {
+            &quot;type&quot;: &quot;keyword&quot;,
+            &quot;ignore_above&quot;: 20
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>Then, we ingest some data to this index:</p>
+<pre><code class="language-json">PUT /tmp-1/_doc/1
+{
+  &quot;error&quot;: &quot;This is a test.&quot;,
+  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+}
+
+PUT /tmp-1/_doc/2
+{
+  &quot;error&quot;: &quot;12345678901234567890&quot;,
+  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+
+}
+
+PUT /tmp-1/_doc/3
+{
+  &quot;error&quot;: &quot;12345678901234567890X&quot;,
+  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+
+}
+</code></pre>
+<p>Notice, for doc three, the length of error field is longer than 20, which will cause problem when filtering doc in kibana.</p>
+<h1 id="search-using-filter"><a class="header" href="#search-using-filter">Search using filter</a></h1>
+<p>First, let's search with <code>error.keyword</code> exist(doc 3 is missing):</p>
+<p><img src="https://raw.githubusercontent.com/lichuan6/i/main/es/Screenshot%202024-02-05%20at%2020.48.52.png" alt="Search with error.keyword exist" /></p>
+<p>Let's see what is the result when searching with <code>error exist</code>(all docs are searchable):</p>
+<p><img src="https://github.com/lichuan6/i/blob/main/es/Screenshot%202024-02-05%20at%2020.49.15.png?raw=true" alt="Search with error exist" /></p>
+<h1 id="reason-why-existing-data-not-exist"><a class="header" href="#reason-why-existing-data-not-exist">Reason why existing data not exist</a></h1>
+<p>In Elasticsearch, <code>ignore_above</code> is a parameter that can be used in the mapping of string fields, specifically for keyword types. The role of this parameter is to <strong>ignore</strong> (i.e., not index) any string which length is above the specified number of characters.</p>
+<p>Let's consider an example:</p>
+<pre><code class="language-json">&quot;mappings&quot;: {
+  &quot;properties&quot;: {
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;keyword&quot;,
+      &quot;ignore_above&quot;: 20
+    }
+  }
+}
+</code></pre>
+<p>In the above mapping, any <code>name</code> field that has more than <code>20</code> characters will not be indexed and therefore, will not be <strong>searchable</strong>.</p>
+<p>It's important to note that the <code>ignore_above</code> only influences the indexing process and not the <code>_source</code> field (<code>_source</code>), which means the value of the field remains untouched when returned from a query.</p>
+<p>As for how it affects search results:</p>
+<p>If you depend on a keyword search for a specific field and that field's length exceeds the <code>ignore_above</code> value, you <strong>won't</strong> retrieve any information regarding that field in your search results because Elasticsearch didn't index it.</p>
+<p>This feature is especially useful for preventing huge keywords from being indexed (e.g., when a text field is mistakenly indexed as a keyword), effectively <strong>saving disk space</strong> in your Elasticsearch cluster.</p>
+<h1 id="conclution"><a class="header" href="#conclution">Conclution</a></h1>
+<p>The conclusion is, Elasticsearch's <code>ignore_above</code> parameter is beneficial when you want to prevent the indexing of excessively long keywords. This can effectively save storage space in your Elasticsearch cluster. However, you need to be aware that if a field's length exceeds the <code>ignore_above</code> value, it <strong>won't be indexed</strong> and, therefore, you <strong>won't be able to search</strong> for it in your search results - even though it will still exist in the <code>_source</code> field. It's crucial to set the <code>ignore_above</code> parameter carefully, considering the nature and requirements of your data and searches.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
