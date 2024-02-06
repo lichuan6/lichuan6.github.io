@@ -49,3 +49,9 @@
 ## Update
 
 - [Update on local table for ReplicatedMergeTree Table Engine](clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.md)
+
+# Elasticsearch
+
+## Kibana
+
+- [Existing value not exists when searching](elasticsearch/kibana/existing-value-not-exists-when-searching.md)
