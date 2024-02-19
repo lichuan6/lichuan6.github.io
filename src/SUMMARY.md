@@ -8,6 +8,10 @@
 
 - [Render all chartjs charts in react typescript tailwindcss projects](react/chartjs/render-all-chartjs-charts.md)
 
+# React Query
+
+- [Setup Tanstack React Query in NextJS Project](react-query/setup-tanstack-react-query-in-nextjs-project.md)
+
 # Gitlab
 
 ## Runner
