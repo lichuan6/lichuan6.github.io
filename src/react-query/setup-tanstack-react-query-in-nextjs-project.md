@@ -194,7 +194,7 @@ function DataFetchUsingTanstackReactQuery() {
 export default DataFetchUsingTanstackReactQuery;
 ```
 
-Starting with version 5 of @tanstack/react-query, there was a breaking change in how queries and mutations are called. Before version 5, it was possible to use the "array" syntax or the "object" syntax when calling query functions. After version 5, only the "object" form is allowed.
+Starting with version 4 of @tanstack/react-query, there was a breaking change in how queries and mutations are called. Before version 4, it was possible to use the "array" syntax or the "object" syntax when calling query functions. After version 4, only the "object" form is allowed.
 
 ```typescript
 // Older version:
