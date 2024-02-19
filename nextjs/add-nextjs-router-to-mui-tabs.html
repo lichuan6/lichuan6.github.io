@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../nextjs/add-nextjs-router-to-mui-tabs.html" class="active"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">10.</strong> Existing value not exists when searching</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="../react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../nextjs/add-nextjs-router-to-mui-tabs.html" class="active"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -231,14 +231,14 @@ drwxr-xr-x     - naonao 28 Aug 16:38    └── ThemeRegistry
 <p>We add a <code>proceeds</code> folder in <code>app</code>, we also add corresponding folder as router in <code>provided</code> to represent each tab.</p>
 <h1 id="proceedstabs-component"><a class="header" href="#proceedstabs-component">ProceedsTabs component</a></h1>
 <p>Let's look at the <code>ProceedsTabs</code> component.</p>
-<pre><code class="language-jsx">&quot;use client&quot;;
+<pre><code class="language-jsx">"use client";
 
-import * as React from &quot;react&quot;;
-import Tabs from &quot;@mui/material/Tabs&quot;;
-import Tab from &quot;@mui/material/Tab&quot;;
-import Typography from &quot;@mui/material/Typography&quot;;
-import Box from &quot;@mui/material/Box&quot;;
-import { useRouter } from &quot;next/navigation&quot;;
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { useRouter } from "next/navigation";
 
 interface ProceedsTabsProps {
   defaultTab: number;
@@ -253,102 +253,102 @@ const ProceedsTabs: React.FC&lt;ProceedsTabsProps&gt; = ({ defaultTab }) =&gt; {
   };
 
   React.useEffect(() =&gt; {
-    let route = &quot;/proceeds&quot;;
+    let route = "/proceeds";
     if (value === 0) {
-      route += &quot;/content&quot;;
+      route += "/content";
     } else if (value === 1) {
-      route += &quot;/territory&quot;;
+      route += "/territory";
     } else if (value === 2) {
-      route += &quot;/device&quot;;
+      route += "/device";
     } else if (value === 3) {
-      route += &quot;/category&quot;;
+      route += "/category";
     } else if (value === 4) {
-      route += &quot;/contenttype&quot;;
+      route += "/contenttype";
     } else if (value === 5) {
-      route += &quot;/transactiontype&quot;;
+      route += "/transactiontype";
     } else if (value === 6) {
-      route += &quot;/cmb&quot;;
+      route += "/cmb";
     } else if (value === 7) {
-      route += &quot;/version&quot;;
+      route += "/version";
     } else if (value === 8) {
-      route += &quot;/client&quot;;
+      route += "/client";
     }
     console.log(`💗💗💗 ${route}`);
     router.push(route);
   }, [value]);
 
   return (
-    &lt;Box sx={{ width: &quot;100%&quot; }}&gt;
-      &lt;Box sx={{ borderBottom: 1, borderColor: &quot;divider&quot; }}&gt;
-        &lt;Tabs value={value} onChange={handleChange} aria-label=&quot;proceeds tabs&quot;&gt;
-          &lt;Tab label=&quot;Content&quot; /&gt;
-          &lt;Tab label=&quot;Territory&quot; /&gt;
-          &lt;Tab label=&quot;Device&quot; /&gt;
-          &lt;Tab label=&quot;Category&quot; /&gt;
-          &lt;Tab label=&quot;Content Type&quot; /&gt;
-          &lt;Tab label=&quot;Transaction Type&quot; /&gt;
-          &lt;Tab label=&quot;CMB&quot; /&gt;
-          &lt;Tab label=&quot;Version&quot; /&gt;
-          &lt;Tab label=&quot;Client&quot; /&gt;
+    &lt;Box sx={{ width: "100%" }}&gt;
+      &lt;Box sx={{ borderBottom: 1, borderColor: "divider" }}&gt;
+        &lt;Tabs value={value} onChange={handleChange} aria-label="proceeds tabs"&gt;
+          &lt;Tab label="Content" /&gt;
+          &lt;Tab label="Territory" /&gt;
+          &lt;Tab label="Device" /&gt;
+          &lt;Tab label="Category" /&gt;
+          &lt;Tab label="Content Type" /&gt;
+          &lt;Tab label="Transaction Type" /&gt;
+          &lt;Tab label="CMB" /&gt;
+          &lt;Tab label="Version" /&gt;
+          &lt;Tab label="Client" /&gt;
         &lt;/Tabs&gt;
       &lt;/Box&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 0}&gt;
+      &lt;div role="tabpanel" hidden={value !== 0}&gt;
         {value === 0 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Content&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 1}&gt;
+      &lt;div role="tabpanel" hidden={value !== 1}&gt;
         {value === 1 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Territory&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 2}&gt;
+      &lt;div role="tabpanel" hidden={value !== 2}&gt;
         {value === 2 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Device&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 3}&gt;
+      &lt;div role="tabpanel" hidden={value !== 3}&gt;
         {value === 3 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Category&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 4}&gt;
+      &lt;div role="tabpanel" hidden={value !== 4}&gt;
         {value === 4 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Content Type&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 5}&gt;
+      &lt;div role="tabpanel" hidden={value !== 5}&gt;
         {value === 5 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Transaction Type&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 6}&gt;
+      &lt;div role="tabpanel" hidden={value !== 6}&gt;
         {value === 6 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;CMB&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 7}&gt;
+      &lt;div role="tabpanel" hidden={value !== 7}&gt;
         {value === 7 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Version&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 8}&gt;
+      &lt;div role="tabpanel" hidden={value !== 8}&gt;
         {value === 8 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Client&lt;/Typography&gt;
@@ -371,9 +371,9 @@ export default ProceedsTabs;
 <h1 id="tab-page"><a class="header" href="#tab-page">Tab page</a></h1>
 <p>Now, let's look at each tab page.</p>
 <p>As most tab pages are the same, we will take <code>category</code> as an example.</p>
-<pre><code class="language-jsx">&quot;use client&quot;;
+<pre><code class="language-jsx">"use client";
 
-import ProceedsTabs from &quot;@/components/ProceedsTabs&quot;;
+import ProceedsTabs from "@/components/ProceedsTabs";
 
 const Category = () =&gt; {
   let defaultTab = 3;
@@ -386,35 +386,35 @@ export default Category;
 <p>It imports the <code>ProceedsTabs</code> component from the <code>@/components/ProceedsTabs</code> and pass <code>defaultTab</code> to specify which tab to render.</p>
 <h1 id="proceeds-page"><a class="header" href="#proceeds-page">Proceeds page</a></h1>
 <p>Now, let's look at the <code>proceeds</code> page.</p>
-<pre><code class="language-jsx">&quot;use client&quot;;
+<pre><code class="language-jsx">"use client";
 
-import { useRouter, useSearchParams } from &quot;next/navigation&quot;;
-import ProceedsTabs from &quot;@/components/ProceedsTabs&quot;;
+import { useRouter, useSearchParams } from "next/navigation";
+import ProceedsTabs from "@/components/ProceedsTabs";
 
 const Proceeds = () =&gt; {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const tab = searchParams.get(&quot;tab&quot;);
+  const tab = searchParams.get("tab");
 
   let defaultTab = 0;
 
-  if (tab === &quot;/content&quot;) {
+  if (tab === "/content") {
     defaultTab = 0;
-  } else if (tab === &quot;/territory&quot;) {
+  } else if (tab === "/territory") {
     defaultTab = 1;
-  } else if (tab === &quot;/device&quot;) {
+  } else if (tab === "/device") {
     defaultTab = 2;
-  } else if (tab === &quot;/category&quot;) {
+  } else if (tab === "/category") {
     defaultTab = 3;
-  } else if (tab === &quot;/contenttype&quot;;) {
+  } else if (tab === "/contenttype";) {
     defaultTab = 4;
-  } else if (tab === &quot;/transactiontype&quot;) {
+  } else if (tab === "/transactiontype") {
     defaultTab = 5;
-  } else if (tab === &quot;/cmb&quot;) {
+  } else if (tab === "/cmb") {
     defaultTab = 6;
-  } else if (tab === &quot;/version&quot;) {
+  } else if (tab === "/version") {
     defaultTab = 7;
-  } else if (tab === &quot;/client&quot;) {
+  } else if (tab === "/client") {
     defaultTab = 8;
   }
 
@@ -423,8 +423,8 @@ const Proceeds = () =&gt; {
 
 export default Proceeds;
 </code></pre>
-<p>This component uses the <code>useSearchParams</code> hook to access the search parameters from the URL. It retrieves the value of the tab parameter using the <code>searchParams.get(&quot;tab&quot;)</code> method and assigns it to the tab variable.</p>
-<p>After that, there is a series of conditional statements that determine the value of the <code>defaultTab</code> variable based on the value of the tab variable. If the tab is <code>&quot;territory&quot;</code>, the <code>defaultTab</code> is set to <code>1</code>. If the tab is <code>&quot;device&quot;</code>, the <code>defaultTab</code> is set to <code>2</code>, etc.</p>
+<p>This component uses the <code>useSearchParams</code> hook to access the search parameters from the URL. It retrieves the value of the tab parameter using the <code>searchParams.get("tab")</code> method and assigns it to the tab variable.</p>
+<p>After that, there is a series of conditional statements that determine the value of the <code>defaultTab</code> variable based on the value of the tab variable. If the tab is <code>"territory"</code>, the <code>defaultTab</code> is set to <code>1</code>. If the tab is <code>"device"</code>, the <code>defaultTab</code> is set to <code>2</code>, etc.</p>
 <p>As we handle request parameter using <code>useSearchParams</code> hook and pass tab index to <code>ProceedsTabs</code> which will push corresponding route using <code>router.push(route)</code>, when we open link like <code>http://localhost:3000/proceeds?tab=content</code>, the browser will redirect to <code>http://localhost:3000/proceed/content</code>.</p>
 <h1 id="the-takeaway"><a class="header" href="#the-takeaway">The takeaway</a></h1>
 <p>Follow these steps if you want to implement tabbed navigation using NextJS:</p>

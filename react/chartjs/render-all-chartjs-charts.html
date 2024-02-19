@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html" class="active"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">10.</strong> Existing value not exists when searching</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html" class="active"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="../../react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -203,97 +203,97 @@ npx tailwindcss init -p
 </code></pre>
 <h1 id="define-all-chartjs-charts"><a class="header" href="#define-all-chartjs-charts">Define all chartjs charts</a></h1>
 <p>We copy all chartjs official example codes and put them in <code>component/chartjsofficial</code> directory. We also define title and component for each example chart. The <code>components</code> array is the chart data we will render later.</p>
-<pre><code class="language-jsx">import { VerticalBarChart } from &quot;@/component/chartjsofficial/verticalbarchart&quot;;
-import { HorizontalBarChart } from &quot;@/component/chartjsofficial/horizontalbarchart&quot;;
-import { StackedBarChart } from &quot;@/component/chartjsofficial/stackedbarchart&quot;;
-import { GroupedBarChart } from &quot;@/component/chartjsofficial/groupedbarchart&quot;;
-import { AreaChart } from &quot;@/component/chartjsofficial/areachart&quot;;
-import { LineChart } from &quot;@/component/chartjsofficial/linechart&quot;;
-import { MultiAxisLineChart } from &quot;@/component/chartjsofficial/multiaxislinechart&quot;;
-import { PieChart } from &quot;@/component/chartjsofficial/piechart&quot;;
-import { DoughnutChart } from &quot;@/component/chartjsofficial/doughnutchart&quot;;
-import { PolarAreaChart } from &quot;@/component/chartjsofficial/polarareachart&quot;;
-import { RadarChart } from &quot;@/component/chartjsofficial/radarchart&quot;;
-import { ScatterChart } from &quot;@/component/chartjsofficial/scatterchart&quot;;
-import { BubbleChart } from &quot;@/component/chartjsofficial/bubblechart&quot;;
-import { MultiTypeChart } from &quot;@/component/chartjsofficial/multitypechart&quot;;
-import { ChartEvents } from &quot;@/component/chartjsofficial/chartevents&quot;;
-import { ChartRef } from &quot;@/component/chartjsofficial/chartref&quot;;
-import { GradientChart } from &quot;@/component/chartjsofficial/gradientchart&quot;;
-import { ChartEventsSingleDataset } from &quot;@/component/chartjsofficial/charteventssingledataset&quot;;
-import { ChartEventsSingleDatasetOutsideDatasource } from &quot;@/component/chartjsofficial/charteventssingledatasetoutsidedatasource&quot;;
+<pre><code class="language-jsx">import { VerticalBarChart } from "@/component/chartjsofficial/verticalbarchart";
+import { HorizontalBarChart } from "@/component/chartjsofficial/horizontalbarchart";
+import { StackedBarChart } from "@/component/chartjsofficial/stackedbarchart";
+import { GroupedBarChart } from "@/component/chartjsofficial/groupedbarchart";
+import { AreaChart } from "@/component/chartjsofficial/areachart";
+import { LineChart } from "@/component/chartjsofficial/linechart";
+import { MultiAxisLineChart } from "@/component/chartjsofficial/multiaxislinechart";
+import { PieChart } from "@/component/chartjsofficial/piechart";
+import { DoughnutChart } from "@/component/chartjsofficial/doughnutchart";
+import { PolarAreaChart } from "@/component/chartjsofficial/polarareachart";
+import { RadarChart } from "@/component/chartjsofficial/radarchart";
+import { ScatterChart } from "@/component/chartjsofficial/scatterchart";
+import { BubbleChart } from "@/component/chartjsofficial/bubblechart";
+import { MultiTypeChart } from "@/component/chartjsofficial/multitypechart";
+import { ChartEvents } from "@/component/chartjsofficial/chartevents";
+import { ChartRef } from "@/component/chartjsofficial/chartref";
+import { GradientChart } from "@/component/chartjsofficial/gradientchart";
+import { ChartEventsSingleDataset } from "@/component/chartjsofficial/charteventssingledataset";
+import { ChartEventsSingleDatasetOutsideDatasource } from "@/component/chartjsofficial/charteventssingledatasetoutsidedatasource";
 
 const components = [
   {
-    title: &quot;VerticalBarChart&quot;,
+    title: "VerticalBarChart",
     component: VerticalBarChart,
   },
   {
-    title: &quot;HorizontalBarChart&quot;,
+    title: "HorizontalBarChart",
     component: HorizontalBarChart,
   },
   {
-    title: &quot;StackedBarChart&quot;,
+    title: "StackedBarChart",
     component: StackedBarChart,
   },
   {
-    title: &quot;GroupedBarChart&quot;,
+    title: "GroupedBarChart",
     component: GroupedBarChart,
   },
   {
-    title: &quot;AreaChart&quot;,
+    title: "AreaChart",
     component: AreaChart,
   },
   {
-    title: &quot;LineChart&quot;,
+    title: "LineChart",
     component: LineChart,
   },
   {
-    title: &quot;MultiAxisLineChart&quot;,
+    title: "MultiAxisLineChart",
     component: MultiAxisLineChart,
   },
   {
-    title: &quot;DoughnutChart&quot;,
+    title: "DoughnutChart",
     component: DoughnutChart,
   },
   {
-    title: &quot;PolarAreaChart&quot;,
+    title: "PolarAreaChart",
     component: PolarAreaChart,
   },
   {
-    title: &quot;RadarChart&quot;,
+    title: "RadarChart",
     component: RadarChart,
   },
   {
-    title: &quot;ScatterChart&quot;,
+    title: "ScatterChart",
     component: ScatterChart,
   },
   {
-    title: &quot;BubbleChart&quot;,
+    title: "BubbleChart",
     component: BubbleChart,
   },
   {
-    title: &quot;ScatterChart&quot;,
+    title: "ScatterChart",
     component: ScatterChart,
   },
   {
-    title: &quot;MultiTypeChart&quot;,
+    title: "MultiTypeChart",
     component: MultiTypeChart,
   },
   {
-    title: &quot;ChartEvents&quot;,
+    title: "ChartEvents",
     component: ChartEvents,
   },
   {
-    title: &quot;ChartRef&quot;,
+    title: "ChartRef",
     component: ChartRef,
   },
   {
-    title: &quot;GradientChart&quot;,
+    title: "GradientChart",
     component: GradientChart,
   },
   {
-    title: &quot;ChartEventsSingleDataset&quot;,
+    title: "ChartEventsSingleDataset",
     component: ChartEventsSingleDataset,
   },
 ];
@@ -325,8 +325,8 @@ const ComponentWrapper: React.FC&lt;ChartProps&gt; = ({ components }) =&gt; {
 <p>The <code>ComponentWrapper</code> component maps over the components array and renders each component wrapped in a <code>ChartWrapper</code> component(explained later).</p>
 <p>It receives a prop object of type <code>ChartProps</code>, destructures the <code>components</code> property from that object, and uses it to render a list of React function components.</p>
 <p>We can refer to the component part from item in <code>components</code> array, i.e. <code>ChartEventsSingleDataset</code></p>
-<pre><code class="language-jsx">import React, { MouseEvent, useRef } from &quot;react&quot;;
-import type { InteractionItem } from &quot;chart.js&quot;;
+<pre><code class="language-jsx">import React, { MouseEvent, useRef } from "react";
+import type { InteractionItem } from "chart.js";
 import {
   Chart as ChartJS,
   LinearScale,
@@ -336,14 +336,14 @@ import {
   LineElement,
   Legend,
   Tooltip,
-} from &quot;chart.js&quot;;
+} from "chart.js";
 import {
   Chart,
   getDatasetAtEvent,
   getElementAtEvent,
   getElementsAtEvent,
-} from &quot;react-chartjs-2&quot;;
-import faker from &quot;faker&quot;;
+} from "react-chartjs-2";
+import faker from "faker";
 
 ChartJS.register(
   LinearScale,
@@ -363,16 +363,16 @@ export const options = {
   },
 };
 
-const labels = [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;];
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
 export const data = {
   labels,
   datasets: [
     {
-      type: &quot;bar&quot; as const,
-      label: &quot;Dataset 1&quot;,
-      borderColor: &quot;rgb(255, 99, 132)&quot;,
-      backgroundColor: &quot;rgb(255, 99, 132)&quot;,
+      type: "bar" as const,
+      label: "Dataset 1",
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgb(255, 99, 132)",
       data: labels.map(() =&gt; faker.datatype.number({ min: -1000, max: 1000 })),
     },
   ],
@@ -420,7 +420,7 @@ export function ChartEventsSingleDataset() {
   return (
     &lt;Chart
       ref={chartRef}
-      type=&quot;bar&quot;
+      type="bar"
       onClick={onClick}
       options={options}
       data={data}
@@ -435,8 +435,8 @@ export function ChartEventsSingleDataset() {
   children: React.ReactNode,
 }&gt; = ({ title, children }) =&gt; {
   return (
-    &lt;div className=&quot;max-h-96 h-96  bg-slate-50 border border-dashed&quot;&gt;
-      &lt;h1 className=&quot;text-3xl text-center font-bold underline&quot;&gt;{title}&lt;/h1&gt;
+    &lt;div className="max-h-96 h-96  bg-slate-50 border border-dashed"&gt;
+      &lt;h1 className="text-3xl text-center font-bold underline"&gt;{title}&lt;/h1&gt;
       {children}
     &lt;/div&gt;
   );
@@ -452,17 +452,17 @@ export function ChartEventsSingleDataset() {
     &lt;div&gt;
       &lt;Head&gt;
         &lt;title&gt;ChartJS + NextJS + TailwindCSS&lt;/title&gt;
-        &lt;meta name=&quot;description&quot; content=&quot;Generated by create next app&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-        &lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;
+        &lt;meta name="description" content="Generated by create next app" /&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+        &lt;link rel="icon" href="/favicon.ico" /&gt;
       &lt;/Head&gt;
       &lt;main className={styles.main}&gt;
         &lt;div className={styles.description}&gt;
-          &lt;h1 className=&quot;text-3xl text-center font-bold underline&quot;&gt;
+          &lt;h1 className="text-3xl text-center font-bold underline"&gt;
             ChartJS + NextJS + TailwindCSS
           &lt;/h1&gt;
-          &lt;div className=&quot;container columns-2&quot;&gt;
-            &lt;div className=&quot;grid grid-cols-2 md:grid-cols-1 gap-0&quot;&gt;
+          &lt;div className="container columns-2"&gt;
+            &lt;div className="grid grid-cols-2 md:grid-cols-1 gap-0"&gt;
               {&lt;ComponentWrapper components={components} /&gt;}
             &lt;/div&gt;
           &lt;/div&gt;
@@ -472,8 +472,8 @@ export function ChartEventsSingleDataset() {
   );
 }
 </code></pre>
-<p>This is a React component called App that is exporting as a default. The component renders a main <code>div</code> element that contains a <code>Head</code> component and a main element with a className of <code>styles.main</code>. Within the main element, there is a div element with a <code>className</code> of <code>styles.description</code> that contains a <code>h1</code> element with a <code>className</code> of <code>&quot;text-3xl text-center font-bold underline&quot;</code> and some text.</p>
-<p>The div element also contains a div element with a <code>className</code> of <code>&quot;container columns-2&quot;</code> that contains an inner div element with a className of <code>&quot;grid grid-cols-2 md:grid-cols-1 gap-0&quot;</code>. This inner div element renders the <code>ComponentWrapper</code> component passing an array of components in the components prop.</p>
+<p>This is a React component called App that is exporting as a default. The component renders a main <code>div</code> element that contains a <code>Head</code> component and a main element with a className of <code>styles.main</code>. Within the main element, there is a div element with a <code>className</code> of <code>styles.description</code> that contains a <code>h1</code> element with a <code>className</code> of <code>"text-3xl text-center font-bold underline"</code> and some text.</p>
+<p>The div element also contains a div element with a <code>className</code> of <code>"container columns-2"</code> that contains an inner div element with a className of <code>"grid grid-cols-2 md:grid-cols-1 gap-0"</code>. This inner div element renders the <code>ComponentWrapper</code> component passing an array of components in the components prop.</p>
 <p>Here is the important part:</p>
 <pre><code class="language-jsx">{
   &lt;ComponentWrapper components={components} /&gt;;
@@ -530,7 +530,7 @@ const ComponentWrapperNew: React.FC&lt;ChartProps&gt; = ({ components }) =&gt; {
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next prefetch" href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../react-query/setup-tanstack-react-query-in-nextjs-project.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -541,7 +541,7 @@ const ComponentWrapperNew: React.FC&lt;ChartProps&gt; = ({ components }) =&gt; {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next prefetch" href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../react-query/setup-tanstack-react-query-in-nextjs-project.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

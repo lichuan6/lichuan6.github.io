@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html" class="active"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">10.</strong> Existing value not exists when searching</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="../../react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html" class="active"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -191,7 +191,7 @@
 
 pub async fn get_all_users(client: &amp;Client) -&gt; Result&lt;Vec&lt;User&gt;&gt; {
     let users = client
-        .query(&quot;SELECT ?fields FROM users&quot;)
+        .query("SELECT ?fields FROM users")
         .fetch_all::&lt;User&gt;()
         .await?;
 
@@ -214,36 +214,36 @@ pub type Result&lt;T, E = Error&gt; = result::Result&lt;T, E&gt;;
 #[non_exhaustive]
 #[allow(missing_docs)]
 pub enum Error {
-    #[error(&quot;invalid params: {0}&quot;)]
+    #[error("invalid params: {0}")]
     InvalidParams(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;network error: {0}&quot;)]
+    #[error("network error: {0}")]
     Network(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;compression error: {0}&quot;)]
+    #[error("compression error: {0}")]
     Compression(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;decompression error: {0}&quot;)]
+    #[error("decompression error: {0}")]
     Decompression(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;no rows returned by a query that expected to return at least one row&quot;)]
+    #[error("no rows returned by a query that expected to return at least one row")]
     RowNotFound,
-    #[error(&quot;sequences must have a known size ahead of time&quot;)]
+    #[error("sequences must have a known size ahead of time")]
     SequenceMustHaveLength,
-    #[error(&quot;`deserialize_any` is not supported&quot;)]
+    #[error("`deserialize_any` is not supported")]
     DeserializeAnyNotSupported,
-    #[error(&quot;not enough data, probably a row type mismatches a database schema&quot;)]
+    #[error("not enough data, probably a row type mismatches a database schema")]
     NotEnoughData,
-    #[error(&quot;string is not valid utf8&quot;)]
+    #[error("string is not valid utf8")]
     InvalidUtf8Encoding(#[from] Utf8Error),
-    #[error(&quot;tag for enum is not valid&quot;)]
+    #[error("tag for enum is not valid")]
     InvalidTagEncoding(usize),
-    #[error(&quot;a custom error message from serde: {0}&quot;)]
+    #[error("a custom error message from serde: {0}")]
     Custom(String),
-    #[error(&quot;bad response: {0}&quot;)]
+    #[error("bad response: {0}")]
     BadResponse(String),
-    #[error(&quot;timeout expired&quot;)]
+    #[error("timeout expired")]
     TimedOut,
 
     // Internally handled errors, not part of public API.
     // XXX: move to another error?
-    #[error(&quot;internal error: too small buffer, need another {0} bytes&quot;)]
+    #[error("internal error: too small buffer, need another {0} bytes")]
     #[doc(hidden)]
     TooSmallBuffer(usize),
 }
@@ -329,11 +329,11 @@ impl ResponseError for AppError {
         // match *self {
         //     AppError::ClickhouseError(ref err) =&gt; match err {
         //         ClickhouseError::Timeout(err) =&gt; HttpResponse::InternalServerError()
-        //             .body(format!(&quot;Clickhouse server error: {}&quot;, err)),
+        //             .body(format!("Clickhouse server error: {}", err)),
         //         ClickhouseError::Network(err) =&gt; {
-        //             HttpResponse::BadRequest().body(format!(&quot;Clickhouse client error: {}&quot;, err))
+        //             HttpResponse::BadRequest().body(format!("Clickhouse client error: {}", err))
         //         }
-        //         _ =&gt; HttpResponse::InternalServerError().body(&quot;Unknown error&quot;),
+        //         _ =&gt; HttpResponse::InternalServerError().body("Unknown error"),
         //     }, // ... handle other error variants
         // }
     }
@@ -345,7 +345,7 @@ impl fmt::Display for AppError {
     fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
         match *self {
             AppError::ClickhouseError(ref err) =&gt; {
-                write!(f, &quot;Clickhouse error: {}&quot;, err)
+                write!(f, "Clickhouse error: {}", err)
             } // ... handle other error variants
         }
     }

@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">10.</strong> Existing value not exists when searching</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -204,97 +204,97 @@ npx tailwindcss init -p
 </code></pre>
 <h1 id="define-all-chartjs-charts"><a class="header" href="#define-all-chartjs-charts">Define all chartjs charts</a></h1>
 <p>We copy all chartjs official example codes and put them in <code>component/chartjsofficial</code> directory. We also define title and component for each example chart. The <code>components</code> array is the chart data we will render later.</p>
-<pre><code class="language-jsx">import { VerticalBarChart } from &quot;@/component/chartjsofficial/verticalbarchart&quot;;
-import { HorizontalBarChart } from &quot;@/component/chartjsofficial/horizontalbarchart&quot;;
-import { StackedBarChart } from &quot;@/component/chartjsofficial/stackedbarchart&quot;;
-import { GroupedBarChart } from &quot;@/component/chartjsofficial/groupedbarchart&quot;;
-import { AreaChart } from &quot;@/component/chartjsofficial/areachart&quot;;
-import { LineChart } from &quot;@/component/chartjsofficial/linechart&quot;;
-import { MultiAxisLineChart } from &quot;@/component/chartjsofficial/multiaxislinechart&quot;;
-import { PieChart } from &quot;@/component/chartjsofficial/piechart&quot;;
-import { DoughnutChart } from &quot;@/component/chartjsofficial/doughnutchart&quot;;
-import { PolarAreaChart } from &quot;@/component/chartjsofficial/polarareachart&quot;;
-import { RadarChart } from &quot;@/component/chartjsofficial/radarchart&quot;;
-import { ScatterChart } from &quot;@/component/chartjsofficial/scatterchart&quot;;
-import { BubbleChart } from &quot;@/component/chartjsofficial/bubblechart&quot;;
-import { MultiTypeChart } from &quot;@/component/chartjsofficial/multitypechart&quot;;
-import { ChartEvents } from &quot;@/component/chartjsofficial/chartevents&quot;;
-import { ChartRef } from &quot;@/component/chartjsofficial/chartref&quot;;
-import { GradientChart } from &quot;@/component/chartjsofficial/gradientchart&quot;;
-import { ChartEventsSingleDataset } from &quot;@/component/chartjsofficial/charteventssingledataset&quot;;
-import { ChartEventsSingleDatasetOutsideDatasource } from &quot;@/component/chartjsofficial/charteventssingledatasetoutsidedatasource&quot;;
+<pre><code class="language-jsx">import { VerticalBarChart } from "@/component/chartjsofficial/verticalbarchart";
+import { HorizontalBarChart } from "@/component/chartjsofficial/horizontalbarchart";
+import { StackedBarChart } from "@/component/chartjsofficial/stackedbarchart";
+import { GroupedBarChart } from "@/component/chartjsofficial/groupedbarchart";
+import { AreaChart } from "@/component/chartjsofficial/areachart";
+import { LineChart } from "@/component/chartjsofficial/linechart";
+import { MultiAxisLineChart } from "@/component/chartjsofficial/multiaxislinechart";
+import { PieChart } from "@/component/chartjsofficial/piechart";
+import { DoughnutChart } from "@/component/chartjsofficial/doughnutchart";
+import { PolarAreaChart } from "@/component/chartjsofficial/polarareachart";
+import { RadarChart } from "@/component/chartjsofficial/radarchart";
+import { ScatterChart } from "@/component/chartjsofficial/scatterchart";
+import { BubbleChart } from "@/component/chartjsofficial/bubblechart";
+import { MultiTypeChart } from "@/component/chartjsofficial/multitypechart";
+import { ChartEvents } from "@/component/chartjsofficial/chartevents";
+import { ChartRef } from "@/component/chartjsofficial/chartref";
+import { GradientChart } from "@/component/chartjsofficial/gradientchart";
+import { ChartEventsSingleDataset } from "@/component/chartjsofficial/charteventssingledataset";
+import { ChartEventsSingleDatasetOutsideDatasource } from "@/component/chartjsofficial/charteventssingledatasetoutsidedatasource";
 
 const components = [
   {
-    title: &quot;VerticalBarChart&quot;,
+    title: "VerticalBarChart",
     component: VerticalBarChart,
   },
   {
-    title: &quot;HorizontalBarChart&quot;,
+    title: "HorizontalBarChart",
     component: HorizontalBarChart,
   },
   {
-    title: &quot;StackedBarChart&quot;,
+    title: "StackedBarChart",
     component: StackedBarChart,
   },
   {
-    title: &quot;GroupedBarChart&quot;,
+    title: "GroupedBarChart",
     component: GroupedBarChart,
   },
   {
-    title: &quot;AreaChart&quot;,
+    title: "AreaChart",
     component: AreaChart,
   },
   {
-    title: &quot;LineChart&quot;,
+    title: "LineChart",
     component: LineChart,
   },
   {
-    title: &quot;MultiAxisLineChart&quot;,
+    title: "MultiAxisLineChart",
     component: MultiAxisLineChart,
   },
   {
-    title: &quot;DoughnutChart&quot;,
+    title: "DoughnutChart",
     component: DoughnutChart,
   },
   {
-    title: &quot;PolarAreaChart&quot;,
+    title: "PolarAreaChart",
     component: PolarAreaChart,
   },
   {
-    title: &quot;RadarChart&quot;,
+    title: "RadarChart",
     component: RadarChart,
   },
   {
-    title: &quot;ScatterChart&quot;,
+    title: "ScatterChart",
     component: ScatterChart,
   },
   {
-    title: &quot;BubbleChart&quot;,
+    title: "BubbleChart",
     component: BubbleChart,
   },
   {
-    title: &quot;ScatterChart&quot;,
+    title: "ScatterChart",
     component: ScatterChart,
   },
   {
-    title: &quot;MultiTypeChart&quot;,
+    title: "MultiTypeChart",
     component: MultiTypeChart,
   },
   {
-    title: &quot;ChartEvents&quot;,
+    title: "ChartEvents",
     component: ChartEvents,
   },
   {
-    title: &quot;ChartRef&quot;,
+    title: "ChartRef",
     component: ChartRef,
   },
   {
-    title: &quot;GradientChart&quot;,
+    title: "GradientChart",
     component: GradientChart,
   },
   {
-    title: &quot;ChartEventsSingleDataset&quot;,
+    title: "ChartEventsSingleDataset",
     component: ChartEventsSingleDataset,
   },
 ];
@@ -326,8 +326,8 @@ const ComponentWrapper: React.FC&lt;ChartProps&gt; = ({ components }) =&gt; {
 <p>The <code>ComponentWrapper</code> component maps over the components array and renders each component wrapped in a <code>ChartWrapper</code> component(explained later).</p>
 <p>It receives a prop object of type <code>ChartProps</code>, destructures the <code>components</code> property from that object, and uses it to render a list of React function components.</p>
 <p>We can refer to the component part from item in <code>components</code> array, i.e. <code>ChartEventsSingleDataset</code></p>
-<pre><code class="language-jsx">import React, { MouseEvent, useRef } from &quot;react&quot;;
-import type { InteractionItem } from &quot;chart.js&quot;;
+<pre><code class="language-jsx">import React, { MouseEvent, useRef } from "react";
+import type { InteractionItem } from "chart.js";
 import {
   Chart as ChartJS,
   LinearScale,
@@ -337,14 +337,14 @@ import {
   LineElement,
   Legend,
   Tooltip,
-} from &quot;chart.js&quot;;
+} from "chart.js";
 import {
   Chart,
   getDatasetAtEvent,
   getElementAtEvent,
   getElementsAtEvent,
-} from &quot;react-chartjs-2&quot;;
-import faker from &quot;faker&quot;;
+} from "react-chartjs-2";
+import faker from "faker";
 
 ChartJS.register(
   LinearScale,
@@ -364,16 +364,16 @@ export const options = {
   },
 };
 
-const labels = [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;];
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
 export const data = {
   labels,
   datasets: [
     {
-      type: &quot;bar&quot; as const,
-      label: &quot;Dataset 1&quot;,
-      borderColor: &quot;rgb(255, 99, 132)&quot;,
-      backgroundColor: &quot;rgb(255, 99, 132)&quot;,
+      type: "bar" as const,
+      label: "Dataset 1",
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgb(255, 99, 132)",
       data: labels.map(() =&gt; faker.datatype.number({ min: -1000, max: 1000 })),
     },
   ],
@@ -421,7 +421,7 @@ export function ChartEventsSingleDataset() {
   return (
     &lt;Chart
       ref={chartRef}
-      type=&quot;bar&quot;
+      type="bar"
       onClick={onClick}
       options={options}
       data={data}
@@ -436,8 +436,8 @@ export function ChartEventsSingleDataset() {
   children: React.ReactNode,
 }&gt; = ({ title, children }) =&gt; {
   return (
-    &lt;div className=&quot;max-h-96 h-96  bg-slate-50 border border-dashed&quot;&gt;
-      &lt;h1 className=&quot;text-3xl text-center font-bold underline&quot;&gt;{title}&lt;/h1&gt;
+    &lt;div className="max-h-96 h-96  bg-slate-50 border border-dashed"&gt;
+      &lt;h1 className="text-3xl text-center font-bold underline"&gt;{title}&lt;/h1&gt;
       {children}
     &lt;/div&gt;
   );
@@ -453,17 +453,17 @@ export function ChartEventsSingleDataset() {
     &lt;div&gt;
       &lt;Head&gt;
         &lt;title&gt;ChartJS + NextJS + TailwindCSS&lt;/title&gt;
-        &lt;meta name=&quot;description&quot; content=&quot;Generated by create next app&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-        &lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;
+        &lt;meta name="description" content="Generated by create next app" /&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+        &lt;link rel="icon" href="/favicon.ico" /&gt;
       &lt;/Head&gt;
       &lt;main className={styles.main}&gt;
         &lt;div className={styles.description}&gt;
-          &lt;h1 className=&quot;text-3xl text-center font-bold underline&quot;&gt;
+          &lt;h1 className="text-3xl text-center font-bold underline"&gt;
             ChartJS + NextJS + TailwindCSS
           &lt;/h1&gt;
-          &lt;div className=&quot;container columns-2&quot;&gt;
-            &lt;div className=&quot;grid grid-cols-2 md:grid-cols-1 gap-0&quot;&gt;
+          &lt;div className="container columns-2"&gt;
+            &lt;div className="grid grid-cols-2 md:grid-cols-1 gap-0"&gt;
               {&lt;ComponentWrapper components={components} /&gt;}
             &lt;/div&gt;
           &lt;/div&gt;
@@ -473,8 +473,8 @@ export function ChartEventsSingleDataset() {
   );
 }
 </code></pre>
-<p>This is a React component called App that is exporting as a default. The component renders a main <code>div</code> element that contains a <code>Head</code> component and a main element with a className of <code>styles.main</code>. Within the main element, there is a div element with a <code>className</code> of <code>styles.description</code> that contains a <code>h1</code> element with a <code>className</code> of <code>&quot;text-3xl text-center font-bold underline&quot;</code> and some text.</p>
-<p>The div element also contains a div element with a <code>className</code> of <code>&quot;container columns-2&quot;</code> that contains an inner div element with a className of <code>&quot;grid grid-cols-2 md:grid-cols-1 gap-0&quot;</code>. This inner div element renders the <code>ComponentWrapper</code> component passing an array of components in the components prop.</p>
+<p>This is a React component called App that is exporting as a default. The component renders a main <code>div</code> element that contains a <code>Head</code> component and a main element with a className of <code>styles.main</code>. Within the main element, there is a div element with a <code>className</code> of <code>styles.description</code> that contains a <code>h1</code> element with a <code>className</code> of <code>"text-3xl text-center font-bold underline"</code> and some text.</p>
+<p>The div element also contains a div element with a <code>className</code> of <code>"container columns-2"</code> that contains an inner div element with a className of <code>"grid grid-cols-2 md:grid-cols-1 gap-0"</code>. This inner div element renders the <code>ComponentWrapper</code> component passing an array of components in the components prop.</p>
 <p>Here is the important part:</p>
 <pre><code class="language-jsx">{
   &lt;ComponentWrapper components={components} /&gt;;
@@ -525,6 +525,261 @@ const ComponentWrapperNew: React.FC&lt;ChartProps&gt; = ({ components }) =&gt; {
 <p>To summarize, the primary difference between these two implementation methods is that the first one is verbose, which makes it difficult to read and maintain, while the second one is more concise and easier to read and maintain. The second function also uses destructuring, which is a useful syntax for improving readability by eliminating repetition. By using a more concise and readable implementation, you can streamline your code and make it more efficient.</p>
 <h1 id="summary"><a class="header" href="#summary">Summary</a></h1>
 <p>In this post, we compare and contrast two React component functions that are used to render a list of chart components with titles and properties. While both functions ultimately produce the same result, their implementation approaches are different.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setup-tanstack-react-query-in-nextjs-project"><a class="header" href="#setup-tanstack-react-query-in-nextjs-project">Setup Tanstack React Query in NextJS Project</a></h1>
+<!-- toc -->
+<ul>
+<li><a href="react-query/setup-tanstack-react-query-in-nextjs-project.html#introduction">Introduction</a></li>
+<li><a href="react-query/setup-tanstack-react-query-in-nextjs-project.html#install">Install</a></li>
+<li><a href="react-query/setup-tanstack-react-query-in-nextjs-project.html#use-tanstackreact-query-in-nextjs-project">Use tanstack/react-query in nextjs project</a></li>
+<li><a href="react-query/setup-tanstack-react-query-in-nextjs-project.html#write-your-component">Write your component</a></li>
+<li><a href="react-query/setup-tanstack-react-query-in-nextjs-project.html#jsontable---a-component-to-render-data-as-a-table">JSONTable - A component to render data as a table</a></li>
+</ul>
+<!-- tocstop -->
+<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>In the modern web development landscape, efficiently managing and handling data is a crucial aspect that can dramatically impact the user experience. React Query is a powerful data synchronization and state management library that aims to simplify fetching, caching, background updates and server state management in your React applications.</p>
+<p>Next.js is a popular React framework that enables features such as Server-Side Rendering and Static Site Generation out of the box. This makes it a great choice for building performant, SEO-friendly web applications. However, when it comes to data fetching and managing server state, Next.js leaves the choice up to the developer.</p>
+<p>Therefore, using React Query with Next.js can be a powerful combination for building robust, data-driven applications with improved user experience. This blog post will guide you step by step to integrating React Query in a Next.js project.</p>
+<p>We will cover:</p>
+<ul>
+<li>Setting up a new Next.js project</li>
+<li>Installing and setting up React Query</li>
+<li>Fetching data using React Query</li>
+<li>Displaying the fetched data using a table component</li>
+</ul>
+<p>No matter the size and scale of your application, using React Query with Next.js can improve the efficiency of your data operations and the overall quality of your product. Let's dive in!</p>
+<h1 id="install"><a class="header" href="#install">Install</a></h1>
+<p>To install tanstack/react-query, you can use yarn or npm:</p>
+<pre><code class="language-bash">yarn add @tanstack/react-query
+yarn add -D @tanstack/eslint-plugin-query
+</code></pre>
+<p>This will install tanstack/react-query (<code>"@tanstack/react-query": "^5.21.7"</code>) as a dependency in your project. See package.json for more details.</p>
+<pre><code class="language-json">{
+  "name": "mui-5-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/base": "^5.0.0-beta.16",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.14.9",
+    "@mui/styles": "^5.11.13",
+    "@mui/system": "^5.14.9",
+    "@mui/utils": "^5.14.9",
+    "@mui/x-data-grid": "^6.14.0",
+    "@mui/x-data-grid-generator": "^6.14.0",
+    "@mui/x-data-grid-pro": "^6.14.0",
+    "@tanstack/react-query": "^5.21.7",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.31",
+    "@types/react-dom": "18.0.11",
+    "@visx/group": "^3.3.0",
+    "@visx/mock-data": "^3.3.0",
+    "@visx/responsive": "^3.3.0",
+    "@visx/scale": "^3.5.0",
+    "@visx/shape": "^3.5.0",
+    "@visx/text": "^3.3.0",
+    "@visx/wordcloud": "^3.3.0",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "expression-eval": "^5.0.1",
+    "moment-timezone": "^0.5.44",
+    "next": "13.2.4",
+    "qs": "^6.11.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
+    "recharts": "^2.5.0",
+    "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.20.1"
+  }
+}
+</code></pre>
+<h1 id="use-tanstackreact-query-in-nextjs-project"><a class="header" href="#use-tanstackreact-query-in-nextjs-project">Use tanstack/react-query in nextjs project</a></h1>
+<p>After installation, you can use it in nextjs project by adding the following code in <code>_app.tsx</code>:</p>
+<pre><code class="language-typescript">import React from "react";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+
+// import { QueryClient, QueryClientProvider } from "react-query";
+
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+
+// NOTE: Default code
+// export default function App({ Component, pageProps }: AppProps) {
+//   return &lt;Component {...pageProps} /&gt;
+// }
+
+// NOTE: Using react-query v3, for v4+, use tanstack/react-query
+// export default function App({ Component, pageProps }: AppProps) {
+//   // Create a QueryClient instance
+//   const queryClient = new QueryClient();
+
+//   return (
+//     // Use QueryClientProvider to wrapper your application，and pass the queryClient to the component
+//     &lt;QueryClientProvider client={queryClient}&gt;
+//       &lt;Component {...pageProps} /&gt;
+//     &lt;/QueryClientProvider&gt;
+//   );
+// }
+
+export default function App({ Component, pageProps }: AppProps) {
+  // Create a QueryClient instance
+  const [queryClient] = React.useState(() =&gt; new QueryClient());
+
+  return (
+    &lt;QueryClientProvider client={queryClient}&gt;
+      {/* &lt;Hydrate state={pageProps.dehydratedState}&gt; */}
+      &lt;Component {...pageProps} /&gt;
+      {/* &lt;/Hydrate&gt; */}
+    &lt;/QueryClientProvider&gt;
+  );
+}
+</code></pre>
+<h1 id="write-your-component"><a class="header" href="#write-your-component">Write your component</a></h1>
+<p>Now, we can write our component to use the <code>useQuery</code> hook.</p>
+<p>The <code>useQuery</code> hook is a higher-order component that returns a <code>QueryClient</code> instance.</p>
+<pre><code class="language-typescript">import React from "react";
+// import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
+
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import JSONTable from "../../components/table/JSONTable";
+
+type Repo = {
+  name: string;
+  stargazers_count: number;
+};
+
+// Function to fetch data
+const fetchData = async () =&gt; {
+  const response = await fetch("https://api.github.com/repos/vercel/next.js");
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+};
+
+function DataFetchUsingTanstackReactQuery() {
+  // Using the useQuery hook to fetch data
+  // const { data, error, isLoading } = useQuery("fetchData", fetchData);
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["fetchData"],
+    queryFn: fetchData,
+  });
+
+  if (isLoading) {
+    return &lt;p&gt;Loading...&lt;/p&gt;;
+  }
+
+  if (error) {
+    return &lt;p&gt;Error: {error.message}&lt;/p&gt;;
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Data from API:&lt;/h1&gt;
+      &lt;JSONTable data={data} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default DataFetchUsingTanstackReactQuery;
+</code></pre>
+<p>Starting with version 5 of @tanstack/react-query, there was a breaking change in how queries and mutations are called. Before version 5, it was possible to use the "array" syntax or the "object" syntax when calling query functions. After version 5, only the "object" form is allowed.</p>
+<pre><code class="language-typescript">// Older version:
+// const { data, error, isLoading } = useQuery("fetchData", fetchData);
+// New version:
+const { data, error, isLoading } = useQuery({
+  queryKey: ["fetchData"],
+  queryFn: fetchData,
+});
+</code></pre>
+<p>Below is the difference between older and newer versions of @tanstack/react-query.</p>
+<pre><code class="language-diff">- useQuery(key, fn, options)
++ useQuery({ queryKey, queryFn, ...options })
+
+- useInfiniteQuery(key, fn, options)
++ useInfiniteQuery({ queryKey, queryFn, ...options })
+
+- useMutation(fn, options)
++ useMutation({ mutationFn, ...options })
+
+- useIsFetching(key, filters)
++ useIsFetching({ queryKey, ...filters })
+
+- useIsMutating(key, filters)
++ useIsMutating({ mutationKey, ...filters })
+</code></pre>
+<h1 id="jsontable---a-component-to-render-data-as-a-table"><a class="header" href="#jsontable---a-component-to-render-data-as-a-table">JSONTable - A component to render data as a table</a></h1>
+<p>As we use MUI to render the table, we write a <code>JSONTable</code> component , which takes a <code>data</code> prop and renders the data as a table.</p>
+<p>The code is pretty simple, but we need to import the <code>Table</code> and <code>TableHead</code> components from <code>@mui/material</code>.</p>
+<pre><code class="language-typescript">import React from "react";
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableContainer,
+  Paper,
+} from "@mui/material";
+
+const JSONTable = ({ data }) =&gt; {
+  const renderTableRows = () =&gt; {
+    return Object.entries(data).map(([key, value]) =&gt; (
+      &lt;TableRow key={key}&gt;
+        &lt;TableCell sx={{ wordBreak: "break-word", maxWidth: 20 }}&gt;
+          {key}
+        &lt;/TableCell&gt;
+        &lt;TableCell sx={{ wordBreak: "break-word", maxWidth: 800 }}&gt;
+          {/* // NOTE: when value is boolean, we should call toString to change it
+          to string instead of JSON.stringify */}
+          {typeof value === "object"
+            ? JSON.stringify(value)
+            : typeof value === "boolean"
+            ? value.toString()
+            : value}
+          {/* {typeof value === "object" ? JSON.stringify(value) : value} */}
+          {/* {JSON.stringify(value)} */}
+          {/* {typeof value} */}
+        &lt;/TableCell&gt;
+      &lt;/TableRow&gt;
+    ));
+  };
+
+  return (
+    &lt;TableContainer
+      component={Paper}
+      style={{ margin: "20px", marginRight: "40px" }}
+    &gt;
+      &lt;Table sx={{ minWidth: 650 }} aria-label="simple table"&gt;
+        &lt;TableHead&gt;
+          &lt;TableRow&gt;
+            &lt;TableCell&gt;Property&lt;/TableCell&gt;
+            &lt;TableCell&gt;Value&lt;/TableCell&gt;
+          &lt;/TableRow&gt;
+        &lt;/TableHead&gt;
+        &lt;TableBody&gt;{renderTableRows()}&lt;/TableBody&gt;
+      &lt;/Table&gt;
+    &lt;/TableContainer&gt;
+  );
+};
+
+export default JSONTable;
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="register-gitlab-runner-on-amazon-linux-2"><a class="header" href="#register-gitlab-runner-on-amazon-linux-2">Register gitlab runner on Amazon Linux 2</a></h1>
 <h1 id="table-of-contents-1"><a class="header" href="#table-of-contents-1">Table of Contents</a></h1>
 <!--ts-->
@@ -545,7 +800,7 @@ const ComponentWrapperNew: React.FC&lt;ChartProps&gt; = ({ components }) =&gt; {
 <p>Next, we'll install gitlab runner on Amazon Linux 2. Run the following bash script:</p>
 <pre><code class="language-bash"># install on amazon linux 2
 # refs: https://github.com/beda-software/FAQ/blob/master/aws-ec2-gitlab-runner.md
-curl -L &quot;https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh&quot; | sudo bash
+curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh" | sudo bash
 sudo -E yum install gitlab-runner
 sudo amazon-linux-extras install docker
 sudo service docker start
@@ -558,11 +813,11 @@ sudo yum install -y git
 <h1 id="register-gitlab-runner"><a class="header" href="#register-gitlab-runner">Register gitlab runner</a></h1>
 <p>You can register gitlab runner by using <code>gitlab-ci-multi-runner</code> command:</p>
 <pre><code class="language-bash"># register runner
-# sudo gitlab-ci-multi-runner register -n --url GITLAB_URL --registration-token &quot;TOKEN&quot;   --executor docker   --description &quot;Name of docker runner&quot;   --docker-image &quot;docker:latest&quot; --docker-privileged
+# sudo gitlab-ci-multi-runner register -n --url GITLAB_URL --registration-token "TOKEN"   --executor docker   --description "Name of docker runner"   --docker-image "docker:latest" --docker-privileged
 </code></pre>
 <p>Replace <code>GITLAB_URL</code> and <code>TOKEN</code> with your self-hosted gitlab url or token. You can go to <code>https://gitlab.mycompany.com/admin/runners</code> and click <code>Register an instance runner</code> button, and you will see the <code>TOKEN</code> in the popup.</p>
 <pre><code class="language-bash"># register runner in gitlab
-sudo gitlab-ci-multi-runner register -n --url https://gitlab.mycompany.com/ --registration-token &quot;A____TOKEN_____A&quot;   --executor docker   --description &quot;Name of docker runner&quot;   --docker-image &quot;docker:latest&quot; --docker-privileged
+sudo gitlab-ci-multi-runner register -n --url https://gitlab.mycompany.com/ --registration-token "A____TOKEN_____A"   --executor docker   --description "Name of docker runner"   --docker-image "docker:latest" --docker-privileged
 </code></pre>
 <p>Output:</p>
 <pre><code>Runtime platform                                    arch=amd64 os=linux pid=8095 revision=865283c5 version=16.1.0
@@ -572,7 +827,7 @@ WARNING: Support for registration tokens and runner parameters in the 'register'
 Registering runner... succeeded                     runner=paaaaaaa
 Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
 
-Configuration (with the authentication token) was saved in &quot;/etc/gitlab-runner/config.toml&quot;
+Configuration (with the authentication token) was saved in "/etc/gitlab-runner/config.toml"
 </code></pre>
 <p>You will see a runner with name <code>paaaaaaa</code> is registered successfully.</p>
 <p>And you can also config the runner in <code>/etc/gitlab-runner/config.toml</code>.</p>
@@ -591,24 +846,24 @@ shutdown_timeout = 0
   session_timeout = 1800
 
 [[runners]]
-  name = &quot;Name of docker runner&quot;
-  url = &quot;https://gitlab.mycompany.com/&quot;
-  clone_url = &quot;https://gitlab.mycompany.com/&quot;
+  name = "Name of docker runner"
+  url = "https://gitlab.mycompany.com/"
+  clone_url = "https://gitlab.mycompany.com/"
   id = 1
-  token = &quot;s_____________n&quot;
+  token = "s_____________n"
   token_obtained_at = 2023-07-22T01:20:41Z
   token_expires_at = 0001-01-01T00:00:00Z
-  executor = &quot;docker&quot;
+  executor = "docker"
   [runners.cache]
     MaxUploadedArchiveSize = 0
   [runners.docker]
     tls_verify = false
-    image = &quot;docker:latest&quot;
+    image = "docker:latest"
     privileged = true
     disable_entrypoint_overwrite = false
     oom_kill_disable = false
     disable_cache = false
-    volumes = [&quot;/cache&quot;]
+    volumes = ["/cache"]
     shm_size = 0
 </code></pre>
 <h1 id="write-gitlab-ciyml-for-go-project"><a class="header" href="#write-gitlab-ciyml-for-go-project">Write .gitlab-ci.yml for go project</a></h1>
@@ -647,7 +902,7 @@ compile:
 
 deploy:
   stage: deploy
-  script: echo &quot;Define your deployment script!&quot;
+  script: echo "Define your deployment script!"
   environment: production
 </code></pre>
 <h1 id="test-the-runner"><a class="header" href="#test-the-runner">Test the runner</a></h1>
@@ -672,7 +927,7 @@ deploy:
 
 pub async fn get_all_users(client: &amp;Client) -&gt; Result&lt;Vec&lt;User&gt;&gt; {
     let users = client
-        .query(&quot;SELECT ?fields FROM users&quot;)
+        .query("SELECT ?fields FROM users")
         .fetch_all::&lt;User&gt;()
         .await?;
 
@@ -695,36 +950,36 @@ pub type Result&lt;T, E = Error&gt; = result::Result&lt;T, E&gt;;
 #[non_exhaustive]
 #[allow(missing_docs)]
 pub enum Error {
-    #[error(&quot;invalid params: {0}&quot;)]
+    #[error("invalid params: {0}")]
     InvalidParams(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;network error: {0}&quot;)]
+    #[error("network error: {0}")]
     Network(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;compression error: {0}&quot;)]
+    #[error("compression error: {0}")]
     Compression(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;decompression error: {0}&quot;)]
+    #[error("decompression error: {0}")]
     Decompression(#[source] Box&lt;dyn StdError + Send + Sync&gt;),
-    #[error(&quot;no rows returned by a query that expected to return at least one row&quot;)]
+    #[error("no rows returned by a query that expected to return at least one row")]
     RowNotFound,
-    #[error(&quot;sequences must have a known size ahead of time&quot;)]
+    #[error("sequences must have a known size ahead of time")]
     SequenceMustHaveLength,
-    #[error(&quot;`deserialize_any` is not supported&quot;)]
+    #[error("`deserialize_any` is not supported")]
     DeserializeAnyNotSupported,
-    #[error(&quot;not enough data, probably a row type mismatches a database schema&quot;)]
+    #[error("not enough data, probably a row type mismatches a database schema")]
     NotEnoughData,
-    #[error(&quot;string is not valid utf8&quot;)]
+    #[error("string is not valid utf8")]
     InvalidUtf8Encoding(#[from] Utf8Error),
-    #[error(&quot;tag for enum is not valid&quot;)]
+    #[error("tag for enum is not valid")]
     InvalidTagEncoding(usize),
-    #[error(&quot;a custom error message from serde: {0}&quot;)]
+    #[error("a custom error message from serde: {0}")]
     Custom(String),
-    #[error(&quot;bad response: {0}&quot;)]
+    #[error("bad response: {0}")]
     BadResponse(String),
-    #[error(&quot;timeout expired&quot;)]
+    #[error("timeout expired")]
     TimedOut,
 
     // Internally handled errors, not part of public API.
     // XXX: move to another error?
-    #[error(&quot;internal error: too small buffer, need another {0} bytes&quot;)]
+    #[error("internal error: too small buffer, need another {0} bytes")]
     #[doc(hidden)]
     TooSmallBuffer(usize),
 }
@@ -810,11 +1065,11 @@ impl ResponseError for AppError {
         // match *self {
         //     AppError::ClickhouseError(ref err) =&gt; match err {
         //         ClickhouseError::Timeout(err) =&gt; HttpResponse::InternalServerError()
-        //             .body(format!(&quot;Clickhouse server error: {}&quot;, err)),
+        //             .body(format!("Clickhouse server error: {}", err)),
         //         ClickhouseError::Network(err) =&gt; {
-        //             HttpResponse::BadRequest().body(format!(&quot;Clickhouse client error: {}&quot;, err))
+        //             HttpResponse::BadRequest().body(format!("Clickhouse client error: {}", err))
         //         }
-        //         _ =&gt; HttpResponse::InternalServerError().body(&quot;Unknown error&quot;),
+        //         _ =&gt; HttpResponse::InternalServerError().body("Unknown error"),
         //     }, // ... handle other error variants
         // }
     }
@@ -826,7 +1081,7 @@ impl fmt::Display for AppError {
     fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
         match *self {
             AppError::ClickhouseError(ref err) =&gt; {
-                write!(f, &quot;Clickhouse error: {}&quot;, err)
+                write!(f, "Clickhouse error: {}", err)
             } // ... handle other error variants
         }
     }
@@ -893,7 +1148,7 @@ CREATE TABLE
   );
 </code></pre>
 <p>In the provided example, the <code>users</code> table includes a <code>created_at</code> column of type <code>TIMESTAMPTZ</code>.</p>
-<p>In PostgreSQL, the <code>TIMESTAMPTZ</code> data type stands for &quot;timestamp with time zone.&quot;</p>
+<p>In PostgreSQL, the <code>TIMESTAMPTZ</code> data type stands for "timestamp with time zone."</p>
 <h1 id="database-management-using-sqlx"><a class="header" href="#database-management-using-sqlx">Database management using sqlx</a></h1>
 <p>We can also use <code>sqlx</code> to generate migration and add the sql above to the migration script.</p>
 <p>The following example will use <code>sqlx</code>, which is <a href="https://github.com/launchbadge/sqlx">SQLx</a>'s associated command-line utility for managing databases, migrations, to create database and generate the migration.</p>
@@ -926,8 +1181,8 @@ pub struct User {
 }
 
 #[derive(Clone, PartialEq, PartialOrd, Serialize, sqlx::Type, Debug)]
-#[sqlx(type_name = &quot;gender&quot;)]
-#[sqlx(rename_all = &quot;lowercase&quot;)]
+#[sqlx(type_name = "gender")]
+#[sqlx(rename_all = "lowercase")]
 pub enum Gender {
     Male,
     Female,
@@ -938,15 +1193,15 @@ impl User {
     pub async fn all(connection: &amp;PgPool) -&gt; Result&lt;Vec&lt;User&gt;, sqlx::Error&gt; {
         let users = sqlx::query_as!(
             User,
-            r#&quot;
+            r#"
             SELECT
                 id,
                 username,
-                gender as &quot;gender: _&quot;,
+                gender as "gender: _",
                 disabled,
                 created_at
             FROM users
-            &quot;#
+            "#
         )
         .fetch_all(connection)
         .await?;
@@ -958,14 +1213,14 @@ impl User {
 <p>The code snippet above uses the <code>sqlx</code> crate to interact with a PostgreSQL database and retrieve user data.</p>
 <ul>
 <li>The <code>User</code> struct represents a user entity and is serialized using the serde crate. It contains fields such as <code>id</code>, <code>username</code>, <code>disabled</code>, <code>gender</code>, and <code>created_at</code>, representing the corresponding columns in the database table.</li>
-<li>The <code>Gender</code> enum represents the possible genders a user can have. It is derived from Clone, PartialEq, PartialOrd, and Serialize. The <code>sqlx::Type</code> trait is implemented to specify that this <code>enum</code> should be treated as a PostgreSQL custom type named &quot;gender&quot;. The <code>sqlx(rename_all)</code> attribute is used to specify that the enum variants should be serialized in lowercase. You can refer to <a href="https://docs.rs/sqlx/latest/sqlx/trait.FromRow.html#rename_all">rename_all</a> for more details.
+<li>The <code>Gender</code> enum represents the possible genders a user can have. It is derived from Clone, PartialEq, PartialOrd, and Serialize. The <code>sqlx::Type</code> trait is implemented to specify that this <code>enum</code> should be treated as a PostgreSQL custom type named "gender". The <code>sqlx(rename_all)</code> attribute is used to specify that the enum variants should be serialized in lowercase. You can refer to <a href="https://docs.rs/sqlx/latest/sqlx/trait.FromRow.html#rename_all">rename_all</a> for more details.
 If you don't specify <code>sqlx(rename_all)</code>, an error will occur:</li>
 </ul>
-<pre><code>thread 'actix-rt|system:0|arbiter:0' panicked at 'called `Result::unwrap()` on an `Err` value: ColumnDecode { index: &quot;2&quot;, source: &quot;invalid value \&quot;male\&quot; for enum Gender&quot; }', enum-example/src/bin/enum.rs:33:45
+<pre><code>thread 'actix-rt|system:0|arbiter:0' panicked at 'called `Result::unwrap()` on an `Err` value: ColumnDecode { index: "2", source: "invalid value \"male\" for enum Gender" }', enum-example/src/bin/enum.rs:33:45
 </code></pre>
 <ul>
 <li>The <code>User</code> struct also contains an <code>all</code> function that retrieves all users from the database. It takes a reference to a <code>PgPool</code> connection pool as a parameter and returns a <code>Result</code> with a vector of <code>User</code> instances or an <code>sqlx::Error</code> if an error occurs.</li>
-<li>Inside the <code>all</code> function, a SQL query is defined using the <code>sqlx::query_as!</code> macro. It selects the necessary columns from the <code>users</code> table, including mapping the <code>gender</code> column to the <code>Gender</code> enum using the as <code>&quot;gender: _&quot;</code> syntax.</li>
+<li>Inside the <code>all</code> function, a SQL query is defined using the <code>sqlx::query_as!</code> macro. It selects the necessary columns from the <code>users</code> table, including mapping the <code>gender</code> column to the <code>Gender</code> enum using the as <code>"gender: _"</code> syntax.</li>
 <li>Finally, the <code>fetch_all</code> method is called on the query to execute it and retrieve all rows as a vector of User instances. The result is then returned as a Result.</li>
 </ul>
 <h1 id="write-actix-handler"><a class="header" href="#write-actix-handler">Write actix handler</a></h1>
@@ -997,22 +1252,22 @@ struct AppState {
 <pre><pre class="playground"><code class="language-rust">use sqlx::postgres::{PgPool, PgPoolOptions};
 
 async fn main() -&gt; std::io::Result&lt;()&gt; {
-    env::set_var(&quot;RUST_LOG&quot;, &quot;info&quot;);
+    env::set_var("RUST_LOG", "info");
     env_logger::init();
 
-    let db_url = &quot;postgres://localhost/test&quot;;
+    let db_url = "postgres://localhost/test";
     let pool = connect(db_url).await.unwrap();
     HttpServer::new(move || {
         App::new()
             // .app_data(pool.clone())
             .app_data(Data::new(AppState {
-                app_name: &quot;enum&quot;.into(),
+                app_name: "enum".into(),
                 pool: pool.clone(),
             }))
-            .service(web::scope(&quot;/api/v1&quot;).configure(config))
-            .route(&quot;/health&quot;, web::get().to(health))
+            .service(web::scope("/api/v1").configure(config))
+            .route("/health", web::get().to(health))
     })
-    .bind((&quot;0.0.0.0&quot;, 8080))?
+    .bind(("0.0.0.0", 8080))?
     .run()
     .await
 }
@@ -1027,8 +1282,8 @@ pub async fn connect(db_url: &amp;str) -&gt; sqlx::Result&lt;PgPool&gt; {
     // Create a connection pool
     let pool = PgPoolOptions::new()
         .max_connections(5)
-        // .connect(&quot;postgres://localhost/test&quot;)
-        // .connect(&amp;env::var(&quot;DATABASE_URL&quot;)?)
+        // .connect("postgres://localhost/test")
+        // .connect(&amp;env::var("DATABASE_URL")?)
         .connect(db_url)
         .await?;
     Ok(pool)
@@ -1042,14 +1297,14 @@ pub async fn connect(db_url: &amp;str) -&gt; sqlx::Result&lt;PgPool&gt; {
     App::new()
         // .app_data(pool.clone())
         .app_data(Data::new(AppState {
-            app_name: &quot;enum&quot;.into(),
+            app_name: "enum".into(),
             pool: pool.clone(),
         }))
         // config routers
-        .service(web::scope(&quot;/api/v1&quot;).configure(config))
-        .route(&quot;/health&quot;, web::get().to(health))
+        .service(web::scope("/api/v1").configure(config))
+        .route("/health", web::get().to(health))
 })
-.bind((&quot;0.0.0.0&quot;, 8080))?
+.bind(("0.0.0.0", 8080))?
 .run()
 .await
 <span class="boring">}</span></code></pre></pre>
@@ -1073,13 +1328,13 @@ pub async fn connect(db_url: &amp;str) -&gt; sqlx::Result&lt;PgPool&gt; {
 pub fn config(cfg: &amp;mut ServiceConfig) {
     cfg
         // users
-        .service(scope(&quot;/users&quot;).service(
-            r(&quot;&quot;).route(get().to(all_users)), // .route(post().to(delete_user)),
+        .service(scope("/users").service(
+            r("").route(get().to(all_users)), // .route(post().to(delete_user)),
         ));
 }
 <span class="boring">}</span></code></pre></pre>
 <h2 id="run-the-application"><a class="header" href="#run-the-application">Run the application</a></h2>
-<p>The application is configured with routes using the <code>service</code> and <code>route</code> methods. It includes a scope for API versioning with <code>/api/v1</code> and sets up a route for a health check endpoint (&quot;/health&quot;) and a route to retrieve all users (&quot;/users&quot;).</p>
+<p>The application is configured with routes using the <code>service</code> and <code>route</code> methods. It includes a scope for API versioning with <code>/api/v1</code> and sets up a route for a health check endpoint ("/health") and a route to retrieve all users ("/users").</p>
 <p>With all things tied up, we can run application using <code>cargo run</code> or <code>cargo run --bin &lt;binary&gt;</code> if you have multiple binaries in you project:</p>
 <pre><code>    Finished dev [unoptimized + debuginfo] target(s) in 2.73s
      Running `target/debug/enum`
@@ -1094,25 +1349,25 @@ pub fn config(cfg: &amp;mut ServiceConfig) {
 <p>Output:</p>
 <pre><code class="language-json">[
   {
-    &quot;id&quot;: 1,
-    &quot;username&quot;: &quot;john_doe&quot;,
-    &quot;disabled&quot;: false,
-    &quot;gender&quot;: &quot;Male&quot;,
-    &quot;created_at&quot;: [2023, 234, 15, 3, 34, 422482000, 0, 0, 0]
+    "id": 1,
+    "username": "john_doe",
+    "disabled": false,
+    "gender": "Male",
+    "created_at": [2023, 234, 15, 3, 34, 422482000, 0, 0, 0]
   },
   {
-    &quot;id&quot;: 2,
-    &quot;username&quot;: &quot;jane_smith&quot;,
-    &quot;disabled&quot;: true,
-    &quot;gender&quot;: &quot;Female&quot;,
-    &quot;created_at&quot;: [2023, 234, 15, 3, 34, 422482000, 0, 0, 0]
+    "id": 2,
+    "username": "jane_smith",
+    "disabled": true,
+    "gender": "Female",
+    "created_at": [2023, 234, 15, 3, 34, 422482000, 0, 0, 0]
   },
   {
-    &quot;id&quot;: 3,
-    &quot;username&quot;: &quot;alex_jones&quot;,
-    &quot;disabled&quot;: false,
-    &quot;gender&quot;: &quot;Other&quot;,
-    &quot;created_at&quot;: [2023, 234, 15, 3, 34, 422482000, 0, 0, 0]
+    "id": 3,
+    "username": "alex_jones",
+    "disabled": false,
+    "gender": "Other",
+    "created_at": [2023, 234, 15, 3, 34, 422482000, 0, 0, 0]
   }
 ]
 </code></pre>
@@ -1137,7 +1392,7 @@ pub mod well_known {
 <p>You can use <code>serde_with</code> crate as follows:</p>
 <ul>
 <li>Place the <code>#[serde_as]</code> attribute before the <code>#[derive]</code> attribute.</li>
-<li>Use <code>#[serde_as(as = &quot;...&quot;)</code>] instead of <code>#[serde(with = &quot;...&quot;)]</code> to annotate field in struct</li>
+<li>Use <code>#[serde_as(as = "...")</code>] instead of <code>#[serde(with = "...")]</code> to annotate field in struct</li>
 </ul>
 <p>Below is an example of using <code>serde_with</code> together with <code>serde_as</code> for <code>User</code> struct.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
@@ -1151,20 +1406,20 @@ pub struct User {
     pub username: String,
     pub disabled: bool,
     pub gender: Gender,
-    #[serde_as(as = &quot;Rfc3339&quot;)]
+    #[serde_as(as = "Rfc3339")]
     pub created_at: OffsetDateTime,
 }
 
 #[derive(Clone, PartialEq, PartialOrd, Serialize, sqlx::Type, Debug)]
-#[sqlx(type_name = &quot;gender&quot;)]
-#[sqlx(rename_all = &quot;lowercase&quot;)]
+#[sqlx(type_name = "gender")]
+#[sqlx(rename_all = "lowercase")]
 pub enum Gender {
     Male,
     Female,
     Other,
 }
 <span class="boring">}</span></code></pre></pre>
-<p>Notice, we use <code>#[serde_as(as = &quot;Rfc3339&quot;)]</code> to annotate <code>created_at</code> field with <code>OffsetDataTime</code> type.</p>
+<p>Notice, we use <code>#[serde_as(as = "Rfc3339")]</code> to annotate <code>created_at</code> field with <code>OffsetDataTime</code> type.</p>
 <p>It's quite convenient to use.</p>
 <h1 id="request-data-through-api-after-using-serde_as"><a class="header" href="#request-data-through-api-after-using-serde_as">Request data through api after using serde_as</a></h1>
 <p>Now, when we request the data, we get the datetime as we wanted.</p>
@@ -1173,25 +1428,25 @@ pub enum Gender {
 <p>Output:</p>
 <pre><code class="language-json">[
   {
-    &quot;id&quot;: 1,
-    &quot;username&quot;: &quot;john_doe&quot;,
-    &quot;disabled&quot;: false,
-    &quot;gender&quot;: &quot;Male&quot;,
-    &quot;created_at&quot;: &quot;2023-08-22T15:03:34.422482Z&quot;
+    "id": 1,
+    "username": "john_doe",
+    "disabled": false,
+    "gender": "Male",
+    "created_at": "2023-08-22T15:03:34.422482Z"
   },
   {
-    &quot;id&quot;: 2,
-    &quot;username&quot;: &quot;jane_smith&quot;,
-    &quot;disabled&quot;: true,
-    &quot;gender&quot;: &quot;Female&quot;,
-    &quot;created_at&quot;: &quot;2023-08-22T15:03:34.422482Z&quot;
+    "id": 2,
+    "username": "jane_smith",
+    "disabled": true,
+    "gender": "Female",
+    "created_at": "2023-08-22T15:03:34.422482Z"
   },
   {
-    &quot;id&quot;: 3,
-    &quot;username&quot;: &quot;alex_jones&quot;,
-    &quot;disabled&quot;: false,
-    &quot;gender&quot;: &quot;Other&quot;,
-    &quot;created_at&quot;: &quot;2023-08-22T15:03:34.422482Z&quot;
+    "id": 3,
+    "username": "alex_jones",
+    "disabled": false,
+    "gender": "Other",
+    "created_at": "2023-08-22T15:03:34.422482Z"
   }
 ]
 </code></pre>
@@ -1225,31 +1480,31 @@ pub enum Gender {
 index 8f5a1aa..5164334 100644
 --- a/rust/projects/diesel_2.0_example/Cargo.toml
 +++ b/rust/projects/diesel_2.0_example/Cargo.toml
-@@ -5,12 +5,13 @@ authors = [&quot;lichuan &lt;lichuan@mur&gt;&quot;]
- edition = &quot;2018&quot;
+@@ -5,12 +5,13 @@ authors = ["lichuan &lt;lichuan@mur&gt;"]
+ edition = "2018"
 
  [dependencies]
--diesel = { version = &quot;1.4&quot;, features = [
-+diesel = { version = &quot;2.1.2&quot;, features = [
-   &quot;postgres&quot;,
-   &quot;serde_json&quot;,
-   &quot;chrono&quot;,
-   &quot;numeric&quot;,
-   &quot;64-column-tables&quot;,
-+  &quot;r2d2&quot;,
+-diesel = { version = "1.4", features = [
++diesel = { version = "2.1.2", features = [
+   "postgres",
+   "serde_json",
+   "chrono",
+   "numeric",
+   "64-column-tables",
++  "r2d2",
  ] }
- # r2d2 = &quot;0.8&quot;
- # r2d2-diesel = &quot;1.0&quot;
- dotenv = &quot;0.14&quot;
- # actix-web = &quot;1.0.3&quot;
- chrono = { version = &quot;0.4.7&quot;, features = [&quot;serde&quot;] }
+ # r2d2 = "0.8"
+ # r2d2-diesel = "1.0"
+ dotenv = "0.14"
+ # actix-web = "1.0.3"
+ chrono = { version = "0.4.7", features = ["serde"] }
 </code></pre>
-<p>We change diesel version to <code>2.1.2</code> and remove <code>r2d2</code> and <code>r2d2-diesel</code> dependencies, as they are included in <code>diesel</code> crate, by specifying the <code>r2d2</code> feature in <code>diesel</code> crate like this: <code>diesel = { version = &quot;2.1.2&quot;, features = [ &quot;r2d2&quot; ] }</code>.</p>
+<p>We change diesel version to <code>2.1.2</code> and remove <code>r2d2</code> and <code>r2d2-diesel</code> dependencies, as they are included in <code>diesel</code> crate, by specifying the <code>r2d2</code> feature in <code>diesel</code> crate like this: <code>diesel = { version = "2.1.2", features = [ "r2d2" ] }</code>.</p>
 <h2 id="add-mut-to-pgconnection-and-dao-functions"><a class="header" href="#add-mut-to-pgconnection-and-dao-functions">Add mut to PgConnection and dao functions</a></h2>
 <p>Diesel now requires mutable access to the Connection to perform any database interaction. The following changes are required for all usages of any Connection type:</p>
-<pre><code class="language-diff">- let connection = PgConnection::establish_connection(&quot;…&quot;)?;
+<pre><code class="language-diff">- let connection = PgConnection::establish_connection("…")?;
 - let result = some_query.load(&amp;connection)?;
-+ let mut connection = PgConnection::establish_connection(&quot;…&quot;)?;
++ let mut connection = PgConnection::establish_connection("…")?;
 + let result = some_query.load(&amp;mut connection)?;
 </code></pre>
 <p>Here are the changes for our own code:</p>
@@ -1258,37 +1513,37 @@ index a74e29397..6efc8ef4f 100644
 --- a/rust/projects/diesel_2.0_example/src/bin/contacts.rs
 +++ b/rust/projects/diesel_2.0_example/src/bin/contacts.rs
 @@ -16,11 +16,15 @@ fn test_contacts() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(LOCAL_DATABASE_URL.into());
+         env::var("DATABASE_URL").unwrap_or(LOCAL_DATABASE_URL.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
 +    let mut conn = pool.get().unwrap();
 
 -    let conn: &amp;PgConnection = &amp;connection;
--    conn.execute(&quot;TRUNCATE TABLE contacts&quot;).unwrap();
--    conn.execute(&quot;alter sequence contacts_id_seq restart;&quot;).unwrap();
-+    diesel::sql_query(&quot;TRUNCATE TABLE contacts&quot;).execute(&amp;mut conn).unwrap();
-+    diesel::sql_query(&quot;alter sequence contacts_id_seq restart;&quot;)
+-    conn.execute("TRUNCATE TABLE contacts").unwrap();
+-    conn.execute("alter sequence contacts_id_seq restart;").unwrap();
++    diesel::sql_query("TRUNCATE TABLE contacts").execute(&amp;mut conn).unwrap();
++    diesel::sql_query("alter sequence contacts_id_seq restart;")
 +        .execute(&amp;mut conn)
 +        .unwrap();
 +
-+    // conn.execute(&quot;TRUNCATE TABLE contacts&quot;).unwrap();
-+    // conn.execute(&quot;alter sequence contacts_id_seq restart;&quot;).unwrap();
++    // conn.execute("TRUNCATE TABLE contacts").unwrap();
++    // conn.execute("alter sequence contacts_id_seq restart;").unwrap();
 
      let santas_address: serde_json::Value = serde_json::from_str(
-         r#&quot;{
+         r#"{
 @@ -61,7 +65,7 @@ fn test_contacts() {
          },
      ];
 
 -    let contacts = create_contracts(&amp;conn, &amp;new_contacts).unwrap();
 +    let contacts = create_contracts(&amp;mut conn, &amp;new_contacts).unwrap();
-     println!(&quot;{:?}&quot;, contacts);
+     println!("{:?}", contacts);
 
      // let inserted_address = insert_into(contacts)
 @@ -75,9 +79,7 @@ fn get_contacts() {
      let database_url =
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(LOCAL_DATABASE_URL.into());
+         env::var("DATABASE_URL").unwrap_or(LOCAL_DATABASE_URL.into());
      let pool = db::init_pool(database_url);
 -    let connection = pool.get().unwrap();
 -
@@ -1296,21 +1551,21 @@ index a74e29397..6efc8ef4f 100644
 +    let mut conn = pool.get().unwrap();
 
      let santas_address: serde_json::Value = serde_json::from_str(
-         r#&quot;{
+         r#"{
 @@ -86,12 +88,13 @@ fn get_contacts() {
      )
      .unwrap();
 
 -    let contacts = get_contacts_by_address(&amp;conn, &amp;santas_address).unwrap();
 +    let contacts = get_contacts_by_address(&amp;mut conn, &amp;santas_address).unwrap();
-     println!(&quot;{:?}&quot;, contacts);
+     println!("{:?}", contacts);
 
      let santas_address2: serde_json::Value = json!(true);
 
 -    let contacts = get_contacts_by_address(&amp;conn, &amp;santas_address2).unwrap();
 +    let contacts =
 +        get_contacts_by_address(&amp;mut conn, &amp;santas_address2).unwrap();
-     println!(&quot;{:?}&quot;, contacts);
+     println!("{:?}", contacts);
  }
 
 diff --git a/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs b/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs
@@ -1318,7 +1573,7 @@ index a9c583039..a69489b7a 100644
 --- a/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs
 +++ b/rust/projects/diesel_2.0_example/src/bin/select-limit-offset.rs
 @@ -10,13 +10,11 @@ fn select_limit_offset() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+         env::var("DATABASE_URL").unwrap_or(local_database_url.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
@@ -1330,11 +1585,11 @@ index a9c583039..a69489b7a 100644
      let offset = 2;
 -    let all = get_select_limit_offset(&amp;connection, limit, offset).unwrap();
 +    let all = get_select_limit_offset(&amp;mut conn, limit, offset).unwrap();
-     println!(&quot;select : {:?} records&quot;, all);
+     println!("select : {:?} records", all);
  }
 
 @@ -26,17 +24,15 @@ fn select_limit_offset_loop() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+         env::var("DATABASE_URL").unwrap_or(local_database_url.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
@@ -1346,7 +1601,7 @@ index a9c583039..a69489b7a 100644
      let mut offset = 0;
 -    let all = get_select_limit_offset(&amp;connection, limit, offset).unwrap();
 +    let all = get_select_limit_offset(&amp;mut conn, limit, offset).unwrap();
-     println!(&quot;select : {:?} records&quot;, all);
+     println!("select : {:?} records", all);
 
      loop {
 -        if let Ok(res) = get_select_limit_offset(&amp;connection, limit, offset) {
@@ -1367,28 +1622,28 @@ index 1010a2380..44bce1eb4 100644
  use diesel_example::db;
 
 -fn greet(req: HttpRequest) -&gt; impl Responder {
--    let name = req.match_info().get(&quot;name&quot;).unwrap_or(&quot;World&quot;);
--    format!(&quot;Hello {}!&quot;, &amp;name)
+-    let name = req.match_info().get("name").unwrap_or("World");
+-    format!("Hello {}!", &amp;name)
 +// TODO: why compile error for actix-web 4?
 +// fn greet(req: HttpRequest) -&gt; impl Responder {
-+//     let name = req.match_info().get(&quot;name&quot;).unwrap_or(&quot;World&quot;);
-+//     format!(&quot;Hello {}!&quot;, &amp;name)
++//     let name = req.match_info().get("name").unwrap_or("World");
++//     format!("Hello {}!", &amp;name)
 +// }
 +
-+// #[get(&quot;/hello/{name}&quot;)]
++// #[get("/hello/{name}")]
 +async fn greet(name: web::Path&lt;String&gt;) -&gt; impl Responder {
-+    format!(&quot;Hello {}!&quot;, name)
++    format!("Hello {}!", name)
  }
 
 -fn main() {
 +#[actix_web::main]
 +async fn main() -&gt; std::io::Result&lt;()&gt; {
-     let database_url = env::var(&quot;DATABASE_URL&quot;).expect(&quot;set DATABASE_URL&quot;);
+     let database_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 @@ -26,5 +33,5 @@ fn main() {
-     .bind(&quot;127.0.0.1:8000&quot;)
-     .expect(&quot;Can not bind to port 8000&quot;)
+     .bind("127.0.0.1:8000")
+     .expect("Can not bind to port 8000")
      .run()
 -    .unwrap();
 +    .await
@@ -1403,22 +1658,22 @@ index 1819a9677..0fa4e2650 100644
  use diesel_example::db;
  use diesel_example::model::partial_inserts::NewPartialInsert;
 @@ -10,7 +9,7 @@ fn main() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+         env::var("DATABASE_URL").unwrap_or(local_database_url.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
 +    let mut conn = pool.get().unwrap();
 
      let v = vec![
-         NewPartialInsert { user_id: 5, name: Some(&quot;3&quot;.to_string()) },
+         NewPartialInsert { user_id: 5, name: Some("3".to_string()) },
 @@ -20,7 +19,7 @@ fn main() {
      // 如果每次插入多个，其中一个报错（比如以上 user_id = 2），整体插入失败（5 不被插入）
-     // Err(DatabaseError(UniqueViolation, &quot;duplicate key value violates unique constraint \&quot;ui_partial_inserts_user_id\&quot;&quot;))
+     // Err(DatabaseError(UniqueViolation, "duplicate key value violates unique constraint \"ui_partial_inserts_user_id\""))
 
 -    let r = create_partial_inserts(&amp;connection, &amp;v);
 +    let r = create_partial_inserts(&amp;mut conn, &amp;v);
 
-     println!(&quot;{:?}&quot;, r);
+     println!("{:?}", r);
  }
 diff --git a/rust/projects/diesel_2.0_example/src/bin/timestamp-with-zone.rs b/rust/projects/diesel_2.0_example/src/bin/timestamp-with-zone.rs
 index e5a793222..1d3b3e72d 100644
@@ -1435,7 +1690,7 @@ index e5a793222..1d3b3e72d 100644
  use diesel_example::model::timestamp_with_zone::NewTimestampWithZone;
  use std::env;
 @@ -12,7 +10,7 @@ fn main() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+         env::var("DATABASE_URL").unwrap_or(local_database_url.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
@@ -1457,7 +1712,7 @@ index c536b6a9c..27c5a37da 100644
 --- a/rust/projects/diesel_2.0_example/src/bin/updated-at.rs
 +++ b/rust/projects/diesel_2.0_example/src/bin/updated-at.rs
 @@ -10,7 +10,7 @@ fn main() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+         env::var("DATABASE_URL").unwrap_or(local_database_url.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
@@ -1484,32 +1739,32 @@ index ca7f19d77..807f74272 100644
 --- a/rust/projects/diesel_2.0_example/src/bin/upsert-if-condition.rs
 +++ b/rust/projects/diesel_2.0_example/src/bin/upsert-if-condition.rs
 @@ -10,11 +10,15 @@ fn upsert_on_conflict_id() {
-         env::var(&quot;DATABASE_URL&quot;).unwrap_or(local_database_url.into());
+         env::var("DATABASE_URL").unwrap_or(local_database_url.into());
      let pool = db::init_pool(database_url);
      // https://github.com/sfackler/r2d2/issues/37
 -    let connection = pool.get().unwrap();
 +    let mut conn = pool.get().unwrap();
 
 -    let conn: &amp;PgConnection = &amp;connection;
--    conn.execute(&quot;TRUNCATE TABLE upserts_if_condition&quot;).unwrap();
--    conn.execute(&quot;alter sequence upserts_if_condition_id_seq restart;&quot;)
+-    conn.execute("TRUNCATE TABLE upserts_if_condition").unwrap();
+-    conn.execute("alter sequence upserts_if_condition_id_seq restart;")
 +    // let conn: &amp;mut PgConnection = &amp;mut connection;
-+    // conn.execute(&quot;TRUNCATE TABLE upserts_if_condition&quot;).unwrap();
-+    // conn.execute(&quot;alter sequence upserts_if_condition_id_seq restart;&quot;)
++    // conn.execute("TRUNCATE TABLE upserts_if_condition").unwrap();
++    // conn.execute("alter sequence upserts_if_condition_id_seq restart;")
 +    //     .unwrap();
 +
-+    diesel::sql_query(&quot;TRUNCATE TABLE upserts_if_condition&quot;)
++    diesel::sql_query("TRUNCATE TABLE upserts_if_condition")
 +        .execute(&amp;mut conn)
          .unwrap();
 
      let u = NewUpsertIfCondition {
 @@ -27,7 +31,7 @@ fn upsert_on_conflict_id() {
          next: Some(9),
-         email: Some(&quot;e&quot;.into()),
+         email: Some("e".into()),
      };
 -    let inserted = create_upserts_if_condition_by_sql(&amp;connection, &amp;u).unwrap();
 +    let inserted = create_upserts_if_condition_by_sql(&amp;mut conn, &amp;u).unwrap();
-     println!(&quot;{} records inserted&quot;, inserted.len());
+     println!("{} records inserted", inserted.len());
  }
 </code></pre>
 <h2 id="derive-attributes"><a class="header" href="#derive-attributes">Derive attributes</a></h2>
@@ -1519,8 +1774,8 @@ index ca7f19d77..807f74272 100644
 </span><span class="boring">fn main() {
 </span>#[derive(Insertable, Debug)]
 // NOTE: For diesel 1.4.x, we use `table_name` macro directly.
-// #[table_name = &quot;timestamp_with_zone&quot;]
-#[table_name = &quot;timestamp_with_zone&quot;]
+// #[table_name = "timestamp_with_zone"]
+#[table_name = "timestamp_with_zone"]
 pub struct NewTimestampWithZone {
     pub user_id: i64,
     pub created_at: DateTime&lt;Utc&gt;,
@@ -1563,7 +1818,7 @@ go: added github.com/lichuan6/go-mod-test v1.0.1
 <pre><code class="language-bash">go get gitlab.mycompany.com/mygroup/myproject
 </code></pre>
 <p>Output:</p>
-<pre><code>go: unrecognized import path &quot;gitlab.mycompany.com/mygroup/myproject&quot;: parse https://gitlab.mycompany.com/mygroup/myproject?go-get=1: no go-import meta tags (meta tag gitlab.mycompany.com:443/mygroup/myproject did not match import path gitlab.mycompany.com/mygroup/myproject)
+<pre><code>go: unrecognized import path "gitlab.mycompany.com/mygroup/myproject": parse https://gitlab.mycompany.com/mygroup/myproject?go-get=1: no go-import meta tags (meta tag gitlab.mycompany.com:443/mygroup/myproject did not match import path gitlab.mycompany.com/mygroup/myproject)
 </code></pre>
 <p>What does this error message mean?</p>
 <h2 id="how-go-get-works"><a class="header" href="#how-go-get-works">How go get works?</a></h2>
@@ -1574,7 +1829,7 @@ go: added github.com/lichuan6/go-mod-test v1.0.1
 <li>Scan the response for the <code>go-import</code> meta tag.</li>
 <li>Fetch the repository indicated by the meta tag using the indicated VCS.</li>
 </ul>
-<p>The meta tag should have the form <code>&lt;meta name=&quot;go-import&quot; content=&quot;{prefix} {vcs} {url}&quot;&gt;</code>. For example, <code>gitlab.com/my/project git https://gitlab.com/my/project.git</code> indicates that packages beginning with <code>gitlab.com/my/project</code> should be fetched from <code>https://gitlab.com/my/project.git</code> using Git.</p>
+<p>The meta tag should have the form <code>&lt;meta name="go-import" content="{prefix} {vcs} {url}"&gt;</code>. For example, <code>gitlab.com/my/project git https://gitlab.com/my/project.git</code> indicates that packages beginning with <code>gitlab.com/my/project</code> should be fetched from <code>https://gitlab.com/my/project.git</code> using Git.</p>
 <p>Looking back the error message, we know that we do not config correct meta tag for request like <code>https://{package name}?go-get=1</code>, here it refers to <code>https://gitlab.mycompany.com/mygroup/myproject</code>.</p>
 <h2 id="fix"><a class="header" href="#fix">Fix</a></h2>
 <p>The fix is easy, but it maybe different depending on which reverse proxy you use.</p>
@@ -1583,15 +1838,15 @@ go: added github.com/lichuan6/go-mod-test v1.0.1
 <pre><code>server {
     server_name gitlab.mycompany.com;
 
-    if ($args ~* &quot;^go-get=1&quot;) {
+    if ($args ~* "^go-get=1") {
       set $condition goget;
     }
     if ($uri ~ ^/([a-zA-Z0-9\._-]+)/([a-zA-Z0-9_-]+)/?.*$) {
-      set $condition &quot;${condition}query&quot;;
+      set $condition "${condition}query";
     }
     if ($condition = gogetquery) {
-      return 200 &quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta content='gitlab.mycompany.com/$1/$2 git https://gitlab.mycompany.com
-/$1/$2' name='go-import'&gt;&lt;/head&gt;&lt;/html&gt;&quot;;
+      return 200 "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta content='gitlab.mycompany.com/$1/$2 git https://gitlab.mycompany.com
+/$1/$2' name='go-import'&gt;&lt;/head&gt;&lt;/html&gt;";
     }
 }
 </code></pre>
@@ -1604,7 +1859,7 @@ go: added github.com/lichuan6/go-mod-test v1.0.1
         }
 
         respond @goget 200 {
-                body &quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta content='gitlab.mycompany.com/{re.goget.1}/{re.goget.2} git ssh://git@gitlab.mycompany.com/{re.goget.1}/{re.goget.2}' name='go-import'&gt;&lt;/head&gt;&lt;/html&gt;&quot;
+                body "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta content='gitlab.mycompany.com/{re.goget.1}/{re.goget.2} git ssh://git@gitlab.mycompany.com/{re.goget.1}/{re.goget.2}' name='go-import'&gt;&lt;/head&gt;&lt;/html&gt;"
         }
 
         reverse_proxy localhost:10080
@@ -1612,7 +1867,7 @@ go: added github.com/lichuan6/go-mod-test v1.0.1
 </code></pre>
 <h2 id="config-ssh"><a class="header" href="#config-ssh">Config ssh</a></h2>
 <p>Now we have reverse proxy configured to return the correct meta tag in response, but there's still an error when running <code>go get -u -v gitlab.mycompany.com/mygroup/myproject</code>:</p>
-<pre><code>get &quot;gitlab.mycompany.com/mygroup/myproject&quot;: found meta tag vcs.metaImport{Prefix:&quot;gitlab.mycompany.com/mygroup/myproject&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;ssh://git@gitlab.mycompany.com/mygroup/myproject&quot;} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
+<pre><code>get "gitlab.mycompany.com/mygroup/myproject": found meta tag vcs.metaImport{Prefix:"gitlab.mycompany.com/mygroup/myproject", VCS:"git", RepoRoot:"ssh://git@gitlab.mycompany.com/mygroup/myproject"} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
 go: module gitlab.mycompany.com/mygroup/myproject: git ls-remote -q origin in /Users/username/go/pkg/mod/cache/vcs/d831e72abb0cb1006afb601471112319e0a1d0e490efb16e63a5682d76677a2e: exit status 128:
         Host key verification failed.
         fatal: Could not read from remote repository.
@@ -1629,7 +1884,7 @@ go: module gitlab.mycompany.com/mygroup/myproject: git ls-remote -q origin in /U
     IdentityFile ~/.ssh/id_rsa-gitlab.self-hosted
 </code></pre>
 <p>After all is setup, you can add dependency using <code>go get</code> successfully.</p>
-<pre><code>get &quot;gitlab.mycompany.com/mygroup/myproject&quot;: found meta tag vcs.metaImport{Prefix:&quot;gitlab.mycompany.com/mygroup/myproject&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;ssh://git@gitlab.mycompany.com/mygroup/myproject&quot;} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
+<pre><code>get "gitlab.mycompany.com/mygroup/myproject": found meta tag vcs.metaImport{Prefix:"gitlab.mycompany.com/mygroup/myproject", VCS:"git", RepoRoot:"ssh://git@gitlab.mycompany.com/mygroup/myproject"} at //gitlab.mycompany.com/mygroup/myproject?go-get=1
 go: added gitlab.mycompany.com/mygroup/myproject v0.0.1
 </code></pre>
 <p>🎉🎉🎉</p>
@@ -1649,7 +1904,7 @@ go: added gitlab.mycompany.com/mygroup/myproject v0.0.1
 <li><a href="nextjs/add-nextjs-router-to-mui-tabs.html#summary">Summary</a></li>
 </ul>
 <!--te-->
-<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<h1 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h1>
 <p>In this blog post, we will explore how to build a tabbed navigation system in <code>Next.js</code> using <code>React</code>. Tabbed navigation is a common UI pattern that allows users to switch between different sections or categories of content within a single page.</p>
 <h1 id="demoseeing-is-beliving"><a class="header" href="#demoseeing-is-beliving">Demo(Seeing is beliving)</a></h1>
 <p><img src="https://user-images.githubusercontent.com/74223747/264132025-57ca0731-46dd-4208-95ca-74420ff60e38.gif" alt="" /></p>
@@ -1691,14 +1946,14 @@ drwxr-xr-x     - naonao 28 Aug 16:38    └── ThemeRegistry
 <p>We add a <code>proceeds</code> folder in <code>app</code>, we also add corresponding folder as router in <code>provided</code> to represent each tab.</p>
 <h1 id="proceedstabs-component"><a class="header" href="#proceedstabs-component">ProceedsTabs component</a></h1>
 <p>Let's look at the <code>ProceedsTabs</code> component.</p>
-<pre><code class="language-jsx">&quot;use client&quot;;
+<pre><code class="language-jsx">"use client";
 
-import * as React from &quot;react&quot;;
-import Tabs from &quot;@mui/material/Tabs&quot;;
-import Tab from &quot;@mui/material/Tab&quot;;
-import Typography from &quot;@mui/material/Typography&quot;;
-import Box from &quot;@mui/material/Box&quot;;
-import { useRouter } from &quot;next/navigation&quot;;
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { useRouter } from "next/navigation";
 
 interface ProceedsTabsProps {
   defaultTab: number;
@@ -1713,102 +1968,102 @@ const ProceedsTabs: React.FC&lt;ProceedsTabsProps&gt; = ({ defaultTab }) =&gt; {
   };
 
   React.useEffect(() =&gt; {
-    let route = &quot;/proceeds&quot;;
+    let route = "/proceeds";
     if (value === 0) {
-      route += &quot;/content&quot;;
+      route += "/content";
     } else if (value === 1) {
-      route += &quot;/territory&quot;;
+      route += "/territory";
     } else if (value === 2) {
-      route += &quot;/device&quot;;
+      route += "/device";
     } else if (value === 3) {
-      route += &quot;/category&quot;;
+      route += "/category";
     } else if (value === 4) {
-      route += &quot;/contenttype&quot;;
+      route += "/contenttype";
     } else if (value === 5) {
-      route += &quot;/transactiontype&quot;;
+      route += "/transactiontype";
     } else if (value === 6) {
-      route += &quot;/cmb&quot;;
+      route += "/cmb";
     } else if (value === 7) {
-      route += &quot;/version&quot;;
+      route += "/version";
     } else if (value === 8) {
-      route += &quot;/client&quot;;
+      route += "/client";
     }
     console.log(`💗💗💗 ${route}`);
     router.push(route);
   }, [value]);
 
   return (
-    &lt;Box sx={{ width: &quot;100%&quot; }}&gt;
-      &lt;Box sx={{ borderBottom: 1, borderColor: &quot;divider&quot; }}&gt;
-        &lt;Tabs value={value} onChange={handleChange} aria-label=&quot;proceeds tabs&quot;&gt;
-          &lt;Tab label=&quot;Content&quot; /&gt;
-          &lt;Tab label=&quot;Territory&quot; /&gt;
-          &lt;Tab label=&quot;Device&quot; /&gt;
-          &lt;Tab label=&quot;Category&quot; /&gt;
-          &lt;Tab label=&quot;Content Type&quot; /&gt;
-          &lt;Tab label=&quot;Transaction Type&quot; /&gt;
-          &lt;Tab label=&quot;CMB&quot; /&gt;
-          &lt;Tab label=&quot;Version&quot; /&gt;
-          &lt;Tab label=&quot;Client&quot; /&gt;
+    &lt;Box sx={{ width: "100%" }}&gt;
+      &lt;Box sx={{ borderBottom: 1, borderColor: "divider" }}&gt;
+        &lt;Tabs value={value} onChange={handleChange} aria-label="proceeds tabs"&gt;
+          &lt;Tab label="Content" /&gt;
+          &lt;Tab label="Territory" /&gt;
+          &lt;Tab label="Device" /&gt;
+          &lt;Tab label="Category" /&gt;
+          &lt;Tab label="Content Type" /&gt;
+          &lt;Tab label="Transaction Type" /&gt;
+          &lt;Tab label="CMB" /&gt;
+          &lt;Tab label="Version" /&gt;
+          &lt;Tab label="Client" /&gt;
         &lt;/Tabs&gt;
       &lt;/Box&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 0}&gt;
+      &lt;div role="tabpanel" hidden={value !== 0}&gt;
         {value === 0 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Content&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 1}&gt;
+      &lt;div role="tabpanel" hidden={value !== 1}&gt;
         {value === 1 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Territory&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 2}&gt;
+      &lt;div role="tabpanel" hidden={value !== 2}&gt;
         {value === 2 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Device&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 3}&gt;
+      &lt;div role="tabpanel" hidden={value !== 3}&gt;
         {value === 3 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Category&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 4}&gt;
+      &lt;div role="tabpanel" hidden={value !== 4}&gt;
         {value === 4 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Content Type&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 5}&gt;
+      &lt;div role="tabpanel" hidden={value !== 5}&gt;
         {value === 5 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Transaction Type&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 6}&gt;
+      &lt;div role="tabpanel" hidden={value !== 6}&gt;
         {value === 6 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;CMB&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 7}&gt;
+      &lt;div role="tabpanel" hidden={value !== 7}&gt;
         {value === 7 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Version&lt;/Typography&gt;
           &lt;/Box&gt;
         )}
       &lt;/div&gt;
-      &lt;div role=&quot;tabpanel&quot; hidden={value !== 8}&gt;
+      &lt;div role="tabpanel" hidden={value !== 8}&gt;
         {value === 8 &amp;&amp; (
           &lt;Box sx={{ p: 3 }}&gt;
             &lt;Typography&gt;Client&lt;/Typography&gt;
@@ -1831,9 +2086,9 @@ export default ProceedsTabs;
 <h1 id="tab-page"><a class="header" href="#tab-page">Tab page</a></h1>
 <p>Now, let's look at each tab page.</p>
 <p>As most tab pages are the same, we will take <code>category</code> as an example.</p>
-<pre><code class="language-jsx">&quot;use client&quot;;
+<pre><code class="language-jsx">"use client";
 
-import ProceedsTabs from &quot;@/components/ProceedsTabs&quot;;
+import ProceedsTabs from "@/components/ProceedsTabs";
 
 const Category = () =&gt; {
   let defaultTab = 3;
@@ -1846,35 +2101,35 @@ export default Category;
 <p>It imports the <code>ProceedsTabs</code> component from the <code>@/components/ProceedsTabs</code> and pass <code>defaultTab</code> to specify which tab to render.</p>
 <h1 id="proceeds-page"><a class="header" href="#proceeds-page">Proceeds page</a></h1>
 <p>Now, let's look at the <code>proceeds</code> page.</p>
-<pre><code class="language-jsx">&quot;use client&quot;;
+<pre><code class="language-jsx">"use client";
 
-import { useRouter, useSearchParams } from &quot;next/navigation&quot;;
-import ProceedsTabs from &quot;@/components/ProceedsTabs&quot;;
+import { useRouter, useSearchParams } from "next/navigation";
+import ProceedsTabs from "@/components/ProceedsTabs";
 
 const Proceeds = () =&gt; {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const tab = searchParams.get(&quot;tab&quot;);
+  const tab = searchParams.get("tab");
 
   let defaultTab = 0;
 
-  if (tab === &quot;/content&quot;) {
+  if (tab === "/content") {
     defaultTab = 0;
-  } else if (tab === &quot;/territory&quot;) {
+  } else if (tab === "/territory") {
     defaultTab = 1;
-  } else if (tab === &quot;/device&quot;) {
+  } else if (tab === "/device") {
     defaultTab = 2;
-  } else if (tab === &quot;/category&quot;) {
+  } else if (tab === "/category") {
     defaultTab = 3;
-  } else if (tab === &quot;/contenttype&quot;;) {
+  } else if (tab === "/contenttype";) {
     defaultTab = 4;
-  } else if (tab === &quot;/transactiontype&quot;) {
+  } else if (tab === "/transactiontype") {
     defaultTab = 5;
-  } else if (tab === &quot;/cmb&quot;) {
+  } else if (tab === "/cmb") {
     defaultTab = 6;
-  } else if (tab === &quot;/version&quot;) {
+  } else if (tab === "/version") {
     defaultTab = 7;
-  } else if (tab === &quot;/client&quot;) {
+  } else if (tab === "/client") {
     defaultTab = 8;
   }
 
@@ -1883,8 +2138,8 @@ const Proceeds = () =&gt; {
 
 export default Proceeds;
 </code></pre>
-<p>This component uses the <code>useSearchParams</code> hook to access the search parameters from the URL. It retrieves the value of the tab parameter using the <code>searchParams.get(&quot;tab&quot;)</code> method and assigns it to the tab variable.</p>
-<p>After that, there is a series of conditional statements that determine the value of the <code>defaultTab</code> variable based on the value of the tab variable. If the tab is <code>&quot;territory&quot;</code>, the <code>defaultTab</code> is set to <code>1</code>. If the tab is <code>&quot;device&quot;</code>, the <code>defaultTab</code> is set to <code>2</code>, etc.</p>
+<p>This component uses the <code>useSearchParams</code> hook to access the search parameters from the URL. It retrieves the value of the tab parameter using the <code>searchParams.get("tab")</code> method and assigns it to the tab variable.</p>
+<p>After that, there is a series of conditional statements that determine the value of the <code>defaultTab</code> variable based on the value of the tab variable. If the tab is <code>"territory"</code>, the <code>defaultTab</code> is set to <code>1</code>. If the tab is <code>"device"</code>, the <code>defaultTab</code> is set to <code>2</code>, etc.</p>
 <p>As we handle request parameter using <code>useSearchParams</code> hook and pass tab index to <code>ProceedsTabs</code> which will push corresponding route using <code>router.push(route)</code>, when we open link like <code>http://localhost:3000/proceeds?tab=content</code>, the browser will redirect to <code>http://localhost:3000/proceed/content</code>.</p>
 <h1 id="the-takeaway"><a class="header" href="#the-takeaway">The takeaway</a></h1>
 <p>Follow these steps if you want to implement tabbed navigation using NextJS:</p>
@@ -1924,16 +2179,16 @@ export default Proceeds;
 <pre><code>Wrote to /Users/naonao/tmp/kkkk/npm-test/package.json:
 
 {
-  &quot;name&quot;: &quot;npm-test&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  "name": "npm-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
   },
-  &quot;keywords&quot;: [],
-  &quot;author&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;ISC&quot;
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
 </code></pre>
 <h1 id="install-jest"><a class="header" href="#install-jest">Install jest</a></h1>
@@ -1950,30 +2205,30 @@ export default Proceeds;
 </code></pre>
 <h1 id="write-functions"><a class="header" href="#write-functions">Write functions</a></h1>
 <p>Now, we'll write a function to convert different relative time formats (<code>now-15m</code>, <code>now-1h</code>, <code>now-24h</code>, <code>now-7h</code>) to their respective absolute time representations. The function looks like this:</p>
-<pre><code class="language-javascript">const dayjs = require(&quot;dayjs&quot;);
+<pre><code class="language-javascript">const dayjs = require("dayjs");
 
 const getAbsoluteTime = (relativeTime) =&gt; {
-  if (relativeTime.includes(&quot;now&quot;)) {
+  if (relativeTime.includes("now")) {
     let parsedDate = dayjs();
 
-    if (relativeTime.includes(&quot;m&quot;)) {
+    if (relativeTime.includes("m")) {
       const relativeValue = parseInt(
-        relativeTime.split(&quot;now-&quot;)[1].split(&quot;m&quot;)[0]
+        relativeTime.split("now-")[1].split("m")[0]
       );
-      parsedDate = parsedDate.subtract(relativeValue, &quot;minute&quot;);
-    } else if (relativeTime.includes(&quot;h&quot;)) {
+      parsedDate = parsedDate.subtract(relativeValue, "minute");
+    } else if (relativeTime.includes("h")) {
       const relativeValue = parseInt(
-        relativeTime.split(&quot;now-&quot;)[1].split(&quot;h&quot;)[0]
+        relativeTime.split("now-")[1].split("h")[0]
       );
-      parsedDate = parsedDate.subtract(relativeValue, &quot;hour&quot;);
-    } else if (relativeTime.includes(&quot;d&quot;)) {
+      parsedDate = parsedDate.subtract(relativeValue, "hour");
+    } else if (relativeTime.includes("d")) {
       const relativeValue = parseInt(
-        relativeTime.split(&quot;now-&quot;)[1].split(&quot;d&quot;)[0]
+        relativeTime.split("now-")[1].split("d")[0]
       );
-      parsedDate = parsedDate.subtract(relativeValue, &quot;day&quot;);
+      parsedDate = parsedDate.subtract(relativeValue, "day");
     }
 
-    return parsedDate.format(&quot;YYYY-MM-DDTHH:mm&quot;);
+    return parsedDate.format("YYYY-MM-DDTHH:mm");
   }
 
   return null;
@@ -1984,58 +2239,58 @@ module.exports = getAbsoluteTime;
 <p>We'll save it in <code>getAbsoluteTime.js</code> file in the project's root directory.</p>
 <h1 id="write-tests-for-functions"><a class="header" href="#write-tests-for-functions">Write tests for functions</a></h1>
 <p>Now, let's write tests for this simple function.</p>
-<pre><code class="language-javascript">const dayjs = require(&quot;dayjs&quot;);
-const getAbsoluteTime = require(&quot;../getAbsoluteTime&quot;); // Assuming the function is exported from a separate file
+<pre><code class="language-javascript">const dayjs = require("dayjs");
+const getAbsoluteTime = require("../getAbsoluteTime"); // Assuming the function is exported from a separate file
 
-describe(&quot;getAbsoluteTime&quot;, () =&gt; {
-  it('should return the correct absolute time for relative time &quot;now-15m&quot;', () =&gt; {
-    const relativeTime = &quot;now-15m&quot;;
+describe("getAbsoluteTime", () =&gt; {
+  it('should return the correct absolute time for relative time "now-15m"', () =&gt; {
+    const relativeTime = "now-15m";
     const absoluteTime = getAbsoluteTime(relativeTime);
     const currentTime = dayjs(); // Get the current time using dayjs
     const expectedTime = currentTime
-      .subtract(15, &quot;minute&quot;)
-      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+      .subtract(15, "minute")
+      .format("YYYY-MM-DDTHH:mm");
     expect(absoluteTime).toBe(expectedTime);
   });
 
-  it('should return the correct absolute time for relative time &quot;now-1h&quot;', () =&gt; {
-    const relativeTime = &quot;now-1h&quot;;
+  it('should return the correct absolute time for relative time "now-1h"', () =&gt; {
+    const relativeTime = "now-1h";
     const absoluteTime = getAbsoluteTime(relativeTime);
     const currentTime = dayjs(); // Get the current time using dayjs
     const expectedTime = currentTime
-      .subtract(1, &quot;hour&quot;)
-      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+      .subtract(1, "hour")
+      .format("YYYY-MM-DDTHH:mm");
     expect(absoluteTime).toBe(expectedTime);
   });
 
-  it('should return the correct absolute time for relative time &quot;now-24h&quot;', () =&gt; {
-    const relativeTime = &quot;now-24h&quot;;
+  it('should return the correct absolute time for relative time "now-24h"', () =&gt; {
+    const relativeTime = "now-24h";
     const absoluteTime = getAbsoluteTime(relativeTime);
     const currentTime = dayjs(); // Get the current time using dayjs
     const expectedTime = currentTime
-      .subtract(24, &quot;hour&quot;)
-      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+      .subtract(24, "hour")
+      .format("YYYY-MM-DDTHH:mm");
     expect(absoluteTime).toBe(expectedTime);
   });
 
-  it('should return the correct absolute time for relative time &quot;now-7h&quot;', () =&gt; {
-    const relativeTime = &quot;now-7h&quot;;
+  it('should return the correct absolute time for relative time "now-7h"', () =&gt; {
+    const relativeTime = "now-7h";
     const absoluteTime = getAbsoluteTime(relativeTime);
     const currentTime = dayjs(); // Get the current time using dayjs
     const expectedTime = currentTime
-      .subtract(7, &quot;hour&quot;)
-      .format(&quot;YYYY-MM-DDTHH:mm&quot;);
+      .subtract(7, "hour")
+      .format("YYYY-MM-DDTHH:mm");
     expect(absoluteTime).toBe(expectedTime);
   });
 });
 </code></pre>
 <p>Save this file in <code>tests/getAbsoluteTime.test.js</code> and we are ready to run test using <code>jest</code>.</p>
 <h1 id="run-test"><a class="header" href="#run-test">Run Test</a></h1>
-<p>Before running any tests, you have to add <code>&quot;scripts&quot; : {&quot;test&quot;: &quot;jest&quot;}</code> to <code>package.json</code> as follows:</p>
+<p>Before running any tests, you have to add <code>"scripts" : {"test": "jest"}</code> to <code>package.json</code> as follows:</p>
 <pre><code class="language-json">{
   // ...
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;jest&quot;
+  "scripts": {
+    "test": "jest"
   }
   // ...
 }
@@ -2047,10 +2302,10 @@ describe(&quot;getAbsoluteTime&quot;, () =&gt; {
 
  PASS  tests/getAbsoluteTime.test.js
   getAbsoluteTime
-    ✓ should return the correct absolute time for relative time &quot;now-15m&quot; (2 ms)
-    ✓ should return the correct absolute time for relative time &quot;now-1h&quot;
-    ✓ should return the correct absolute time for relative time &quot;now-24h&quot; (1 ms)
-    ✓ should return the correct absolute time for relative time &quot;now-7h&quot;
+    ✓ should return the correct absolute time for relative time "now-15m" (2 ms)
+    ✓ should return the correct absolute time for relative time "now-1h"
+    ✓ should return the correct absolute time for relative time "now-24h" (1 ms)
+    ✓ should return the correct absolute time for relative time "now-7h"
 
 Test Suites: 1 passed, 1 total
 Tests:       4 passed, 4 total
@@ -2173,27 +2428,27 @@ WHERE visit_date &lt; '2022-01-01'
 <p>Recently, when searching for application error logs in Kibana, I encountered a particularly intriguing challenge. Some of the expected search results were missing, when using <code>error</code> as filter field and <code>exists</code> as filter operator in kibana(Click <code>+Add Filter</code> button). After scratching my head for a while and doing a deep dive into why this was happening, I stumbled upon a lifesaver feature in Elasticsearch - the <code>ignore_above</code> parameter.</p>
 <p>Below are the samples for <code>error</code> field in log records.</p>
 <pre><code class="language-json">[
-  &quot;你所在的区域无法查看特定的内容，请联系相关部门进行处理&quot;,
-  &quot;author is not authenticated missing parameters in request, request=id_is:Kp3mE5QJwVHkM1Wl3xCg client_id_is:MoNRe2Qxvz4nR8R9oZtA payment_number:\&quot;jXb9q8flSY6vQIpV3GtE\&quot; order_detail_id:L3R9mU1W8pN9gKuH6Wz deliver_timestamp:{seconds:QG4cP2a0QK6SxI6D0EbR} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
-  &quot;author is not authenticated missing parameters in request, request=user_id_is:T7L3b4HnE1pM6L9QeXy5 client_id_is:w1L6i0uJ3S0A9X6K4G5 payment_number:\&quot;K0l6W0kR2rH9Y0O5Z0x8\&quot; order_detail_id:J2A0B1Z4uE9X7Y2W7L0E deliver_timestamp:{seconds:1I3lC6nT8Q4N7j0X4I6v} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
-  &quot;author is not authenticated missing parameters in request, request=user_id_is:G5B9kS6pJ3C7H0D8K6M4 client_id_is:w9R0V6mF3A8D4H1G2G6 payment_number:\&quot;Z3R0b8D7uJ2Z4Q5W7X6E\&quot; order_detail_id:Y7T2R8X1vI6E0G3C7M3E deliver_timestamp:{seconds:4K6G9O5N3fP1K6S7R8Y} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
-  &quot;author is not authenticated missing parameters in request, request=user_id_is:U8T0D9hE8C3L6H9K5V7 client_id_is:O4xH2L3K5R0C9X2O9M0 merchant_id_iss:z5fN6qO0R4eV9tK8E2bB payment_number:\&quot;D9H4fQ2O5W3C7R8E2C6\&quot; order_detail_id:W8sI5kQ2dP3W1C7G9T5 deliver_timestamp:{seconds:R0U7X1Q3U5sE2Y4O8D} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;
+  "你所在的区域无法查看特定的内容，请联系相关部门进行处理",
+  "author is not authenticated missing parameters in request, request=id_is:Kp3mE5QJwVHkM1Wl3xCg client_id_is:MoNRe2Qxvz4nR8R9oZtA payment_number:\"jXb9q8flSY6vQIpV3GtE\" order_detail_id:L3R9mU1W8pN9gKuH6Wz deliver_timestamp:{seconds:QG4cP2a0QK6SxI6D0EbR} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\"",
+  "author is not authenticated missing parameters in request, request=user_id_is:T7L3b4HnE1pM6L9QeXy5 client_id_is:w1L6i0uJ3S0A9X6K4G5 payment_number:\"K0l6W0kR2rH9Y0O5Z0x8\" order_detail_id:J2A0B1Z4uE9X7Y2W7L0E deliver_timestamp:{seconds:1I3lC6nT8Q4N7j0X4I6v} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\"",
+  "author is not authenticated missing parameters in request, request=user_id_is:G5B9kS6pJ3C7H0D8K6M4 client_id_is:w9R0V6mF3A8D4H1G2G6 payment_number:\"Z3R0b8D7uJ2Z4Q5W7X6E\" order_detail_id:Y7T2R8X1vI6E0G3C7M3E deliver_timestamp:{seconds:4K6G9O5N3fP1K6S7R8Y} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\"",
+  "author is not authenticated missing parameters in request, request=user_id_is:U8T0D9hE8C3L6H9K5V7 client_id_is:O4xH2L3K5R0C9X2O9M0 merchant_id_iss:z5fN6qO0R4eV9tK8E2bB payment_number:\"D9H4fQ2O5W3C7R8E2C6\" order_detail_id:W8sI5kQ2dP3W1C7G9T5 deliver_timestamp:{seconds:R0U7X1Q3U5sE2Y4O8D} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\""
 ]
 </code></pre>
-<p>The question is: Why doesn't the error log saying &quot;author is not ...&quot; appear in the search results?</p>
+<p>The question is: Why doesn't the error log saying "author is not ..." appear in the search results?</p>
 <h1 id="ingest-data"><a class="header" href="#ingest-data">Ingest data</a></h1>
 <p>Now, let's do some investigation!</p>
 <p>First, we creates an index named <code>tmp-1</code> with a single field called <code>error</code>. The <code>error</code> field is of type <code>text</code> for full-text search and has a sub-field named <code>keyword</code> of type <code>keyword</code> for exact matching, with a maximum length of <code>20</code> characters.</p>
 <pre><code class="language-json">PUT /tmp-1
 {
-  &quot;mappings&quot;: {
-    &quot;properties&quot;: {
-      &quot;error&quot;: {
-        &quot;type&quot;: &quot;text&quot;,
-        &quot;fields&quot;: {
-          &quot;keyword&quot;: {
-            &quot;type&quot;: &quot;keyword&quot;,
-            &quot;ignore_above&quot;: 20
+  "mappings": {
+    "properties": {
+      "error": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 20
           }
         }
       }
@@ -2204,21 +2459,21 @@ WHERE visit_date &lt; '2022-01-01'
 <p>Then, we ingest some data to this index:</p>
 <pre><code class="language-json">PUT /tmp-1/_doc/1
 {
-  &quot;error&quot;: &quot;This is a test.&quot;,
-  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+  "error": "This is a test.",
+  "@timestamp": "2024-02-05T12:35:35Z"
 }
 
 PUT /tmp-1/_doc/2
 {
-  &quot;error&quot;: &quot;12345678901234567890&quot;,
-  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+  "error": "12345678901234567890",
+  "@timestamp": "2024-02-05T12:35:35Z"
 
 }
 
 PUT /tmp-1/_doc/3
 {
-  &quot;error&quot;: &quot;12345678901234567890X&quot;,
-  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+  "error": "12345678901234567890X",
+  "@timestamp": "2024-02-05T12:35:35Z"
 
 }
 </code></pre>
@@ -2231,11 +2486,11 @@ PUT /tmp-1/_doc/3
 <h1 id="reason-why-existing-data-not-exist"><a class="header" href="#reason-why-existing-data-not-exist">Reason why existing data not exist</a></h1>
 <p>In Elasticsearch, <code>ignore_above</code> is a parameter that can be used in the mapping of string fields, specifically for keyword types. The role of this parameter is to <strong>ignore</strong> (i.e., not index) any string which length is above the specified number of characters.</p>
 <p>Let's consider an example:</p>
-<pre><code class="language-json">&quot;mappings&quot;: {
-  &quot;properties&quot;: {
-    &quot;name&quot;: {
-      &quot;type&quot;: &quot;keyword&quot;,
-      &quot;ignore_above&quot;: 20
+<pre><code class="language-json">"mappings": {
+  "properties": {
+    "name": {
+      "type": "keyword",
+      "ignore_above": 20
     }
   }
 }

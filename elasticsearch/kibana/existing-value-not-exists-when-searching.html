@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">2.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">3.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">4.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">5.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">6.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">7.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">8.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">9.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html" class="active"><strong aria-hidden="true">10.</strong> Existing value not exists when searching</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="../../react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html" class="active"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -187,27 +187,27 @@
 <p>Recently, when searching for application error logs in Kibana, I encountered a particularly intriguing challenge. Some of the expected search results were missing, when using <code>error</code> as filter field and <code>exists</code> as filter operator in kibana(Click <code>+Add Filter</code> button). After scratching my head for a while and doing a deep dive into why this was happening, I stumbled upon a lifesaver feature in Elasticsearch - the <code>ignore_above</code> parameter.</p>
 <p>Below are the samples for <code>error</code> field in log records.</p>
 <pre><code class="language-json">[
-  &quot;你所在的区域无法查看特定的内容，请联系相关部门进行处理&quot;,
-  &quot;author is not authenticated missing parameters in request, request=id_is:Kp3mE5QJwVHkM1Wl3xCg client_id_is:MoNRe2Qxvz4nR8R9oZtA payment_number:\&quot;jXb9q8flSY6vQIpV3GtE\&quot; order_detail_id:L3R9mU1W8pN9gKuH6Wz deliver_timestamp:{seconds:QG4cP2a0QK6SxI6D0EbR} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
-  &quot;author is not authenticated missing parameters in request, request=user_id_is:T7L3b4HnE1pM6L9QeXy5 client_id_is:w1L6i0uJ3S0A9X6K4G5 payment_number:\&quot;K0l6W0kR2rH9Y0O5Z0x8\&quot; order_detail_id:J2A0B1Z4uE9X7Y2W7L0E deliver_timestamp:{seconds:1I3lC6nT8Q4N7j0X4I6v} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
-  &quot;author is not authenticated missing parameters in request, request=user_id_is:G5B9kS6pJ3C7H0D8K6M4 client_id_is:w9R0V6mF3A8D4H1G2G6 payment_number:\&quot;Z3R0b8D7uJ2Z4Q5W7X6E\&quot; order_detail_id:Y7T2R8X1vI6E0G3C7M3E deliver_timestamp:{seconds:4K6G9O5N3fP1K6S7R8Y} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;,
-  &quot;author is not authenticated missing parameters in request, request=user_id_is:U8T0D9hE8C3L6H9K5V7 client_id_is:O4xH2L3K5R0C9X2O9M0 merchant_id_iss:z5fN6qO0R4eV9tK8E2bB payment_number:\&quot;D9H4fQ2O5W3C7R8E2C6\&quot; order_detail_id:W8sI5kQ2dP3W1C7G9T5 deliver_timestamp:{seconds:R0U7X1Q3U5sE2Y4O8D} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\&quot;INTERNAL_CODE_PAYMENT_NOT_FOUND\&quot;&quot;
+  "你所在的区域无法查看特定的内容，请联系相关部门进行处理",
+  "author is not authenticated missing parameters in request, request=id_is:Kp3mE5QJwVHkM1Wl3xCg client_id_is:MoNRe2Qxvz4nR8R9oZtA payment_number:\"jXb9q8flSY6vQIpV3GtE\" order_detail_id:L3R9mU1W8pN9gKuH6Wz deliver_timestamp:{seconds:QG4cP2a0QK6SxI6D0EbR} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\"",
+  "author is not authenticated missing parameters in request, request=user_id_is:T7L3b4HnE1pM6L9QeXy5 client_id_is:w1L6i0uJ3S0A9X6K4G5 payment_number:\"K0l6W0kR2rH9Y0O5Z0x8\" order_detail_id:J2A0B1Z4uE9X7Y2W7L0E deliver_timestamp:{seconds:1I3lC6nT8Q4N7j0X4I6v} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\"",
+  "author is not authenticated missing parameters in request, request=user_id_is:G5B9kS6pJ3C7H0D8K6M4 client_id_is:w9R0V6mF3A8D4H1G2G6 payment_number:\"Z3R0b8D7uJ2Z4Q5W7X6E\" order_detail_id:Y7T2R8X1vI6E0G3C7M3E deliver_timestamp:{seconds:4K6G9O5N3fP1K6S7R8Y} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\"",
+  "author is not authenticated missing parameters in request, request=user_id_is:U8T0D9hE8C3L6H9K5V7 client_id_is:O4xH2L3K5R0C9X2O9M0 merchant_id_iss:z5fN6qO0R4eV9tK8E2bB payment_number:\"D9H4fQ2O5W3C7R8E2C6\" order_detail_id:W8sI5kQ2dP3W1C7G9T5 deliver_timestamp:{seconds:R0U7X1Q3U5sE2Y4O8D} resp=internal_code:INTERNAL_CODE_PAYMENT_NOT_FOUND result_description:\"INTERNAL_CODE_PAYMENT_NOT_FOUND\""
 ]
 </code></pre>
-<p>The question is: Why doesn't the error log saying &quot;author is not ...&quot; appear in the search results?</p>
+<p>The question is: Why doesn't the error log saying "author is not ..." appear in the search results?</p>
 <h1 id="ingest-data"><a class="header" href="#ingest-data">Ingest data</a></h1>
 <p>Now, let's do some investigation!</p>
 <p>First, we creates an index named <code>tmp-1</code> with a single field called <code>error</code>. The <code>error</code> field is of type <code>text</code> for full-text search and has a sub-field named <code>keyword</code> of type <code>keyword</code> for exact matching, with a maximum length of <code>20</code> characters.</p>
 <pre><code class="language-json">PUT /tmp-1
 {
-  &quot;mappings&quot;: {
-    &quot;properties&quot;: {
-      &quot;error&quot;: {
-        &quot;type&quot;: &quot;text&quot;,
-        &quot;fields&quot;: {
-          &quot;keyword&quot;: {
-            &quot;type&quot;: &quot;keyword&quot;,
-            &quot;ignore_above&quot;: 20
+  "mappings": {
+    "properties": {
+      "error": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 20
           }
         }
       }
@@ -218,21 +218,21 @@
 <p>Then, we ingest some data to this index:</p>
 <pre><code class="language-json">PUT /tmp-1/_doc/1
 {
-  &quot;error&quot;: &quot;This is a test.&quot;,
-  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+  "error": "This is a test.",
+  "@timestamp": "2024-02-05T12:35:35Z"
 }
 
 PUT /tmp-1/_doc/2
 {
-  &quot;error&quot;: &quot;12345678901234567890&quot;,
-  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+  "error": "12345678901234567890",
+  "@timestamp": "2024-02-05T12:35:35Z"
 
 }
 
 PUT /tmp-1/_doc/3
 {
-  &quot;error&quot;: &quot;12345678901234567890X&quot;,
-  &quot;@timestamp&quot;: &quot;2024-02-05T12:35:35Z&quot;
+  "error": "12345678901234567890X",
+  "@timestamp": "2024-02-05T12:35:35Z"
 
 }
 </code></pre>
@@ -245,11 +245,11 @@ PUT /tmp-1/_doc/3
 <h1 id="reason-why-existing-data-not-exist"><a class="header" href="#reason-why-existing-data-not-exist">Reason why existing data not exist</a></h1>
 <p>In Elasticsearch, <code>ignore_above</code> is a parameter that can be used in the mapping of string fields, specifically for keyword types. The role of this parameter is to <strong>ignore</strong> (i.e., not index) any string which length is above the specified number of characters.</p>
 <p>Let's consider an example:</p>
-<pre><code class="language-json">&quot;mappings&quot;: {
-  &quot;properties&quot;: {
-    &quot;name&quot;: {
-      &quot;type&quot;: &quot;keyword&quot;,
-      &quot;ignore_above&quot;: 20
+<pre><code class="language-json">"mappings": {
+  "properties": {
+    "name": {
+      "type": "keyword",
+      "ignore_above": 20
     }
   }
 }
