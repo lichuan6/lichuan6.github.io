@@ -59,3 +59,7 @@
 ## Kibana
 
 - [Existing value not exists when searching](elasticsearch/kibana/existing-value-not-exists-when-searching.md)
+
+# LLM
+
+- [Run LLM using llamafile on Apple M3 Max](llm/run-llm-using-llamafile-on-apple-m3-max.md)
