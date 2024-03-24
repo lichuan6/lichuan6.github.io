@@ -313,7 +313,7 @@ ts=2024-03-24T06:51:03.872Z caller=tls_config.go:274 level=info msg="Listening o
 ts=2024-03-24T06:51:03.872Z caller=tls_config.go:277 level=info msg="TLS is disabled." http2=false address=[::]:9100
 </code></pre>
 <h1 id="config-prometheus-to-scape-metrics-from-node_exporter"><a class="header" href="#config-prometheus-to-scape-metrics-from-node_exporter">Config Prometheus to scape metrics from node_exporter</a></h1>
-<p>With Prometheus, Grafana and node exporter up and runnign, we can configuring Prometh eus instance to scrape metrics from node exporter.</p>
+<p>With Prometheus, Grafana and node exporter up and running, we can configuring Prometh eus instance to scrape metrics from node exporter.</p>
 <p>Your locally running Prometheus instance needs to be properly configured in order to access Node Exporter metrics. The following prometheus.yml example configuration file will tell the Prometheus instance to scrape, and how frequently, from the Node Exporter via <code>localhost:9100</code>:</p>
 <pre><code class="language-yaml">global:
   scrape_interval: 15s
