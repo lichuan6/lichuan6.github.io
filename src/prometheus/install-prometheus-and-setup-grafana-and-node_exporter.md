@@ -126,7 +126,7 @@ INFO [03-24|15:05:48] Completed cleanup jobs                   logger=cleanup du
 
 # Install Node Exporter
 
-After Prometheus and Grafana are instlaled, we can setup node exporter and configure prometheus to scrape metrics from node exporter.
+After Prometheus and Grafana are installed, we can setup node exporter and configure prometheus to scrape metrics from node exporter.
 
 Let's download node exporter binary file and setup node exporter.
 
@@ -163,7 +163,7 @@ ts=2024-03-24T06:51:03.872Z caller=tls_config.go:277 level=info msg="TLS is disa
 
 # Config Prometheus to scape metrics from node_exporter
 
-With Prometheus, Grafana and node exporter up and runnign, we can configuring Prometh eus instance to scrape metrics from node exporter.
+With Prometheus, Grafana and node exporter up and running, we can configuring Prometh eus instance to scrape metrics from node exporter.
 
 Your locally running Prometheus instance needs to be properly configured in order to access Node Exporter metrics. The following prometheus.yml example configuration file will tell the Prometheus instance to scrape, and how frequently, from the Node Exporter via `localhost:9100`:
 
