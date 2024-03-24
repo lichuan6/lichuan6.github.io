@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Install Prometheus and setup grafana and node_exporter - Blog by lichuan</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="../react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li><li class="chapter-item expanded affix "><li class="part-title">LLM</li><li class="chapter-item expanded "><a href="../llm/run-llm-using-llamafile-on-apple-m3-max.html"><strong aria-hidden="true">12.</strong> Run LLM using llamafile on Apple M3 Max</a></li><li class="chapter-item expanded affix "><li class="part-title">Prometheus</li><li class="chapter-item expanded "><a href="../prometheus/install-prometheus-and-setup-grafana-and-node_exporter.html" class="active"><strong aria-hidden="true">13.</strong> Install Prometheus and setup grafana and node_exporter</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Blog by lichuan</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="install-prometheus-and-setup-grafana-and-node_exporter"><a class="header" href="#install-prometheus-and-setup-grafana-and-node_exporter">Install Prometheus and setup grafana and node_exporter</a></h1>
+<!-- toc -->
+<ul>
+<li><a href="#install-prometheus">Install Prometheus</a></li>
+<li><a href="#install-grafana">Install Grafana</a></li>
+<li><a href="#install-node-exporter">Install Node Exporter</a></li>
+<li><a href="#config-prometheus-to-scape-metrics-from-node_exporter">Config Prometheus to scape metrics from node_exporter</a></li>
+<li><a href="#grafana-dashboard">Grafana Dashboard</a>
+<ul>
+<li><a href="#import-dashboard">Import Dashboard</a></li>
+<li><a href="#view-the-dashboard">View the dashboard</a></li>
+</ul>
+</li>
+<li><a href="#refs">Refs</a></li>
+</ul>
+<!-- tocstop -->
+<h1 id="install-prometheus"><a class="header" href="#install-prometheus">Install Prometheus</a></h1>
+<p>First, let's download and install prometheus.</p>
+<pre><code class="language-bash">version=2.51.0
+wget -c https://github.com/prometheus/prometheus/releases/download/v${version}/prometheus-${version}.darwin-amd64.tar.gz
+tar xf prometheus-*.tar.gz
+</code></pre>
+<p>Running prometheus is pretty easy. All you need to do is running <code>prometheus</code> binary.</p>
+<pre><code class="language-bash">./prometheus
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-bash">./prometheus
+ts=2024-03-24T06:52:11.327Z caller=main.go:573 level=info msg="No time or size retention was set so using the default time retention" duration=15d
+ts=2024-03-24T06:52:11.327Z caller=main.go:617 level=info msg="Starting Prometheus Server" mode=server version="(version=2.51.0, branch=HEAD, revision=c05c15512acb675e3f6cd662a6727854e93fc024)"
+ts=2024-03-24T06:52:11.327Z caller=main.go:622 level=info build_context="(go=go1.22.1, platform=darwin/amd64, user=root@4c99b76a6ccd, date=20240319-10:54:45, tags=netgo,builtinassets,stringlabels)"
+ts=2024-03-24T06:52:11.327Z caller=main.go:623 level=info host_details=(darwin)
+ts=2024-03-24T06:52:11.327Z caller=main.go:624 level=info fd_limits="(soft=61440, hard=unlimited)"
+ts=2024-03-24T06:52:11.327Z caller=main.go:625 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+ts=2024-03-24T06:52:11.334Z caller=web.go:568 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+ts=2024-03-24T06:52:11.336Z caller=main.go:1129 level=info msg="Starting TSDB ..."
+ts=2024-03-24T06:52:11.340Z caller=tls_config.go:313 level=info component=web msg="Listening on" address=[::]:9090
+ts=2024-03-24T06:52:11.340Z caller=tls_config.go:316 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+ts=2024-03-24T06:52:11.342Z caller=head.go:616 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+ts=2024-03-24T06:52:11.343Z caller=head.go:698 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=188.04µs
+ts=2024-03-24T06:52:11.343Z caller=head.go:706 level=info component=tsdb msg="Replaying WAL, this may take a while"
+ts=2024-03-24T06:52:11.345Z caller=head.go:778 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=1
+ts=2024-03-24T06:52:11.346Z caller=head.go:778 level=info component=tsdb msg="WAL segment loaded" segment=1 maxSegment=1
+ts=2024-03-24T06:52:11.346Z caller=head.go:815 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=89.814µs wal_replay_duration=2.840538ms wbl_replay_duration=89ns total_replay_duration=3.149532ms
+ts=2024-03-24T06:52:11.350Z caller=main.go:1150 level=info fs_type=1a
+ts=2024-03-24T06:52:11.350Z caller=main.go:1153 level=info msg="TSDB started"
+ts=2024-03-24T06:52:11.350Z caller=main.go:1335 level=info msg="Loading configuration file" filename=prometheus.yml
+ts=2024-03-24T06:52:11.361Z caller=main.go:1372 level=info msg="Completed loading of configuration file" filename=prometheus.yml totalDuration=11.479233ms db_storage=4.975µs remote_storage=4.641µs web_handler=305ns query_engine=706ns scrape=10.903788ms scrape_sd=42.235µs notify=21.224µs notify_sd=9.849µs rules=7.179µs tracing=211.699µs
+ts=2024-03-24T06:52:11.361Z caller=main.go:1114 level=info msg="Server is ready to receive web requests."
+ts=2024-03-24T06:52:11.361Z caller=manager.go:163 level=info component="rule manager" msg="Starting rule manager..."
+</code></pre>
+<h1 id="install-grafana"><a class="header" href="#install-grafana">Install Grafana</a></h1>
+<p>Next, let's download and install grafana.</p>
+<pre><code class="language-bash">curl -O https://dl.grafana.com/oss/release/grafana-10.4.1.darwin-amd64.tar.gz
+tar -zxvf grafana-10.4.1.darwin-amd64.tar.gz
+</code></pre>
+<p>You can run grafana using <code>./bin/grafana server</code> command.</p>
+<pre><code class="language-bash">./bin/grafana server
+INFO [03-24|14:45:48] Starting Grafana                         logger=settings version=10.4.1 commit=d3ce857c0eb86f571ffa993a9cd8493b6f47b630 branch=HEAD compiled=2024-03-24T14:45:48+08:00
+INFO [03-24|14:45:48] Config loaded from                       logger=settings file=/Users/dudu/Documents/programs/grafana/grafana-v10.4.1/conf/defaults.ini
+INFO [03-24|14:45:48] Target                                   logger=settings target=[all]
+INFO [03-24|14:45:48] Path Home                                logger=settings path=/Users/dudu/Documents/programs/grafana/grafana-v10.4.1
+INFO [03-24|14:45:48] Path Data                                logger=settings path=/Users/dudu/Documents/programs/grafana/grafana-v10.4.1/data
+INFO [03-24|14:45:48] Path Logs                                logger=settings path=/Users/dudu/Documents/programs/grafana/grafana-v10.4.1/data/log
+INFO [03-24|14:45:48] Path Plugins                             logger=settings path=/Users/dudu/Documents/programs/grafana/grafana-v10.4.1/data/plugins
+INFO [03-24|14:45:48] Path Provisioning                        logger=settings path=/Users/dudu/Documents/programs/grafana/grafana-v10.4.1/conf/provisioning
+INFO [03-24|14:45:48] App mode production                      logger=settings
+INFO [03-24|14:45:48] Connecting to DB                         logger=sqlstore dbtype=sqlite3
+INFO [03-24|14:45:48] Starting DB migrations                   logger=migrator
+INFO [03-24|14:45:48] migrations completed                     logger=migrator performed=0 skipped=548 duration=521.065µs
+INFO [03-24|14:45:48] Envelope encryption state                logger=secrets enabled=true current provider=secretKey.v1
+ERROR[03-24|14:45:48] Failed to get renderer plugin sources    logger=renderer.manager error="failed to open plugins path"
+INFO [03-24|14:45:48] Loading plugins...                       logger=plugin.store
+ERROR[03-24|14:45:48] Failed to load external plugins          logger=plugin.sources error="failed to open plugins path"
+INFO [03-24|14:45:48] Plugin registered                        logger=plugins.registration pluginId=input
+INFO [03-24|14:45:48] Plugins loaded                           logger=plugin.store count=56 duration=68.232976ms
+INFO [03-24|14:45:48] Query Service initialization             logger=query_data
+INFO [03-24|14:45:48] Live Push Gateway initialization         logger=live.push_http
+INFO [03-24|14:45:48] Starting                                 logger=ngalert.migration
+INFO [03-24|14:45:48] Running in alternative execution of Error/NoData mode logger=ngalert.state.manager
+INFO [03-24|14:45:48] registering usage stat providers         logger=infra.usagestats.collector usageStatsProvidersLen=2
+INFO [03-24|14:45:48] starting to provision alerting           logger=provisioning.alerting
+INFO [03-24|14:45:48] finished to provision alerting           logger=provisioning.alerting
+INFO [03-24|14:45:48] Warming state cache for startup          logger=ngalert.state.manager
+INFO [03-24|14:45:48] Starting MultiOrg Alertmanager           logger=ngalert.multiorg.alertmanager
+INFO [03-24|14:45:48] Storage starting                         logger=grafanaStorageLogger
+ERROR[03-24|14:45:48] Failed to get renderer plugin sources    logger=renderer.manager error="failed to open plugins path"
+INFO [03-24|14:45:48] State cache has been initialized         logger=ngalert.state.manager states=0 duration=565.65µs
+INFO [03-24|14:45:48] Starting scheduler                       logger=ngalert.scheduler tickInterval=10s maxAttempts=1
+INFO [03-24|14:45:48] starting                                 logger=ticker first_tick=2024-03-24T14:45:50+08:00
+INFO [03-24|14:45:48] HTTP Server Listen                       logger=http.server address=[::]:3000 protocol=http subUrl= socket=
+INFO [03-24|14:45:48] starting to provision dashboards         logger=provisioning.dashboard
+INFO [03-24|14:45:48] finished to provision dashboards         logger=provisioning.dashboard
+INFO [03-24|14:45:48] Adding GroupVersion playlist.grafana.app v0alpha1 to ResourceManager logger=grafana-apiserver
+INFO [03-24|14:45:48] Adding GroupVersion featuretoggle.grafana.app v0alpha1 to ResourceManager logger=grafana-apiserver
+INFO [03-24|14:45:52] Update check succeeded                   logger=grafana.update.checker duration=3.946779633s
+INFO [03-24|14:45:55] Request Completed                        logger=context userId=0 orgId=0 uname= method=GET path=/ status=302 remote_addr=[::1] time_ms=0 duration=138.517µs size=29 referer= handler=/ status_source=server
+INFO [03-24|14:45:56] Update check succeeded                   logger=plugins.update.checker duration=8.418350576s
+INFO [03-24|14:46:34] Usage stats are ready to report          logger=infra.usagestats
+INFO [03-24|14:46:40] Request Completed                        logger=context userId=1 orgId=1 uname=admin method=GET path=/api/live/ws status=-1 remote_addr=[::1] time_ms=0 duration=917.361µs size=0 referer= handler=/api/live/ws status_source=server
+INFO [03-24|14:48:31] Request Completed                        logger=context userId=1 orgId=1 uname=admin method=GET path=/api/live/ws status=-1 remote_addr=[::1] time_ms=4 duration=4.228579ms size=0 referer= handler=/api/live/ws status_source=server
+INFO [03-24|14:48:38] Request Completed                        logger=context userId=1 orgId=1 uname=admin method=GET path=/api/plugins/grafana-llm-app/settings status=404 remote_addr=[::1] time_ms=0 duration=488.121µs size=64 referer="http://localhost:3000/dashboard/new?editPanel=1&amp;orgId=1" handler=/api/plugins/:pluginId/settings status_source=server
+INFO [03-24|14:48:38] Request Completed                        logger=context userId=1 orgId=1 uname=admin method=GET path=/api/plugins/grafana-llm-app/settings status=404 remote_addr=[::1] time_ms=0 duration=630.382µs size=64 referer="http://localhost:3000/dashboard/new?editPanel=1&amp;orgId=1" handler=/api/plugins/:pluginId/settings status_source=server
+INFO [03-24|14:55:48] Database locked, sleeping then retrying  logger=sqlstore.transactions error="database is locked" retry=0 code="database is locked"
+INFO [03-24|14:55:48] Completed cleanup jobs                   logger=cleanup duration=19.821422ms
+INFO [03-24|14:56:05] Update check succeeded                   logger=plugins.update.checker duration=8.570043551s
+ERROR[03-24|14:59:51] Dashboard not found                      logger=context userId=1 orgId=1 uname=admin error="Dashboard not found" remote_addr=[::1] traceID=
+INFO [03-24|14:59:51] Request Completed                        logger=context userId=1 orgId=1 uname=admin method=GET path=/api/dashboards/uid/rYdddlPWk status=404 remote_addr=[::1] time_ms=1 duration=1.496887ms size=46 referer=http://localhost:3000/dashboard/import handler=/api/dashboards/uid/:uid status_source=server
+INFO [03-24|15:00:47] Initialized channel handler              logger=live channel=grafana/dashboard/uid/rYdddlPWk address=grafana/dashboard/uid/rYdddlPWk
+INFO [03-24|15:05:48] Completed cleanup jobs                   logger=cleanup duration=13.724174ms
+</code></pre>
+<h1 id="install-node-exporter"><a class="header" href="#install-node-exporter">Install Node Exporter</a></h1>
+<p>After Prometheus and Grafana are instlaled, we can setup node exporter and configure prometheus to scrape metrics from node exporter.</p>
+<p>Let's download node exporter binary file and setup node exporter.</p>
+<pre><code class="language-bash">wget -c https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.darwin-amd64.tar.gz
+tar xf node_exporter*.gz
+</code></pre>
+<p>Start node exporter:</p>
+<pre><code class="language-bash">❯ ./node_exporter
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:192 level=info msg="Starting node_exporter" version="(version=1.7.0, branch=HEAD, revision=7333465abf9efba81876303bb57e6fadb946041b)"
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:193 level=info msg="Build context" build_context="(go=go1.19.12, platform=darwin/amd64, user=root@192f292aac5e, date=20231112-23:56:56, tags=netgo osusergo static_build)"
+ts=2024-03-24T06:51:03.871Z caller=filesystem_common.go:111 level=info collector=filesystem msg="Parsed flag --collector.filesystem.mount-points-exclude" flag=^/(dev)($|/)
+ts=2024-03-24T06:51:03.871Z caller=filesystem_common.go:113 level=info collector=filesystem msg="Parsed flag --collector.filesystem.fs-types-exclude" flag=^devfs$
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:110 level=info msg="Enabled collectors"
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=boottime
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=cpu
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=diskstats
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=filesystem
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=loadavg
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=meminfo
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=netdev
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=os
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=powersupplyclass
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=textfile
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=thermal
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=time
+ts=2024-03-24T06:51:03.871Z caller=node_exporter.go:117 level=info collector=uname
+ts=2024-03-24T06:51:03.872Z caller=tls_config.go:274 level=info msg="Listening on" address=[::]:9100
+ts=2024-03-24T06:51:03.872Z caller=tls_config.go:277 level=info msg="TLS is disabled." http2=false address=[::]:9100
+</code></pre>
+<h1 id="config-prometheus-to-scape-metrics-from-node_exporter"><a class="header" href="#config-prometheus-to-scape-metrics-from-node_exporter">Config Prometheus to scape metrics from node_exporter</a></h1>
+<p>With Prometheus, Grafana and node exporter up and runnign, we can configuring Prometh eus instance to scrape metrics from node exporter.</p>
+<p>Your locally running Prometheus instance needs to be properly configured in order to access Node Exporter metrics. The following prometheus.yml example configuration file will tell the Prometheus instance to scrape, and how frequently, from the Node Exporter via <code>localhost:9100</code>:</p>
+<pre><code class="language-yaml">global:
+  scrape_interval: 15s
+
+# Add the following to prometheus.yml
+scrape_configs:
+  - job_name: node
+    static_configs:
+      - targets: ["localhost:9100"]
+</code></pre>
+<h1 id="grafana-dashboard"><a class="header" href="#grafana-dashboard">Grafana Dashboard</a></h1>
+<p>You can create a dashboard or you can import dashboard from https://grafana.com/grafana/dashboards</p>
+<p>The node exporter dashboard is located at:
+https://grafana.com/grafana/dashboards/1860-node-exporter-full/</p>
+<h2 id="import-dashboard"><a class="header" href="#import-dashboard">Import Dashboard</a></h2>
+<p>Importing a dashboard is easy. All you need to do is to specify the dashboard id.</p>
+<p>Don't forget to choose prometheus as data source.</p>
+<p><img src="https://github.com/lichuan6/i/blob/main/grafana/Screen%20Shot%202024-03-24%20at%2015.00.45.png" alt="Import Dashboard" /></p>
+<h2 id="view-the-dashboard"><a class="header" href="#view-the-dashboard">View the dashboard</a></h2>
+<p>After the dashboard is imported, you can view the dashboard.</p>
+<p>Go to Home - Dashboard, search <code>Node Exporter Full</code> and you will see the information about the local machine.</p>
+<p><img src="https://github.com/lichuan6/i/blob/main/grafana/Screen%20Shot%202024-03-24%20at%2015.36.40.png" alt="Dashboard - Node Exporter Full" /></p>
+<h1 id="refs"><a class="header" href="#refs">Refs</a></h1>
+<p>https://grafana.com/docs/grafana/latest/datasources/prometheus/configure-prometheus-data-source/</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../llm/run-llm-using-llamafile-on-apple-m3-max.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../llm/run-llm-using-llamafile-on-apple-m3-max.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
