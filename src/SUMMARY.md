@@ -63,3 +63,7 @@
 # LLM
 
 - [Run LLM using llamafile on Apple M3 Max](llm/run-llm-using-llamafile-on-apple-m3-max.md)
+
+# Prometheus
+
+- [Install Prometheus and setup grafana and node_exporter](./prometheus/install-prometheus-and-setup-grafana-and-node_exporter.md)
