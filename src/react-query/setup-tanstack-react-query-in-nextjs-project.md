@@ -286,3 +286,5 @@ const JSONTable = ({ data }) => {
 
 export default JSONTable;
 ```
+
+![Render from api](https://github.com/lichuan6/i/blob/main/react/Screen%20Shot%202024-03-26%20at%2021.14.11.png?raw=true)
