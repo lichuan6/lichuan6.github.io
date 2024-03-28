@@ -67,3 +67,7 @@
 # Prometheus
 
 - [Install Prometheus and setup grafana and node_exporter](./prometheus/install-prometheus-and-setup-grafana-and-node_exporter.md)
+
+# Solana
+
+- [Anchor helloworld](solana/anchor/helloworld.md)
