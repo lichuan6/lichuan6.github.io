@@ -1,0 +1,653 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Anchor helloworld - Blog by lichuan</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded affix "><li class="part-title">Functional Component</li><li class="chapter-item expanded "><a href="../../react/chartjs/render-all-chartjs-charts.html"><strong aria-hidden="true">1.</strong> Render all chartjs charts in react typescript tailwindcss projects</a></li><li class="chapter-item expanded affix "><li class="part-title">React Query</li><li class="chapter-item expanded "><a href="../../react-query/setup-tanstack-react-query-in-nextjs-project.html"><strong aria-hidden="true">2.</strong> Setup Tanstack React Query in NextJS Project</a></li><li class="chapter-item expanded affix "><li class="part-title">Gitlab</li><li class="chapter-item expanded "><a href="../../gitlab/runner/register-gitlab-runner-on-amazon-linux-2.html"><strong aria-hidden="true">3.</strong> Register gitlab runner on Amazon Linux 2</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../../rust/error/how-to-organise-application-error-in-actix-web-application.html"><strong aria-hidden="true">4.</strong> How to organise application Error in actix-web application</a></li><li class="chapter-item expanded "><a href="../../rust/actix-web/serialize-time-offsetdatetime-type-using-serde-as-in-serde-with-crate.html"><strong aria-hidden="true">5.</strong> Serialize time::OffsetDataTime type using serde_as in serde_with crate</a></li><li class="chapter-item expanded "><a href="../../rust/diesel/upgrade-diesel-to-2.0.html"><strong aria-hidden="true">6.</strong> Upgrade diesel to 2.0</a></li><li class="chapter-item expanded affix "><li class="part-title">Go</li><li class="chapter-item expanded "><a href="../../go/gomod/add-dependency-in-go-mod-in-self-hosted-gitlab.html"><strong aria-hidden="true">7.</strong> Add dependency in go mod in self-hosted gitlab</a></li><li class="chapter-item expanded affix "><li class="part-title">NextJS</li><li class="chapter-item expanded "><a href="../../nextjs/add-nextjs-router-to-mui-tabs.html"><strong aria-hidden="true">8.</strong> Add nextjs router to mui tabs</a></li><li class="chapter-item expanded affix "><li class="part-title">NodeJS</li><li class="chapter-item expanded "><a href="../../nodejs/test/setup-tests-in-npm-project-using-jest.html"><strong aria-hidden="true">9.</strong> Setup tests in npm project using jest</a></li><li class="chapter-item expanded affix "><li class="part-title">ClickHouse</li><li class="chapter-item expanded "><a href="../../clickhouse/update/update-on-local-table-for-replicatedmergetree-table-engine.html"><strong aria-hidden="true">10.</strong> Update on local table for ReplicatedMergeTree Table Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Elasticsearch</li><li class="chapter-item expanded "><a href="../../elasticsearch/kibana/existing-value-not-exists-when-searching.html"><strong aria-hidden="true">11.</strong> Existing value not exists when searching</a></li><li class="chapter-item expanded affix "><li class="part-title">LLM</li><li class="chapter-item expanded "><a href="../../llm/run-llm-using-llamafile-on-apple-m3-max.html"><strong aria-hidden="true">12.</strong> Run LLM using llamafile on Apple M3 Max</a></li><li class="chapter-item expanded affix "><li class="part-title">Prometheus</li><li class="chapter-item expanded "><a href="../../prometheus/install-prometheus-and-setup-grafana-and-node_exporter.html"><strong aria-hidden="true">13.</strong> Install Prometheus and setup grafana and node_exporter</a></li><li class="chapter-item expanded affix "><li class="part-title">Solana</li><li class="chapter-item expanded "><a href="../../solana/anchor/helloworld.html" class="active"><strong aria-hidden="true">14.</strong> Anchor helloworld</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Blog by lichuan</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="anchor-helloworld"><a class="header" href="#anchor-helloworld">Anchor helloworld</a></h1>
+<!-- toc -->
+<ul>
+<li><a href="#install-rust">Install Rust</a></li>
+<li><a href="#install-solana">Install solana</a></li>
+<li><a href="#install-anchor">Install Anchor</a></li>
+<li><a href="#init-anchor-project">Init anchor project</a></li>
+<li><a href="#build-anchor-project---but-failed-%E2%9D%8C">Build anchor project - but failed ❌</a></li>
+<li><a href="#try-to-fix-the-build-error">Try to fix the build error</a></li>
+<li><a href="#write-anchor-program">Write anchor program</a></li>
+<li><a href="#write-anchor-test">Write anchor test</a></li>
+<li><a href="#anchor-build">Anchor build</a></li>
+<li><a href="#anchor-test">Anchor test</a></li>
+<li><a href="#run-solana-test-validator">Run solana-test-validator</a></li>
+<li><a href="#anchor-deploy">Anchor deploy</a></li>
+<li><a href="#what-happend-when-deploy">What happend when deploy</a></li>
+<li><a href="#program-log">Program log</a></li>
+<li><a href="#airdrop">Airdrop</a></li>
+</ul>
+<!-- tocstop -->
+<h1 id="install-rust"><a class="header" href="#install-rust">Install Rust</a></h1>
+<pre><code class="language-bash"># install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+export PATH="$HOME/.cargo/bin:$PATH"
+</code></pre>
+<h1 id="install-solana"><a class="header" href="#install-solana">Install solana</a></h1>
+<pre><code class="language-bash"># install solana
+# NOTE: Using 1.18.4 will cause `anchor build` error, so we choose v1.18.8
+# sh -c "$(curl -sSfL https://release.solana.com/v1.18.4/install)"
+sh -c "$(curl -sSfL https://release.solana.com/v1.18.8/install)"
+</code></pre>
+<h1 id="install-anchor"><a class="header" href="#install-anchor">Install Anchor</a></h1>
+<p>Anchor is a framework for Solana development</p>
+<pre><code class="language-bash"># install anchor
+cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+avm install latest
+avm use latest
+</code></pre>
+<h1 id="init-anchor-project"><a class="header" href="#init-anchor-project">Init anchor project</a></h1>
+<pre><code class="language-bash"># init new project
+anchor init helloworld
+</code></pre>
+<h1 id="build-anchor-project---but-failed-"><a class="header" href="#build-anchor-project---but-failed-">Build anchor project - but failed ❌</a></h1>
+<p>Now, let's build the anchor project.</p>
+<pre><code class="language-bash"># error
+❯ anchor build
+warning: some crates are on edition 2021 which defaults to `resolver = "2"`, but virtual workspaces default to `resolver = "1"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
+error: package `solana-program v1.18.8` cannot be built because it requires rustc 1.75.0 or newer, while the currently active rustc version is 1.72.0-dev
+Either upgrade to rustc 1.75.0 or newer, or use
+cargo update -p solana-program@1.18.8 --precise ver
+where `ver` is the latest version of `solana-program` supporting rustc 1.72.0-dev
+</code></pre>
+<p>Oops! We have an error!</p>
+<h1 id="try-to-fix-the-build-error"><a class="header" href="#try-to-fix-the-build-error">Try to fix the build error</a></h1>
+<p>I tried to run the following commands but no luck.</p>
+<pre><code class="language-bash"># To check the version of rustc from Solana Tools, runs:
+# see https://solana.stackexchange.com/questions/7077/anchor-build-says-cannot-be-built-because-it-requires-rustc-1-68-0-or-newer-bu
+❯ cargo-build-sbf --version
+solana-cargo-build-sbf 1.18.4
+platform-tools v1.39
+rustc 1.72.0
+
+# Upgrade your Solana tools
+solana-install init 1.18.8
+
+# To check the version of rustc from Solana Tools, runs:
+❯ cargo-build-sbf --version
+solana-cargo-build-sbf 1.18.8
+platform-tools v1.41
+</code></pre>
+<p>After struggling with the error message, I found there was no <code>rust</code> in <code>platform-tools</code> directory, only an uncompressed tar ball.</p>
+<pre><code class="language-bash"># anchor build error again
+~/.local/share/solana/install/releases/1.18.8/solana-release/bin/sdk/sbf/dependencies/platform-tools
+drwxr-xr-x    - hana 28 Mar 10:36 llvm
+.rw-r--r-- 291M hana 28 Mar 10:36 platform-tools-osx-x86_64.tar.bz2
+.rw-r--r--  240 hana 27 Feb 04:59 version.md
+</code></pre>
+<p>Instinctively, I extract <code>platform-tools-osx-x86_64.tar.bz2</code> file manually.</p>
+<pre><code class="language-bash"># Manually extract platform-tools-osx-x86_64.tar.bz2
+cd ~/.local/share/solana/install/releases/1.18.8/solana-release/bin/sdk/sbf/dependencies/platform-tools
+tar xf platform-tools-osx-x86_64.tar.bz2
+</code></pre>
+<p>After the file is extracted, I run <code>anchor build</code> again and it succeeds! 🎉</p>
+<h1 id="write-anchor-program"><a class="header" href="#write-anchor-program">Write anchor program</a></h1>
+<p>Now, it's time to write some <code>Rust</code> code(and <code>TypeScript</code>)!</p>
+<p>Modify <code>programs/helloworld/lib.rs</code> to print message to <code>initialize</code> function.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use anchor_lang::prelude::*;
+
+declare_id!("4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx");
+
+#[program]
+pub mod helloworld {
+    use super::*;
+
+    pub fn initialize(ctx: Context&lt;Initialize&gt;) -&gt; Result&lt;()&gt; {
+        msg!("Hello world, from solana smart contract");
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct Initialize {}
+<span class="boring">}</span></code></pre></pre>
+<h1 id="write-anchor-test"><a class="header" href="#write-anchor-test">Write anchor test</a></h1>
+<p>Anchor will generate a test case for <code>helloworld</code> project.</p>
+<p>Below is the generated test case in <code>tests/helloworld.ts</code> file.</p>
+<pre><code class="language-typescript">import * as anchor from "@coral-xyz/anchor";
+import { Program } from "@coral-xyz/anchor";
+import { Helloworld } from "../target/types/helloworld";
+
+describe("helloworld", () =&gt; {
+  // Configure the client to use the local cluster.
+  anchor.setProvider(anchor.AnchorProvider.env());
+
+  const program = anchor.workspace.Helloworld as Program&lt;Helloworld&gt;;
+
+  it("Is initialized!", async () =&gt; {
+    // Add your test here.
+    const tx = await program.methods.initialize().rpc();
+    console.log("Your transaction signature", tx);
+  });
+});
+</code></pre>
+<h1 id="anchor-build"><a class="header" href="#anchor-build">Anchor build</a></h1>
+<p>Now, we can build the anchor project.</p>
+<pre><code class="language-bash">❯ anchor build
+warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2021 which implies `resolver = "2"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
+note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+   Compiling proc-macro2 v1.0.79
+   Compiling unicode-ident v1.0.12
+   Compiling version_check v0.9.4
+   Compiling serde v1.0.197
+   Compiling typenum v1.17.0
+   Compiling syn v1.0.109
+   Compiling thiserror v1.0.58
+   Compiling serde_json v1.0.115
+   Compiling semver v1.0.22
+   Compiling anyhow v1.0.81
+   Compiling subtle v2.5.0
+   Compiling generic-array v0.14.7
+   Compiling itoa v1.0.11
+   Compiling ryu v1.0.17
+   Compiling cfg-if v1.0.0
+   Compiling quote v1.0.35
+   Compiling syn v2.0.55
+   Compiling unicode-segmentation v1.11.0
+   Compiling cpufeatures v0.2.12
+   Compiling libc v0.2.153
+   Compiling heck v0.3.3
+   Compiling rustc_version v0.4.0
+   Compiling bs58 v0.5.1
+   Compiling proc-macro-error-attr v1.0.4
+   Compiling autocfg v1.2.0
+   Compiling once_cell v1.19.0
+   Compiling proc-macro-error v1.0.4
+   Compiling hashbrown v0.14.3
+   Compiling equivalent v1.0.1
+   Compiling ahash v0.7.8
+   Compiling ahash v0.8.11
+   Compiling winnow v0.5.40
+   Compiling toml_datetime v0.6.5
+   Compiling feature-probe v0.1.1
+   Compiling indexmap v2.2.6
+   Compiling bv v0.11.1
+   Compiling jobserver v0.1.28
+   Compiling solana-frozen-abi-macro v1.18.8
+   Compiling cc v1.0.90
+   Compiling rustversion v1.0.14
+   Compiling zerocopy v0.7.32
+   Compiling cfg_aliases v0.1.1
+   Compiling borsh v1.4.0
+   Compiling memoffset v0.9.1
+   Compiling num-traits v0.2.18
+   Compiling solana-frozen-abi v1.18.8
+   Compiling hashbrown v0.11.2
+   Compiling hashbrown v0.13.2
+   Compiling toml_edit v0.21.1
+   Compiling arrayvec v0.7.4
+   Compiling lazy_static v1.4.0
+   Compiling bs58 v0.4.0
+   Compiling borsh-derive-internal v0.10.3
+   Compiling borsh-schema-derive-internal v0.10.3
+   Compiling borsh-schema-derive-internal v0.9.3
+   Compiling proc-macro-crate v3.1.0
+   Compiling borsh-derive-internal v0.9.3
+   Compiling arrayref v0.3.7
+   Compiling log v0.4.21
+   Compiling either v1.10.0
+   Compiling keccak v0.1.5
+   Compiling constant_time_eq v0.3.0
+   Compiling itertools v0.10.5
+   Compiling getrandom v0.2.12
+   Compiling base64 v0.13.1
+   Compiling blake3 v1.5.1
+   Compiling solana-program v1.18.8
+   Compiling serde_derive v1.0.197
+   Compiling thiserror-impl v1.0.58
+   Compiling syn_derive v0.1.8
+   Compiling bytemuck_derive v1.6.0
+   Compiling solana-sdk-macro v1.18.8
+   Compiling num-derive v0.4.2
+   Compiling anchor-derive-space v0.29.0
+   Compiling borsh-derive v1.4.0
+   Compiling bytemuck v1.15.0
+   Compiling serde_bytes v0.11.14
+   Compiling bincode v1.3.3
+   Compiling toml v0.5.11
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.8
+   Compiling sha3 v0.10.8
+   Compiling proc-macro-crate v0.1.5
+   Compiling anchor-syn v0.29.0
+   Compiling borsh-derive v0.9.3
+   Compiling borsh-derive v0.10.3
+   Compiling borsh v0.10.3
+   Compiling borsh v0.9.3
+   Compiling anchor-derive-accounts v0.29.0
+   Compiling anchor-attribute-account v0.29.0
+   Compiling anchor-derive-serde v0.29.0
+   Compiling anchor-attribute-access-control v0.29.0
+   Compiling anchor-attribute-program v0.29.0
+   Compiling anchor-attribute-error v0.29.0
+   Compiling anchor-attribute-event v0.29.0
+   Compiling anchor-attribute-constant v0.29.0
+   Compiling anchor-lang v0.29.0
+   Compiling helloworld v0.1.0 (/Users/hana/tmp/helloworld/programs/helloworld)
+warning: unused variable: `ctx`
+ --&gt; programs/helloworld/src/lib.rs:9:23
+  |
+9 |     pub fn initialize(ctx: Context&lt;Initialize&gt;) -&gt; Result&lt;()&gt; {
+  |                       ^^^ help: if this is intentional, prefix it with an underscore: `_ctx`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: `helloworld` (lib) generated 1 warning (run `cargo fix --lib -p helloworld` to apply 1 suggestion)
+    Finished release [optimized] target(s) in 3m 30s
++ wget https://github.com/Snaipe/Criterion/releases/download/v2.3.2/criterion-v2.3.2-osx-x86_64.tar.bz2 -O criterion-v2.3.2-osx-x86_64.tar.bz2 --progress=dot:giga --retry-connrefused --read-timeout=30
+--2024-03-28 11:00:29--  https://github.com/Snaipe/Criterion/releases/download/v2.3.2/criterion-v2.3.2-osx-x86_64.tar.bz2
+Resolving github.com (github.com)... 20.205.243.166
+Connecting to github.com (github.com)|20.205.243.166|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/30111969/33613116-1c60-11e7-8934-6166ffd90477?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240328%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20240328T030030Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=4122d55871f80d3351bb33cb84c3a81a36f7e9b28b2acec18bba5ecaf72b73e8&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=30111969&amp;response-content-disposition=attachment%3B%20filename%3Dcriterion-v2.3.2-osx-x86_64.tar.bz2&amp;response-content-type=application%2Foctet-stream [following]
+--2024-03-28 11:00:30--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/30111969/33613116-1c60-11e7-8934-6166ffd90477?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240328%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20240328T030030Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=4122d55871f80d3351bb33cb84c3a81a36f7e9b28b2acec18bba5ecaf72b73e8&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=30111969&amp;response-content-disposition=attachment%3B%20filename%3Dcriterion-v2.3.2-osx-x86_64.tar.bz2&amp;response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 180979 (177K) [application/octet-stream]
+Saving to: ‘criterion-v2.3.2-osx-x86_64.tar.bz2’
+
+     0K                                    100%  587K=0.3s
+
+2024-03-28 11:00:31 (587 KB/s) - ‘criterion-v2.3.2-osx-x86_64.tar.bz2’ saved [180979/180979]
+
++ tar --strip-components 1 -jxf criterion-v2.3.2-osx-x86_64.tar.bz2
++ ./platform-tools/rust/bin/rustc --version
++ ./platform-tools/rust/bin/rustc --print sysroot
++ set +e
++ rustup toolchain uninstall solana
+info: uninstalling toolchain 'solana'
+info: toolchain 'solana' uninstalled
++ set -e
++ rustup toolchain link solana platform-tools/rust
++ exit 0
+</code></pre>
+<h1 id="anchor-test"><a class="header" href="#anchor-test">Anchor test</a></h1>
+<pre><code class="language-bash">anchor test
+warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2021 which implies `resolver = "2"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
+note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+warning: unused variable: `ctx`
+ --&gt; programs/helloworld/src/lib.rs:9:23
+  |
+9 |     pub fn initialize(ctx: Context&lt;Initialize&gt;) -&gt; Result&lt;()&gt; {
+  |                       ^^^ help: if this is intentional, prefix it with an underscore: `_ctx`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: `helloworld` (lib) generated 1 warning (run `cargo fix --lib -p helloworld` to apply 1 suggestion)
+    Finished release [optimized] target(s) in 0.24s
+
+Found a 'test' script in the Anchor.toml. Running it as a test suite!
+
+Running test suite: "/Users/hana/tmp/helloworld/Anchor.toml"
+
+yarn run v1.22.21
+warning package.json: No license field
+$ /Users/hana/tmp/helloworld/node_modules/.bin/ts-mocha -p ./tsconfig.json -t 1000000 'tests/**/*.ts'
+(node:87299) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+
+  helloworld
+Your transaction signature 2TWQV8ftHjohurqV2WtFqKCn7VwseRjBfTwKPBLYqa8x3A54joXjDt1s6gWfMFMi8JNEbB4XuAvHnTthCGn8n5oq
+    ✔ Is initialized! (575ms)
+
+
+  1 passing (577ms)
+
+✨  Done in 4.07s.
+</code></pre>
+<p>🎉🎉🎉</p>
+<h1 id="run-solana-test-validator"><a class="header" href="#run-solana-test-validator">Run solana-test-validator</a></h1>
+<p>The program is built successfully, we can deploy it in localnet.</p>
+<p>Before deploying in localnet, you have to ensure solana local validate is up and running.</p>
+<p>Run <code>solana-test-validator</code> to start solana local validator:</p>
+<pre><code class="language-bash">❯ solana-test-validator
+--faucet-sol argument ignored, ledger already exists
+Ledger location: test-ledger
+Log: test-ledger/validator.log
+⠐ Initializing...                                                                                                                                         Waiting for fees to stabilize 1...
+Identity: DB867gXPUPZXZ1epZe1u6M6sms1Ybe7ni5v5wK6iyvPh
+Genesis Hash: 7CtbpyodydkFzXTyELyBb1GTrZQFXSvus4mHrDVDBX4z
+Version: 1.18.8
+Shred Version: 10839
+Gossip Address: 127.0.0.1:1024
+TPU Address: 127.0.0.1:1027
+JSON RPC URL: http://127.0.0.1:8899
+⠤ 02:00:48 | Processed Slot: 13441 | Confirmed Slot: 13441 | Finalized Slot: 13409 | Full Snapshot Slot: 13404 | Incremental Snapshot Slot: - | Transactions: 13614 |
+</code></pre>
+<p>NOTE: You may need to turn off proxy when you encounter error like <code>localhost:8899 connect refused</code>.</p>
+<pre><code class="language-bash">Genesis Hash: 7CtbpyodydkFzXTyELyBb1GTrZQFXSvus4mHrDVDBX4z
+Version: 1.18.8
+Shred Version: 10839
+Gossip Address: 127.0.0.1:1024
+TPU Address: 127.0.0.1:1027
+JSON RPC URL: http://127.0.0.1:8899
+WebSocket PubSub URL: ws://127.0.0.1:8900
+  RPC connection failure: error sending request for url (http://127.0.0.1:8899/): connection closed before message completed
+Identity: DB867gXPUPZXZ1epZe1u6M6sms1Ybe7ni5v5wK6iyvPh
+Genesis Hash: 7CtbpyodydkFzXTyELyBb1GTrZQFXSvus4mHrDVDBX4z
+  RPC connection failure: error sending request for url (http://127.0.0.1:8899/): connection closed before message completed
+Identity: DB867gXPUPZXZ1epZe1u6M6sms1Ybe7ni5v5wK6iyvPh
+Genesis Hash: 7CtbpyodydkFzXTyELyBb1GTrZQFXSvus4mHrDVDBX4z
+</code></pre>
+<h1 id="anchor-deploy"><a class="header" href="#anchor-deploy">Anchor deploy</a></h1>
+<p>The program is built successfully, we can deploy it in localnet.</p>
+<p>Before deploying in localnet, you have to ensure solana local validate is up and running.</p>
+<p>Config <code>Anchor.toml</code> to use <code>Localnet</code> in <code>provider</code>.</p>
+<pre><code class="language-toml">[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+helloworld = "4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet" # &lt;-- 🙋 use localnet
+# cluster = "devnet"
+# cluster = "testnet"
+wallet = "/Users/hana/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+</code></pre>
+<p>Before deploying anchor program, we can run <code>solana balance</code> to check the balance.</p>
+<pre><code class="language-bash">❯ solana balance
+500000002 SOL
+</code></pre>
+<p>Run <code>anchor deploy</code> to deploy <code>helloworld</code> program to local net.</p>
+<pre><code class="language-bash">❯ anchor deploy
+Deploying cluster: http://localhost:8899
+Upgrade authority: /Users/hana/.config/solana/id.json
+Deploying program "helloworld"...
+Program path: /Users/hana/tmp/helloworld/target/deploy/helloworld.so...
+⠂  27.4% | Resent 130 transactions...               [block height 1381; re-sign in 300 blocks]
+Program Id: 4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx
+
+Deploy success
+</code></pre>
+<p>After deploy, we can check the balance again.</p>
+<pre><code>❯ solana balance
+500000000.740320265 SOL
+</code></pre>
+<h1 id="what-happend-when-deploy"><a class="header" href="#what-happend-when-deploy">What happend when deploy</a></h1>
+<p>In order to check how much sol is needed to deploy the program, we can change <code>provider</code> to <code>testnet</code> and run <code>anchor deploy</code>. As we do not have any sol in testnet, <code>anchor deploy</code> will output the error: <code>Error: Account Hupie9P3m69DYALjhjcxwqpTWAoAr36NUXHzcHr7jPpc has insufficient funds for spend (1.25762328 SOL) + fee (0.000915 SOL)</code></p>
+<p>Below is attempt to deploy helloworld program to testnet.</p>
+<pre><code class="language-bash">❯ anchor deploy
+Deploying cluster: https://api.testnet.solana.com
+Upgrade authority: /Users/hana/.config/solana/id.json
+Deploying program "helloworld"...
+Program path: /Users/hana/tmp/helloworld/target/deploy/helloworld.so...
+========================================================================
+Recover the intermediate account's ephemeral keypair file with
+`solana-keygen recover` and the following 12-word seed phrase:
+========================================================================
+high goddess rib arrange execute right dragon dutch pact edit razor ugly
+========================================================================
+To resume a deploy, pass the recovered keypair as the
+[BUFFER_SIGNER] to `solana program deploy` or `solana program write-buffer'.
+Or to recover the account's lamports, pass it as the
+[BUFFER_ACCOUNT_ADDRESS] argument to `solana program close`.
+========================================================================
+Error: Account Hupie9P3m69DYALjhjcxwqpTWAoAr36NUXHzcHr7jPpc has insufficient funds for spend (1.25762328 SOL) + fee (0.000915 SOL)
+There was a problem deploying: Output { status: ExitStatus(unix_wait_status(256)), stdout: "", stderr: "" }.
+</code></pre>
+<h1 id="program-log"><a class="header" href="#program-log">Program log</a></h1>
+<p>Go to <code>.anchor/program-logs/</code> to inspect program's log.</p>
+<pre><code class="language-bash">❯ ct .anchor/program-logs//4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx.helloworld.log
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Streaming transaction logs mentioning 4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx. Confirmed commitment
+Transaction executed in slot 8:
+  Signature: 2TWQV8ftHjohurqV2WtFqKCn7VwseRjBfTwKPBLYqa8x3A54joXjDt1s6gWfMFMi8JNEbB4XuAvHnTthCGn8n5oq
+  Status: Ok
+  Log Messages:
+    Program 4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx invoke [1]
+    Program log: Instruction: Initialize
+    Program log: Hello world, from solana smart contract
+    Program 4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx consumed 324 of 200000 compute units
+    Program 4d9Riew7cGvjPUzpjDnDSkXdt7qzW67qT84Ef1wpwEMx success
+</code></pre>
+<h1 id="airdrop"><a class="header" href="#airdrop">Airdrop</a></h1>
+<p>You can go to solona faucet to claim sol token.</p>
+<p>https://faucet.solana.com/</p>
+<p>After deploy in testnet, we can check transaction in solona exploer.</p>
+<p>https://explorer.solana.com/address/Hupie9P3m69DYALjhjcxwqpTWAoAr36NUXHzcHr7jPpc?cluster=testnet</p>
+<p>You can also inspect the transaction.</p>
+<p>https://explorer.solana.com/tx/43YmCZWeUHDkvtqGf6tidbTi3wiynzBc64TR1jmrcqhY5kzSqSSc3A8p6Q4mKkG8hzdy7uNzkbQ6Q2ngzA5rsP4f?cluster=testnet</p>
+<p><img src="https://github.com/lichuan6/i/blob/main/solana/helloworld.png?raw=true" alt="solana helloworld" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../prometheus/install-prometheus-and-setup-grafana-and-node_exporter.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../prometheus/install-prometheus-and-setup-grafana-and-node_exporter.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
